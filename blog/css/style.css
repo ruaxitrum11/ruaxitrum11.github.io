@@ -1,0 +1,26 @@
+.box{
+	max-width: 45%;
+	float: left;
+	margin-right: 15px;
+	display: block;
+	text-align: center;
+	margin-left: 60px;
+}
+img:hover{
+	border-radius: 50%;	
+}
+img{
+	border: 2px solid blue;
+}
+.box img{
+	width: 100%;
+}
+	a:link {
+		color: black;
+	}
+	a:hover{
+		color: red;
+	}
+	a:visited { 
+		color: black;
+	}

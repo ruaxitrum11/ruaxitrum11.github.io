@@ -1,7 +1,9 @@
+
 .group1{
 	width: 16%;
 	float: left;
 	margin-right: 10px;
+
 }
 	a:link{
 		color: blue;
@@ -17,4 +19,4 @@
 	}
 .anh img{
 	height: 160px;
-	
+}

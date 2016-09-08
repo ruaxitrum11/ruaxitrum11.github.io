@@ -1,10 +1,9 @@
 .box{
-	max-width: 35%;
+	max-width: 33%;
 	float: left;
-	margin-right: 15px;
 	display: block;
 	text-align: center;
-	margin-left: 125px;
+	margin-left: 170px;
 }
 img:hover{
 	border-radius: 50%;	
@@ -24,3 +23,57 @@ img{
 	a:visited { 
 		color: black;
 	}
+
+.wrap{
+	max-width: 1000px;
+	margin: auto;
+
+}
+#main-menu {
+	float: left;
+	font-size: 16px;
+	margin-right: 10px;
+	margin-bottom: 70px;
+	position: relative;
+}
+
+#main-menu img{
+	border-radius: 0;
+}
+#main-menu a{
+	margin-right: 5px;
+	display: block;
+
+}
+#logo img{
+	position: absolute;
+	border-radius: 50%;
+	top: 420px;
+	left: -150px;
+
+}
+
+.menu {
+	background-color: black;
+	width: 150px;
+	line-height: 40px;
+	position: absolute;
+	left:-20px;
+	top:650px;
+
+
+}
+.menu  a{
+	color: white;
+	margin-left: 20px;
+	margin-top: 25px;
+
+	
+}
+#back img{
+	border-radius: 0;
+	max-width: 50px;
+	border: 0;
+	position: fixed;
+	left: 30px;
+}

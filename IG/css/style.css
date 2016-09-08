@@ -1,19 +1,35 @@
+*{
+	box-sizing: border-box;
+}
+.wrap{
+	
+	width: 80%;
+	max-width: 1000px;
+	margin:0 auto;
+	overflow-y: auto;
+
+	
+}
 .box{
-	max-width: 35%;
+	width: 50%;
 	float: left;
-	margin-right: 15px;
 	display: block;
 	text-align: center;
-	margin-left: 125px;
+	margin-bottom: 15px;
+	
 }
 img:hover{
 	border-radius: 50%;	
 }
 img{
+	width: 100%;
 	border: 2px solid blue;
 }
 .box img{
-	width: 100%;
+	width: 80%;
+	margin-left: 10%;
+
+
 }
 	a:link {
 		color: black;
@@ -24,3 +40,36 @@ img{
 	a:visited { 
 		color: black;
 	}
+	
+
+#main-menu {
+	float: left;
+	font-size: 16px;
+	margin-bottom: 40px;
+	
+}
+
+#main-menu img{
+	border-radius: 0;
+}
+#main-menu a{
+	margin-right: 5px;
+	
+
+}
+
+.menu {
+	background-color: black;
+	line-height: 100px;
+	/*display: inline;*/
+	/*padding: 20px 0;*/
+	width: 100%;
+	padding: 5px 0;
+	text-align: center;
+
+
+}
+.menu  a{
+	color: white;
+	
+}

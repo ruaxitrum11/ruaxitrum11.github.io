@@ -2,6 +2,9 @@
 	width: 16%;
 	float: left;
 	margin-right: 10px;
+	max-width: 100%;
+
+
 }
 	a:link{
 		color: blue;
@@ -16,5 +19,5 @@
 		color: blue;
 	}
 .anh img{
-	height: 160px;
-	
+	max-width: 100%;
+}

@@ -1,14 +1,27 @@
+*{
+	box-sizing: border-box;
+}
+.wrap{
+	
+	width: 80%;
+	max-width: 1000px;
+	margin:0 auto;
+	overflow-y: auto;
+	
+}
 .box{
-	max-width: 33%;
+	width: 50%;
+	padding-left: 2%;
 	float: left;
 	display: block;
 	text-align: center;
-	margin-left: 170px;
+	
 }
 img:hover{
 	border-radius: 50%;	
 }
 img{
+	width: 100%;
 	border: 2px solid blue;
 }
 .box img{
@@ -24,15 +37,11 @@ img{
 		color: black;
 	}
 
-.wrap{
-	max-width: 1000px;
-	margin: auto;
 
-}
 #main-menu {
 	float: left;
 	font-size: 16px;
-	margin-right: 10px;
+	/*margin-right: 10px;*/
 	margin-bottom: 70px;
 	position: relative;
 }
@@ -45,11 +54,20 @@ img{
 	display: block;
 
 }
-#logo img{
+
+#logo{
 	position: absolute;
+	z-index: 2;
+	left: 38px;
+	bottom: -76px;
+}
+#logo img{
+	
 	border-radius: 50%;
-	top: 420px;
-	left: -150px;
+
+	width: 200px;
+	height: 200px;
+	
 
 }
 
@@ -58,8 +76,8 @@ img{
 	width: 150px;
 	line-height: 40px;
 	position: absolute;
-	left:-20px;
-	top:650px;
+	left:0;
+	top:600px;
 
 
 }
@@ -78,4 +96,7 @@ img{
 	left: 25px;
 	top: 5px;
 
+}
+.content-box{
+	margin-left: 150px;
 }

@@ -1,0 +1,22 @@
+
+.group1{
+	width: 16%;
+	float: left;
+	margin-right: 10px;
+
+}
+	a:link{
+		color: blue;
+	}
+	a:hover{
+		color: blue; 
+	}
+	a:active{
+		color: red;
+	}
+	a:visited{
+		color: blue;
+	}
+.anh img{
+	height: 160px;
+}

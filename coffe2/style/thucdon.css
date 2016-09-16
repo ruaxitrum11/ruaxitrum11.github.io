@@ -1,0 +1,238 @@
+html,body, *{
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+a{
+	text-decoration: none;
+}
+.content{
+	overflow-y: auto;
+	float: left;
+}
+.row{
+	float: left;
+	width: 100%;
+}
+.wrap{
+	overflow-y: hidden;
+	width: 80%;
+	max-width: 1150px;
+	margin:0 auto;
+}
+.header{
+	display: block;
+	float: left;
+	position: relative;
+	background: rgba(205,102,29,0.75);
+	z-index: 100;
+	width: 100%;
+
+	
+}
+.logo,.menu,.delivery{
+	float: left;
+}
+.logo img{
+	max-width: 100%;
+	height: 150px;
+	float: left;
+	position: absolute;
+	top: 58px;
+	z-index: 1000;
+}
+.menu {
+	padding-top: 50px;
+	overflow-y: auto;
+	max-width: 100%;
+	margin-left: 150px;
+}
+.menu li {
+	float: left;
+	padding : 24px;
+	font-size: 30px;
+}
+.menu ul {
+	list-style: none;
+}
+.menu a:link{
+	color: white;
+}
+.menu li:hover a{
+	color: blue;
+}
+.menu a:visited{
+	color: white;
+}
+.delivery{
+	padding-top: 60px;
+	padding-left : 50px;
+}
+.delivery img{
+	max-width: 100%;
+	height: 55px;
+	float: left;
+	padding-top: 1px;
+}
+.text-top{
+	padding-left: 82px;
+	color: white;
+	max-width: 100%;
+	padding-top: 10px;
+}
+.menuu {
+	float: left;
+	width: 100%;
+	background: #999999;
+	padding-top: 200px;
+	overflow: hidden;
+}
+.menuu ul {
+	list-style: none;
+	padding-left: 0px;
+	line-height: 40px;
+	font-size: 25px;
+	color: white;
+	font-style: italic;
+	text-align: center;
+}
+.menuu li{
+	position: relative;
+	float: left;
+	width: 20%;
+	/*padding-right: 50px;*/
+
+}
+
+.menuu img{
+	max-width: 100%;
+	transition: all 0.3s linear;
+	display: block;
+	position: absolute;
+	z-index: 0;
+	bottom: -35px;
+	padding-left: 15px;
+}
+.menuu img:hover{
+	bottom: -20px;
+}
+.menucaption {
+	padding: 10px;
+	background: #666666;
+	position: relative;
+	z-index: 2;
+}
+.row img{
+	margin-top: 15px;
+	width: 100%;
+
+
+}
+.coffe-details{
+	background: #A9A9A9;
+	float: left;
+	margin-top: 15px;
+}
+.coffe-details img{
+	display: block;
+	padding-top: 20px;
+	margin: 0 auto;
+	border-radius: 50% ;
+
+}
+.coffe-details div{
+	float: left;
+	width: 20%;
+}
+h4{
+	text-align: center;
+}
+.price {
+	text-align: center;
+	font-style: italic;
+}
+.chocolate-details{
+	background : #A9A9A9;
+	float: left;
+	margin-top: 15px;
+	width: 100%;
+}
+.chocolate-details img{
+	display: block;
+	padding-top: 20px;
+	margin: 0 auto;
+	border-radius: 50% ;
+
+}
+.chocolate-details div{
+	float: left;
+	width: 20%;
+}
+.tea-details{
+	background: #A9A9A9;
+	float: left;
+	margin-top: 15px;
+	width: 100%;
+}
+.tea-details img{
+	display: block;
+	padding-top: 20px;
+	margin: 0 auto;
+	border-radius: 50%;
+}
+.tea-details div{
+	float: left;
+	width: 20%;
+}
+.fruit-details{
+	background: #A9A9A9;
+	float: left;
+	margin-top: 15px;
+	width: 100%;
+}
+.fruit-details img{
+	display: block;
+	padding-top: 20px;
+	margin: 0 auto;
+	border-radius: 50% ;
+}
+.fruit-details div{
+	float: left;
+	width: 20%;
+}
+.dessert-details{
+	background: #A9A9A9;
+	float: left;
+	margin-top: 15px;
+	width: 100%;
+}
+.dessert-details img{
+	display: block;
+	padding-top: 20px;
+	margin: 0 auto;
+	border-radius: 50% ;
+}
+.dessert-details div{
+	float: left;
+	width: 20%;
+}
+.footer{
+	max-width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+    background-color: #8B4513;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
+.footer span{
+	font-size: 35px;
+	font-style: italic;;
+}
+.back img {
+	max-width: 100%;
+	height: 80px;
+	position: fixed;
+	right: 297px;
+	bottom: 0px;
+	z-index: -10px;
+}

@@ -1,0 +1,335 @@
+html,body, *{
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+a{
+	text-decoration: none;
+}
+header {
+	overflow-y: hidden;
+}
+section {
+	overflow-y: auto;
+}
+.site-nav{
+	display: block;
+	float: left;
+	position: relative;
+	z-index: 100;
+	width: 100%;
+	padding-top: 20px;
+}
+.navbar-default {
+	background: rgba(205,102,29,0.75);
+}
+.nav.navbar-nav{
+	padding-left: 75px;	
+}
+
+.banner{
+	float: left;
+}
+
+.logo,.menu,.delivery{
+	float: left;
+}
+.logo img{
+	max-width: 100%;
+	height: 78px;
+	float: left;
+	top: 0px;
+	left: -15px;
+	position: absolute;
+}
+.menu {
+	padding-top: 50px;
+	overflow-y: auto;
+	max-width: 100%;
+	margin-left: 150px;
+}
+
+.nav.navbar-nav  a:link{
+	color: white;
+}
+.nav.navbar-nav li:hover a{
+	color: blue;
+
+}
+.nav.navbar-nav  a:visited{
+	color: white;
+	
+}
+.menuu {
+	float: left;
+	background-color: rgba(205,102,29,0.75);
+	font-style: italic;
+}
+.menuu a {
+	float: left;
+	display: block;
+}
+.menuu img{
+	height: 150px;
+}
+.menuu p {
+	text-align: center;
+}
+.menuu a:link {
+	color: white;
+}
+.menuu a:hover {
+	color: blue;
+}
+.menuu a:visited {
+	color: white;
+}
+.menuu a{
+	font-style: italic;
+	font-size: 20px;
+}
+
+.coffe {
+	float: left;
+	padding-top: 20px;
+
+}
+.coffe img {
+	width: 100%;
+	padding-bottom: 20px;
+}
+.sanpham {
+	background-color: rgba(205,102,29,0.75);
+	float: left;
+	width: 100%
+}
+.menucoffe {
+	padding-top: 10px;
+	max-width: 100%;
+}
+.menucoffe img {
+	width: 100%;
+
+}
+.menucoffe p {
+	text-align: center;
+	font-size: 12px;
+	color: white;
+	height: 51px;
+}
+.chocolate {
+	float: left;
+	padding-top: 20px;
+}
+.chocolate img {
+	width: 100%;
+	padding-bottom: 20px;
+}
+.menuchocolate {
+	padding-top: 10px;
+	max-width: 100%;
+}
+.menuchocolate img {
+	width: 100%;
+
+}
+.menuchocolate p {
+	text-align: center;
+	font-size: 12px;
+	color: white;
+	height: 51px;
+}
+.tea {
+	float: left;
+	padding-top: 20px;
+	width: 100%;
+}
+.tea img {
+	width: 100%;
+	padding-bottom: 20px;
+}
+.menutea {
+	padding-top: 10px;
+	max-width: 100%;
+}
+.menutea img {
+	width: 100%;
+
+}
+.menutea p {
+	text-align: center;
+	font-size: 12px;
+	color: white;
+	height: 51px;
+}
+.fruit {
+	float: left;
+	padding-top: 20px;
+}
+.fruit img {
+	width: 100%;
+	padding-bottom: 20px;
+}
+.menufruit {
+	padding-top: 10px;
+	max-width: 100%;
+}
+.menufruit img {
+	width: 100%;
+
+}
+.menufruit p {
+	text-align: center;
+	font-size: 12px;
+	color: white;
+	height: 51px;
+}
+.footer{
+	background-color: #8B4513;
+	color: white;
+	text-align: center;
+	font-size: 13px;
+	margin-top: 20px;
+}
+.footer span{
+	font-size: 20px;
+	font-style: italic;
+}
+@media ( min-width: 425px){
+	.menuu {
+		padding-left: 39px;
+	}
+}
+@media ( min-width: 768px){
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+		float: left;
+	}
+
+	.delivery img{
+		max-width: 100%;
+		height: 55px;
+		float: left;
+		padding-top: 10px;
+		padding-left: 18px;
+	}
+	.text-top{
+		padding-left: 100px;
+		color: white;
+		max-width: 100%;
+		padding-top: 10px;
+	}
+	.nav.navbar-nav{
+		padding-top: 6px;
+		padding-left: 90px;
+	}
+	.logo img{
+		height: 95px;
+		left: -3px;
+	}
+	li.menuu {
+		margin-top: 20px;
+	}
+	.menuu a{
+		padding-bottom: 20px;
+	}
+	.menuu {
+		float: left;
+		width: 100%;
+		padding-top: 120px;
+		overflow: hidden;
+		padding-left: 0px;
+	}
+	.menuu ul {
+		list-style: none;
+		padding-left: 0px;
+		line-height: 40px;
+		font-size: 25px;
+		color: white;
+		font-style: italic;
+		text-align: center;
+	}
+	.menuu li{
+		position: relative;
+		float: left;
+		width: 25%;
+		/*padding-right: 50px;*/
+
+	}
+
+	.menuu img{
+		max-width: 100%;
+		transition: all 0.3s linear;
+		display: block;
+		position: absolute;
+		z-index: 0;
+		bottom: -14px;
+		padding-left: 30px;
+	}
+	.menuu img:hover{
+		bottom: -20px;
+	}
+	.menucaption {
+		background: #666666;
+		position: relative;
+		z-index: 2;
+	}
+}
+@media ( min-width: 992px){
+	.nav.navbar-nav{
+		padding-left: 180px;
+		font-size: 20px;	
+	}
+	.logo img{
+		left: 30px;
+		top: 25px;
+		height: 110px;
+	}
+	.container-fluid {
+		padding-top: 30px;
+		padding-bottom: 15px;
+	}
+	.logo, .menu, .delivery {
+		padding-left: 15px;
+	}
+	.menuu img {
+		padding-left: 60px;
+		bottom: -35px;
+	}
+	.menuu {
+		padding-top: 80px;
+	}
+}
+@media (min-width: 1200px){
+	.logo img{
+		left: 30px;
+		top: 18px;
+		height: 150px;
+	}
+	.content {
+		padding-top: 15px;
+	}
+	.nav.navbar-nav{
+		font-size: 25px;	
+		padding-left: 220px;
+	}
+	.delivery img{
+		max-width: 100%;
+		height: 80px;
+		float: left;
+		padding-bottom: 20px;
+	}
+	.text-top{
+		padding-left: 112px;
+		font-size: 18px;
+	}
+	.logo, .menu, .delivery{
+		padding-left: 60px;
+	}
+	.menuu {
+		padding-top: 110px;
+		margin-top: 15px;
+	}
+	.menuu img {
+		height: 180px;
+		padding-left: 78px;
+	}
+}

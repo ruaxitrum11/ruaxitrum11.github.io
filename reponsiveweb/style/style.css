@@ -5,7 +5,12 @@ html,body, *{
 a{
 	text-decoration: none;
 }
-
+section {
+	clear: both;
+}
+header {
+	overflow-y: hidden;
+}
 .site-nav{
 	display: block;
 	float: left;

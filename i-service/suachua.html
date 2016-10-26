@@ -23,7 +23,7 @@
 					<ul class="sidebar-nav">
 						<li class="sidebar-brand">
 							<img src="img/date1.png">
-							<a href="#">Đặt lịch trực tuyến</a>
+							<a href="datlich.html">Đặt lịch trực tuyến</a>
 						</li>
 						<li>
 							<img src="img/call.png">
@@ -86,7 +86,7 @@
 					<img src="img/logo.png">
 				</a>
 			</div> 
-			<div class="header2 col-xs-10">
+			<div class="header2 col-xs-7">
 				<div class="top_logo_right">
 					<ul class="list-inline">
 						<li>
@@ -118,15 +118,17 @@
 					</ul>
 				</div>
 			</div>
+			<div class="header3 col-xs-3">
+				<div class="search">
+					<form method="post" action="" class="searchform">
+						<input type="text" placeholder="Tìm kiếm" name="search">
+						<button type="submit" name="btn_search">
+							<span class=" icon-search glyphicon glyphicon-search"></span>
+						</button>
+					</form>
+				</div>
+			</div>
 		</header>
-
-		<div class="duongdan hidden-xs">
-			<a href="index.html"><p id="duongdan">I-Service</p></a>
-			<p>/</p>
-			<a href="suachua.html"><p>Sửa Chữa</p></a>
-			<span>Gọi ngay cho chúng tôi : 1900.1099</span>
-		</div>
-
 		<section class="main-content">
 			<div class="banner">
 				<div class="banner-left col-sm-8">
@@ -138,7 +140,7 @@
 						</div>
 						<div class="button-fixed">
 							<div class="button-date col-xs-6">
-								<a href="#" class="button-call">
+								<a href="datlich.html" class="button-call">
 									<img class="img-responsive" src="img/date.png">
 									<span> Đặt lịch trực tuyến </span>
 								</a>
@@ -152,20 +154,12 @@
 				<div class="banner-right col-sm-4 hidden-xs">
 					<img src="img/suachua/banner.jpg">
 				</div>
-				<div class="khuyenmai hidden-xs">
-					<div class="col-xs-12">
-						<p style="text-align: center"> Giảm Giá 15% </p>
-						<span>cho thành viên của I-Services</span>
-						<a data-toggle="modal" data-target="#modal1">Đăng Ký Ngay</a>
-					</div>
-				</div>
-				<div class="khuyenmai1 visible-xs">
-					<div class="col-xs-12">
-						<p style="text-align: center"> Giảm Giá 15% </p>
-						<span>cho tất cả thành viên của i-services</span>
-						<a data-toggle="modal" data-target="#modal1">Đăng Ký Ngay</a>
-					</div>
-				</div>
+			</div>
+			<div class="duongdan hidden-xs">
+				<a href="index.html"><p id="duongdan">I-Service</p></a>
+				<p>/</p>
+				<a href="suachua.html"><p>Sửa Chữa</p></a>
+				<span>Gọi ngay cho chúng tôi : 1900.1099</span>
 			</div>
 			<div class="menu-content">
 				<div class="menu-tittle">
@@ -336,43 +330,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="danhgia">
-				<div class="danhgia-tittle">
-					<h2>Đánh Giá Của Khách Hàng</h2>
-					<div id="review-rating"></div>
-				</div>
-				<div class="danhgia-content">
-					<div class="danhgia-content-details col-xs-6 col-sm-3">
-						<p>Mr Mạnh</p>
-						<div id="review-rating1"></div>
-						<p>Phục vụ tốt</p>
-					</div>
-					<div class="danhgia-content-details col-xs-6 col-sm-3">
-						<p>Mr Huy</p>
-						<div id="review-rating2"></div>
-						<p>Phục vụ nhanh</p>
-					</div>
-					<div class="danhgia-content-details col-xs-6 col-sm-3">
-						<p>Mr Quân</p>
-						<div id="review-rating3"></div>
-						<p>Tay nghề tốt</p>
-					</div>
-					<div class="danhgia-content-details col-xs-6 col-sm-3">
-						<p>Mrs Linh</p>
-						<div id="review-rating4"></div>
-						<p>Dịch vụ tạm ổn</p>
-					</div>
-				</div>
-				<div class="danhgia-under">
-					<a href="#">Các đánh giá khác của khác hàng</a>
-				</div>
-			</div>
 			<div class="blog visible-xs">
 				<div class="content-blog">
 					<div class="title-blog">
-						<a href="#">
 							<h2>16 Nguyên Nhân Khiến Điều Hòa Hỏng</h2>
-						</a>
 					</div>
 					<div class="img-blog">
 						<img src="img/blog/blog2a.jpg">
@@ -388,407 +349,353 @@
 			</div>
 			<div class="blog hidden-xs">
 				<div class="blog-img col-sm-4">
-					<a href="#">
 						<img src="img/blog/blog2a.jpg">
-					</a>
 				</div>
 				<div class="blog-text col-sm-8">
-					<a href="#">
 						<h3>16 Nguyên Nhân Khiến Điều Hòa Hỏng</h3>
+					<span>Máy điều hòa không khí là một hệ thống kín và gas lạnh bên trong máy là loại hóa chất rất bền không bị phân hủy trong điều kiện hoạt động của máy nên không có hiện tượng hao hụt gas. Máy chỉ thiếu gas, hết gas trong trường hợp bị rò rỉ, xì trên đường ống, tại các van, các chỗ đấu nối ống bằng rắc-co…hay trong quá trình lắp mới người lắp đặt không kiểm tra và nạp đủ gas. Khi máy bị thiếu gas hoặc hết gas sẽ có một số hiện tượng sau:...<a href="#">Chi tiết</a></span>
+				</div>
+			</div>
+			<div class="diennuoc">
+				<div class="diennuoc-img col-xs-12 col-sm-4">
+					<a href="#">
+						<img src="img/diennuoc.jpg">
 					</a>
-					<span>Máy điều hòa không khí là một hệ thống kín và gas lạnh bên trong máy là loại hóa chất rất bền không bị phân hủy trong điều kiện hoạt động của máy nên không có hiện tượng hao hụt gas. Máy chỉ thiếu gas, hết gas trong trường hợp bị rò rỉ, xì trên đường ống, tại các van, các chỗ đấu nối ống bằng rắc-co…hay trong quá trình lắp mới người lắp đặt không kiểm tra và nạp đủ gas. Khi máy bị thiếu gas hoặc hết gas sẽ có một số hiện tượng sau:...<a href="#">chi tiết</a></span>
+				</div>
+				<div class="diennuoc-text col-xs-12 col-sm-8">
+					<div class="diennuoc-tittle">
+						<h4>Bạn cần 1 thợ điện hay 1 thợ sửa đường nước ?</h4>
+						<p>Chuyên viên của chúng tôi sẽ tới và kiểm tra trực tiếp tại nhà bạn . Chúng tôi sẽ tìm ra lỗi và tư vấn sửa chữa giúp bạn . Bạn có thể đồng ý lập hóa đơn sửa chữa tại nhà và chuyên viên của chúng tôi sẽ sửa chữa giúp bạn </p>
+					</div>
+					<div class="diennuoc-button">
+						<button class="dien col-xs-12 col-sm-6">
+							Dịch Vụ Sửa Điện
+						</button>
+						<button class="dien col-xs-12 col-sm-6">
+							Dịch Vụ Sửa Nước
+						</button>
 					</div>
 				</div>
-				<div class="diennuoc">
-					<div class="diennuoc-img col-xs-12 col-sm-4">
-						<a href="#">
-							<img src="img/diennuoc.jpg">
-						</a>
+			</div>
+		</section>
+		<footer>
+			<div class="menu-footer">
+				<div class="menu-footer1 col-xs-12 col-sm-4">
+					<div class="menu-footer2">
+						<h2>
+							<a href="suachua.html">Thiết bị sửa chữa</a>
+						</h2>
 					</div>
-					<div class="diennuoc-text col-xs-12 col-sm-8">
-						<div class="diennuoc-tittle">
-							<h4>Bạn cần 1 thợ điện hay 1 thợ sửa đường nước ?</h4>
-							<p>Chuyên viên của chúng tôi sẽ tới và kiểm tra trực tiếp tại nhà bạn . Chúng tôi sẽ tìm ra lỗi và tư vấn sửa chữa giúp bạn . Bạn có thể đồng ý lập hóa đơn sửa chữa tại nhà và chuyên viên của chúng tôi sẽ sửa chữa giúp bạn </p>
-						</div>
-						<div class="diennuoc-button">
-							<button class="dien col-xs-12 col-sm-6">
-								Dịch Vụ Sửa Điện
-							</button>
-							<button class="dien col-xs-12 col-sm-6">
-								Dịch Vụ Sửa Nước
-							</button>
-						</div>
-					</div>
-				</div>
-			</section>
-			<footer>
-				<div class="menu-footer">
-					<div class="menu-footer1 col-xs-12 col-sm-4">
-						<div class="menu-footer2">
-							<h2>
-								<a href="suachua.html">Thiết bị sửa chữa</a>
-							</h2>
-						</div>
-						<div class="menu-footer3">
-							<ul>
-								<li>
-									<a href="">Tủ Lạnh</a>
-								</li>
-								<li>
-									<a href="">Điều Hòa</a>
-								</li>
-								<li>
-									<a href="">Máy Giặt</a>
-								</li>
-								<li>
-									<a href="">Lò Vi Sóng</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="menu-footer1 col-xs-12 col-sm-4">
-						<div class="menu-footer2">
-							<h2>
-								<a href="#">Dịch Vụ Nâng Cấp</a>
-							</h2>
-						</div>
-						<div class="menu-footer3">
-							<ul>
-								<li>
-									<a href="">HVAC</a>
-								</li>
-								<li>
-									<a href="">Thay Cửa Sổ</a>
-								</li>
-								<li>
-									<a href="">Lợp Nhà</a>
-								</li>
-								<li>
-									<a href="">Làm Vách Ngoài</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="menu-footer1 col-xs-12 col-sm-4">
-						<div class="menu-footer2">
-							<h2>
-								<a href="#">Bảo Dưỡng và Làm Sạch</a>
-							</h2>
-						</div>
-						<div class="menu-footer3">
-							<ul>
-								<li>
-									<a href="">Làm Vườn</a>
-								</li>
-								<li>
-									<a href="">Hệ Thống VAC</a>
-								</li>
-								<li>
-									<a href="">Làm Sạch Nhà</a>
-								</li>
-								<li>
-									<a href="">Bảo Dưỡng Điện</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="under-footer">
-					<div class="banquyen">
-						<h4>@2016 Hà Nội</h4>
-					</div>
-					<div class="under-footer-text col-xs-12 col-sm-7">
+					<div class="menu-footer3">
 						<ul>
 							<li>
-								<a href="#">Về chúng tôi</a>
+								<a href="">Tủ Lạnh</a>
 							</li>
 							<li>
-								<a href="#">Liên hệ</a>
+								<a href="">Điều Hòa</a>
 							</li>
 							<li>
-								<a href="#">Blog</a>
+								<a href="">Máy Giặt</a>
 							</li>
 							<li>
-								<a href="#">Tuyển dụng</a>
-							</li>
-							<li>
-								<a href="#">FAQ</a>
+								<a href="">Lò Vi Sóng</a>
 							</li>
 						</ul>
 					</div>
-					<div class="under-footer-text col-xs-12 col-sm-5">
-						<a href="#"><img src="img/fb.png"></a>
-						<a href="#"><img src="img/twitter.png"></a>
-						<a href="#"><img src="img/gmail.png"></a>
-						<a href="#"><img src="img/youtube.png"></a>
+				</div>
+				<div class="menu-footer1 col-xs-12 col-sm-4">
+					<div class="menu-footer2">
+						<h2>
+							<a href="#">Dịch Vụ Nâng Cấp</a>
+						</h2>
+					</div>
+					<div class="menu-footer3">
+						<ul>
+							<li>
+								<a href="">HVAC</a>
+							</li>
+							<li>
+								<a href="">Thay Cửa Sổ</a>
+							</li>
+							<li>
+								<a href="">Lợp Nhà</a>
+							</li>
+							<li>
+								<a href="">Làm Vách Ngoài</a>
+							</li>
+						</ul>
 					</div>
 				</div>
-			</footer>
-		</div>
-		<div class="back hidden-xs hidden-sm">
-			<a href="#back"><img src="img/back.png"></a>
-		</div>
-		<!--modal đăng nhâp -->
-		<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modallabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content" >
-					<section class="container-fluid"> 
-						<div class="row "> 
-							<div class="col-sx-12  col-sm-12  login widget well well-sm"> 
-								<div style=" margin-top:-70px; background-color:#efefef"> 
-									<div class="modal-header"> 
-										<legend> 
-											Đăng nhập
-										</legend> 
-									</div> 
-									<div class="modal-body"> 
-										<div class="box"> 
-											<div class="content"> 
-												<div class="social"> <a class="circle github"> <i class="fa fa-github fa-fw"></i> </a> <a id="google_login" class="circle google"> <i class="fa fa-google-plus fa-fw"></i> </a> <a id="facebook_login" class="circle facebook"> <i class="fa fa-facebook fa-fw"></i> </a> 
-												</div> 
-												<div class="division"> 
-													<div class="line l"></div> hoặc 
-													<div class="line r"></div> 
-												</div> 
-												<div class="error"></div> 
-												<div class="form loginbox" style="display: block;"> 
-													<form method="post" action="#"> <input id="email" class="form-control" type="text" placeholder="email" name="email"> <input id="password" class="form-control" type="password" placeholder="password" name="password"> 
-														<button class="btn btn-lg btn-primary btn-block" type="submit"> Đăng nhập</button>
-														<button class="btn btn-lg btn-primary btn-block" type="submit"> Đóng</button> 
-													</form> 
-												</div> 
+				<div class="menu-footer1 col-xs-12 col-sm-4">
+					<div class="menu-footer2">
+						<h2>
+							<a href="#">Bảo Dưỡng</a>
+						</h2>
+					</div>
+					<div class="menu-footer3">
+						<ul>
+							<li>
+								<a href="">Làm Vườn</a>
+							</li>
+							<li>
+								<a href="">HVAC</a>
+							</li>
+							<li>
+								<a href="">Làm Sạch Nhà</a>
+							</li>
+							<li>
+								<a href="">Bảo Dưỡng Điện</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="under-footer">
+				<div class="banquyen">
+					<h4>@2016 Hà Nội</h4>
+				</div>
+				<div class="under-footer-text col-xs-12 col-sm-7">
+					<ul>
+						<li>
+							<a href="#">Về chúng tôi</a>
+						</li>
+						<li>
+							<a href="#">Liên hệ</a>
+						</li>
+						<li>
+							<a href="#">Blog</a>
+						</li>
+						<li>
+							<a href="#">Tuyển dụng</a>
+						</li>
+						<li>
+							<a href="#">FAQ</a>
+						</li>
+					</ul>
+				</div>
+				<div class="under-footer-text col-xs-12 col-sm-5">
+					<a href="#"><img src="img/fb.png"></a>
+					<a href="#"><img src="img/twitter.png"></a>
+					<a href="#"><img src="img/gmail.png"></a>
+					<a href="#"><img src="img/youtube.png"></a>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div class="back hidden-xs hidden-sm">
+		<a href="#back"><img src="img/back.png"></a>
+	</div>
+	<!--modal đăng nhâp -->
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modallabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" >
+				<section class="container-fluid"> 
+					<div class="row "> 
+						<div class="col-sx-12  col-sm-12  login widget well well-sm"> 
+							<div style=" margin-top:-70px; background-color:#efefef"> 
+								<div class="modal-header"> 
+									<legend> 
+										Đăng nhập
+									</legend> 
+								</div> 
+								<div class="modal-body"> 
+									<div class="box"> 
+										<div class="content"> 
+											<div class="social"> <a class="circle github"> <i class="fa fa-github fa-fw"></i> </a> <a id="google_login" class="circle google"> <i class="fa fa-google-plus fa-fw"></i> </a> <a id="facebook_login" class="circle facebook"> <i class="fa fa-facebook fa-fw"></i> </a> 
+											</div> 
+											<div class="division"> 
+												<div class="line l"></div> hoặc 
+												<div class="line r"></div> 
+											</div> 
+											<div class="error"></div> 
+											<div class="form loginbox" style="display: block;"> 
+												<form method="post" action="#"> <input id="email" class="form-control" type="text" placeholder="email" name="email"> <input id="password" class="form-control" type="password" placeholder="password" name="password"> 
+													<button class="btn btn-lg btn-primary btn-block" type="submit"> Đăng nhập</button>
+													<button class="btn btn-lg btn-primary btn-block" type="submit"> Đóng</button> 
+												</form> 
 											</div> 
 										</div> 
-										<div class="box"> 
-											<div class="content registerbox" style="display: none;"> 
-												<div class="form"> 
-													<form method="post" action="#"> <input id="text1" class="form-control" type="text" placeholder="email" name="email"> <input id="password1" class="form-control" type="password" placeholder="password" name="password"> <input id="password_confirmation" class="form-control" type="password" placeholder="nhập lại password" name="password_confirmation"> <input class="btn btn-default btn-register" type="submit" value="tạo tài khoản" name="commit"> 
-													</form> 
-												</div> 
-											</div> 
-										</div> 
 									</div> 
-									<div class="modal-footer"> 
-										<div class="forgot login-footer" style="display: block;" > <a data-toggle="modal" data-target="#modal1">Tạo tài khoản mới?</a> 
-										</div> 
-										<div class="forgot register-footer" style="display: none;"> Bạn có tài khoản rồi? <a>Đăng nhập</a> 
+									<div class="box"> 
+										<div class="content registerbox" style="display: none;"> 
+											<div class="form"> 
+												<form method="post" action="#"> <input id="text1" class="form-control" type="text" placeholder="email" name="email"> <input id="password1" class="form-control" type="password" placeholder="password" name="password"> <input id="password_confirmation" class="form-control" type="password" placeholder="nhập lại password" name="password_confirmation"> <input class="btn btn-default btn-register" type="submit" value="tạo tài khoản" name="commit"> 
+												</form> 
+											</div> 
 										</div> 
 									</div> 
 								</div> 
+								<div class="modal-footer"> 
+									<div class="forgot login-footer" style="display: block;" > <a data-toggle="modal" data-target="#modal1">Tạo tài khoản mới?</a> 
+									</div> 
+									<div class="forgot register-footer" style="display: none;"> Bạn có tài khoản rồi? <a>Đăng nhập</a> 
+									</div> 
+								</div> 
 							</div> 
-						</div>
-					</section>
-				</div>
+						</div> 
+					</div>
+				</section>
 			</div>
 		</div>
-		<!-- modal đăng kí -->
-		<div class="modal fade" tabindex="-1" id="modal1" role="dialog" aria-labelledby="modal1label">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content" >
-					<section class="container-fluid">  
-						<div class="row"> 
-							<div class="col-xs-12 col-sm-12 well well-sm" > 
-								<legend>
-									Đăng ký thành viên!
-								</legend> 
-								<form action="#" method="post" class="form" role="form"> 
-									<div class="row"> 
-										<div class="col-xs-6 col-md-6"> <input class="form-control" name="firstname" placeholder="họ" type="text"  autofocus> 
-										</div> 
-										<div class="col-xs-6 col-md-6"> <input class="form-control" name="lastname" placeholder="tên" type="text" > 
-										</div> 
+	</div>
+	<!-- modal đăng kí -->
+	<div class="modal fade" tabindex="-1" id="modal1" role="dialog" aria-labelledby="modal1label">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" >
+				<section class="container-fluid">  
+					<div class="row"> 
+						<div class="col-xs-12 col-sm-12 well well-sm" > 
+							<legend>
+								Đăng ký thành viên!
+							</legend> 
+							<form action="#" method="post" class="form" role="form"> 
+								<div class="row"> 
+									<div class="col-xs-6 col-md-6"> <input class="form-control" name="firstname" placeholder="họ" type="text"  autofocus> 
 									</div> 
-									<input class="form-control" name="sdt" placeholder="số điện thoại" type="sdt"> 
-									<input class="form-control" name="addr" placeholder="địa chỉ liên hệ" type="addr"> 
-									<input class="form-control" name="youremail" placeholder="email" type="email"> 
-									<input class="form-control" name="password" placeholder="mật khẩu" type="password" > 
-									<input class="form-control" name="retypepassword" placeholder="nhập lại mật khẩu" type="password"> 
+									<div class="col-xs-6 col-md-6"> <input class="form-control" name="lastname" placeholder="tên" type="text" > 
+									</div> 
+								</div> 
+								<input class="form-control" name="sdt" placeholder="số điện thoại" type="sdt"> 
+								<input class="form-control" name="addr" placeholder="địa chỉ liên hệ" type="addr"> 
+								<input class="form-control" name="youremail" placeholder="email" type="email"> 
+								<input class="form-control" name="password" placeholder="mật khẩu" type="password" > 
+								<input class="form-control" name="retypepassword" placeholder="nhập lại mật khẩu" type="password"> 
 
-									<label for=""> Năm sinh</label> 
-									<div class="row"> 
-										<div class="dangkyy col-xs-4 col-md-4"> 
-											<select class="form-control">         
-												<option value="day">ngày</option>    
-												<option value="day">1</option> 
-												<option value="day">2</option>   
-												<option value="day">3</option> 
-												<option value="day">4</option> 
-												<option value="day">5</option>       
-												<option value="day">6</option> 
-												<option value="day">7</option> 
-												<option value="day">8</option> 
-												<option value="day">9</option> 
-												<option value="day">10</option> 
-												<option value="day">11</option> 
-												<option value="day">12</option> 
-												<option value="day">13</option> 
-												<option value="day">13</option> 
-												<option value="day">14</option> 
-												<option value="day">15</option> 
-												<option value="day">16</option> 
-												<option value="day">16</option> 
-												<option value="day">17</option> 
-												<option value="day">18</option> 
-												<option value="day">19</option> 
-												<option value="day">20</option> 
-												<option value="day">21</option> 
-												<option value="day">22</option> 
-												<option value="day">23</option> 
-												<option value="day">24</option> 
-												<option value="day">25</option> 
-												<option value="day">26</option> 
-												<option value="day">27</option> 
-												<option value="day">28</option> 
-												<option value="day">29</option> 
-												<option value="day">30</option>
-												<option value="day">31</option>
-											</select> 
-										</div> 
-										<div class="dangkyy col-xs-4 col-md-4">
-											<select class="form-control">              
-												<option value="month">tháng</option>
-												<option value="month">tháng 1</option>
-												<option value="month">tháng 2</option>
-												<option value="month">tháng 3</option>
-												<option value="month">tháng 4</option>  
-												<option value="month">tháng 5</option>
-												<option value="month">tháng 6</option>
-												<option value="month">tháng 7</option>
-												<option value="month">tháng 8</option>
-												<option value="month">tháng 9</option>
-												<option value="month">tháng 10</option>
-												<option value="month">tháng 11</option>
-												<option value="month">tháng 12</option>
-											</select> 
-										</div> 
-										<div class="dangkyy col-xs-4 col-md-4">
-											<select class="form-control">              
-												<option value="year">năm</option> 
-												<option value="year">1990</option>
-												<option value="year">1991</option>
-												<option value="year">1992</option>
-												<option value="year">1993</option>          
-												<option value="year">1994</option>
-												<option value="year">1995</option>
-												<option value="year">năm</option>
-												<option value="year">năm</option>
-												<option value="year">năm</option>
-												<option value="year">năm</option>
-												<option value="year">na</option>
-												<option value="year">1999</option>
-												<option value="year">1998</option>
-												<option value="year">1997</option>
-												<option value="year">1996</option>
-											</select> 
-										</div> 
+								<label for=""> Năm sinh</label> 
+								<div class="row"> 
+									<div class="dangkyy col-xs-4 col-md-4"> 
+										<select class="form-control">         
+											<option value="day">ngày</option>    
+											<option value="day">1</option> 
+											<option value="day">2</option>   
+											<option value="day">3</option> 
+											<option value="day">4</option> 
+											<option value="day">5</option>       
+											<option value="day">6</option> 
+											<option value="day">7</option> 
+											<option value="day">8</option> 
+											<option value="day">9</option> 
+											<option value="day">10</option> 
+											<option value="day">11</option> 
+											<option value="day">12</option> 
+											<option value="day">13</option> 
+											<option value="day">13</option> 
+											<option value="day">14</option> 
+											<option value="day">15</option> 
+											<option value="day">16</option> 
+											<option value="day">16</option> 
+											<option value="day">17</option> 
+											<option value="day">18</option> 
+											<option value="day">19</option> 
+											<option value="day">20</option> 
+											<option value="day">21</option> 
+											<option value="day">22</option> 
+											<option value="day">23</option> 
+											<option value="day">24</option> 
+											<option value="day">25</option> 
+											<option value="day">26</option> 
+											<option value="day">27</option> 
+											<option value="day">28</option> 
+											<option value="day">29</option> 
+											<option value="day">30</option>
+											<option value="day">31</option>
+										</select> 
 									</div> 
-									<label class="radio-inline" style="margin-left: 30%">          
-										<input type="radio" name="sex" id="inlinecheckbox1" value="male">     nam </label> 
-										<label class="radio-inline">          
-											<input type="radio" name="sex" id="inlinecheckbox2" value="female">          nữ </label> 
-											<br> 
-											<br> 
-											<button class="btn btn-lg btn-primary btn-block" type="submit"> đăng ký</button> 
-											<button class="btn btn-lg btn-primary btn-block"  data-dismiss="modal"> đóng</button> 
-										</form> 
+									<div class="dangkyy col-xs-4 col-md-4">
+										<select class="form-control">              
+											<option value="month">tháng</option>
+											<option value="month">tháng 1</option>
+											<option value="month">tháng 2</option>
+											<option value="month">tháng 3</option>
+											<option value="month">tháng 4</option>  
+											<option value="month">tháng 5</option>
+											<option value="month">tháng 6</option>
+											<option value="month">tháng 7</option>
+											<option value="month">tháng 8</option>
+											<option value="month">tháng 9</option>
+											<option value="month">tháng 10</option>
+											<option value="month">tháng 11</option>
+											<option value="month">tháng 12</option>
+										</select> 
 									</div> 
-								</div>
+									<div class="dangkyy col-xs-4 col-md-4">
+										<select class="form-control">              
+											<option value="year">năm</option> 
+											<option value="year">1990</option>
+											<option value="year">1991</option>
+											<option value="year">1992</option>
+											<option value="year">1993</option>          
+											<option value="year">1994</option>
+											<option value="year">1995</option>
+											<option value="year">năm</option>
+											<option value="year">năm</option>
+											<option value="year">năm</option>
+											<option value="year">năm</option>
+											<option value="year">na</option>
+											<option value="year">1999</option>
+											<option value="year">1998</option>
+											<option value="year">1997</option>
+											<option value="year">1996</option>
+										</select> 
+									</div> 
+								</div> 
+								<label class="radio-inline" style="margin-left: 30%">          
+									<input type="radio" name="sex" id="inlinecheckbox1" value="male">     nam </label> 
+									<label class="radio-inline">          
+										<input type="radio" name="sex" id="inlinecheckbox2" value="female">          nữ </label> 
+										<br> 
+										<br> 
+										<button class="btn btn-lg btn-primary btn-block" type="submit"> đăng ký</button> 
+										<button class="btn btn-lg btn-primary btn-block"  data-dismiss="modal"> đóng</button> 
+									</form> 
+								</div> 
 							</div>
 						</div>
 					</div>
-					<!-- /#wrapper -->
-					<!-- jquery -->
-					<script src="js/jquery.js"></script>
-					<!-- bootstrap core javascript -->
-					<script src="js/bootstrap.min.js"></script>
-					<script src="js/jquery.star-rating-svg.min.js"></script>
-					<script src="js/wow.min.js"></script>
-					<!-- menu toggle script -->
-					<script>
-						$("#menu-toggle").click(function(e) {
-							e.preventDefault();
-							$("#wrapper").toggleClass("toggled");
-						});
-					</script>
+				</div>
+				<!-- /#wrapper -->
+				<!-- jquery -->
+				<script src="js/jquery.js"></script>
+				<!-- bootstrap core javascript -->
+				<script src="js/bootstrap.min.js"></script>
+				<script src="js/jquery.star-rating-svg.min.js"></script>
+				<script src="js/wow.min.js"></script>
+				<!-- menu toggle script -->
+				<script>
+					$("#menu-toggle").click(function(e) {
+						e.preventDefault();
+						$("#wrapper").toggleClass("toggled");
+					});
+				</script>
 
-					<script>
-						var x = $(".button-fixed").offset();
-						$(window).bind('scroll', function () {
+				<script>
+					var x = $(".button-fixed").offset();
+					$(window).bind('scroll', function () {
 
-							if ($(window).scrollTop() > x.top) {
-								$('.button-fixed').addClass('fixed');
-							} else {
-								$('.button-fixed').removeClass('fixed');
-							}
-						});
-					</script>
-					<script>
-						$(window).bind('scroll', function () {
+						if ($(window).scrollTop() > x.top) {
+							$('.button-fixed').addClass('fixed');
+						} else {
+							$('.button-fixed').removeClass('fixed');
+						}
+					});
+				</script>
+				<script>
+					$(window).bind('scroll', function () {
 
-							if ($(window).scrollTop() > 200) {
-								$('.back img').css('display','block');
-							} else {
-								$('.back img').css('display','none');
-							}
-						});
-					</script>
-					<script>
-						$('#review-rating').starRating({
-							starSize: 40,
-					// initialRating: 4.5,
-					// readOnly: true,
-					hoverColor :'red',
-					activeColor: 'red',
-					useGradient: false
-				});
-					</script>
-					<script>
-						$('#review-rating1').starRating({
-							starSize: 20,
-							initialRating: 5,
-							readOnly: true,
-							hoverColor :'red',
-							activeColor: 'red',
-							useGradient: false
-						});
-					</script>
-					<script>
-						$('#review-rating2').starRating({
-							starSize: 20,
-							initialRating: 4.5,
-							readOnly: true,
-							hoverColor :'red',
-							activeColor: 'red',
-							useGradient: false
-						});
-					</script>
-					<script>
-						$('#review-rating3').starRating({
-							starSize: 20,
-							initialRating: 4,
-							readOnly: true,
-							hoverColor :'red',
-							activeColor: 'red',
-							useGradient: false
-						});
-					</script>
-					<script>
-						$('#review-rating4').starRating({
-							starSize: 20,
-							initialRating: 5,
-							readOnly: true,
-							hoverColor :'red',
-							activeColor: 'red',
-							useGradient: false
-						});
-					</script>
-					<script>
-						new WOW().init();
-					</script>
-					<script>
-						$(".dien").click(function(){
-							location.href = "index.html"
-						})
-					</script>
-				</body>
-				</html>
+						if ($(window).scrollTop() > 200) {
+							$('.back img').css('display','block');
+						} else {
+							$('.back img').css('display','none');
+						}
+					});
+				</script>
+				<script>
+					new WOW().init();
+				</script>
+				<script>
+					$(".dien").click(function(){
+						location.href = "index.html"
+					})
+				</script>
+			</body>
+			</html>

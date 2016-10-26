@@ -4,7 +4,12 @@ html,body, *{
 }
 header {
 	float: left;
-	border: 1px solid #C3D32B;
+}
+.wrap {
+	padding-right: 0px;
+	padding-left : 0px;
+	border-right: 2px double #ddd;
+	border-left:  2px double #ddd;
 }
 #wrapper.toggled {
 	padding-left: 230px;
@@ -295,7 +300,7 @@ h4 { display: block; text-align: center; }
 	background:#f4f4f4;
 	background:rgba(244,244,244,.79);
 	border: 1px solid #d3d3d3;
-	width:85%;
+	width:100%;
 	height: 38px;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -357,22 +362,18 @@ h4 { display: block; text-align: center; }
 }
 .top_logo_right {
 	float: left;
-	padding-left: 110px;
+	padding-left: 105px;
 	padding-top: 10px;
 }
 .list-inline , .list-inline1 {
 	margin-bottom: 0px;
 }
-.list-inline a:link {
-	color: black;
-	text-decoration: none;
-}
-.list-inline a:visited {
+.list-inline a:link ,.list-inline a:hover , .list-inline a:visited {
 	color: black;
 	text-decoration: none;
 }
 .list-inline a {
-	font-size: 17px;
+	font-size: 12px;
 }
 .list-inline li {
 	padding-left:25px;
@@ -386,20 +387,15 @@ h4 { display: block; text-align: center; }
 	float: left;
 	width: 100%;
 }
-.list-inline1 a:link {
-	color: #000099;
+.list-inline1 a:link ,.list-inline1 a:hover,.list-inline1 a:visited {
+	color: rgb(0, 110, 255);
 	text-decoration: none;
 }
 .list-inline1 a:hover {
-	color: #000099;
-	text-decoration: none;
-}
-.list-inline1 a:visited {
-	color: #000099;
-	text-decoration: none;
+	opacity: 0.3;
 }
 .list-inline1 a {
-	font-size: 30px;
+	font-size: 20px;
 }
 .list-inline1 li {
 	float: left;
@@ -408,22 +404,22 @@ h4 { display: block; text-align: center; }
 .duongdan {
 	float: left;
 	width: 100%;
-	background: #000099;
+	background: rgb(0, 110, 255);
+	margin-top: 5px;
 }
 .duongdan p {
 	color: white;
-	font-size: 15px;
 	font-style: italic;
 	float: left;
-	padding-top: 14px;
+	padding-top: 10px;
 	padding-left: 5px;
 }
 .duongdan span{
 	float: right;
 	color: white;
-	padding-right: 20px;
-	font-size: 18px;
-	padding-top: 13px;
+	padding-right: 10px;
+	font-size: 16px;
+	padding-top: 10px;
 }
 #duongdan {
 	padding-left: 35px
@@ -441,9 +437,6 @@ h4 { display: block; text-align: center; }
 	float: left;
 	margin-bottom: 10px;
 }
-.banner-left h1  {
-	color: #000099;
-}
 #text-banner  {
 	width: 90%;
 }
@@ -451,7 +444,7 @@ h4 { display: block; text-align: center; }
 	background-color: white;
 	float: left;
 	width: 90%;
-	border: 1px solid #C3D32B;
+	border: 1px solid #ddd;
 	margin-left: 15px;
 	margin-bottom: 10px;
 	padding-bottom: 10px
@@ -477,10 +470,10 @@ h4 { display: block; text-align: center; }
 }
 .button-call {
 	display: block;
-	border: 1px solid red;
+	border: 1px solid #ddd;
 	border-radius: 2px;
 	outline: 0;
-	background: red;
+	background: rgb(0, 110, 255);
 	font-weight: 400px;
 	font-size: 15px;
 	line-height: 1.1875;
@@ -500,10 +493,11 @@ h4 { display: block; text-align: center; }
 	text-decoration: none;
 }
 .button-text1 span {
-	padding-top: 1rem;
+	padding-top: 16px;
+	padding-bottom: 16px;
 	font-style: italic;
 	text-align: center;
-	color: red;
+	color: rgb(0, 110, 255);
 	display: block;
 	font-size :18px;
 }
@@ -515,7 +509,7 @@ h4 { display: block; text-align: center; }
 	width: 100%;
 }
 .khuyenmai {
-	background-color: #000099;
+	background-color: #999;
 	padding-bottom: 15px;
 	float: left;
 	width: 18%;
@@ -526,12 +520,12 @@ h4 { display: block; text-align: center; }
 }
 .khuyenmai p {
 	font-size: 15px;
-	color: #C3D32B;
+	color: white;
 	padding-top: 20px;
 	margin-bottom: 0px;
 }
 .khuyenmai span {
-	color: white;
+	color: black;
 	text-align: center;
 	display: block;
 }
@@ -539,51 +533,16 @@ h4 { display: block; text-align: center; }
 	text-decoration: none;
 }
 .khuyenmai a:visited {
-	color: #C3D32B;
+	color: white;
 }
 .khuyenmai a {
 	width: 70%;
-	color: #C3D32B;
+	color: white;
 	font-size: 13px;
 	font-style: italic;
 	text-align: center;
 	display: block;
 	border: 1px solid white;
-	margin-top: 10px;
-	cursor: pointer;
-}
-.khuyenmai1 {
-	background-color: #000099;
-	padding-bottom: 15px;
-	width: 100%;
-	float: left;
-}
-.khuyenmai1 p {
-	font-size: 25px;
-	color: #C3D32B;
-	padding-top: 10px;
-	margin-bottom: 0px;
-}
-.khuyenmai1 span {
-	color: white;
-	text-align: center;
-	display: block;
-
-}
-.khuyenmai1 a:hover {
-	text-decoration: none;
-}
-.khuyenmai1 a:visited {
-	color: #C3D32B;
-}
-.khuyenmai1 a {
-	width: 55%;
-	color: #C3D32B;
-	font-size: 20px;
-	font-style : italic;
-	text-align: center;
-	display: block;
-	border: 2px solid white;
 	margin-top: 10px;
 	cursor: pointer;
 }
@@ -635,13 +594,13 @@ h4 { display: block; text-align: center; }
 }
 .banner-right img{
 	width: 100%;
-	height: 267px;
+	height: 228px
 }
 .menu-content {
 	float: left;
 	width: 100%;
 	margin-top: 20px;
-	border-top: 1px solid #C3D32B;
+	border-top: 1px solid #ddd;
 }
 .menu-tittle h2 {
 	text-align: center;
@@ -666,19 +625,9 @@ h4 { display: block; text-align: center; }
 .datlich a {
 	font-size: 20px;
 }
-.datlich a:link {
+.datlich a:link , .datlich a:hover , .datlich a:visited {
 	text-decoration : underline;
-	color: red;
-	font-style: italic;
-}
-.datlich a:hover {	
-	text-decoration : underline;
-	color: red;
-	font-style: italic;
-}
-.datlich a:visited {
-	text-decoration : underline;	
-	color: red;
+	color: rgb(0, 110, 255);
 	font-style: italic;
 }
 .datlich {
@@ -691,7 +640,7 @@ h4 { display: block; text-align: center; }
 .menu-more {
 	float: left;
 	width: 100%;
-	border-top: 1px solid #C3D32B;
+	border-top: 1px solid #ddd;
 }
 .menu-more-tittle h2 {
 	text-align: center;
@@ -713,24 +662,25 @@ h4 { display: block; text-align: center; }
 	display: block;
 	text-align: center;
 }
-.menu-more-content a:link{
-	color: #000099;
+.menu-more-content a:link , .menu-more-content a:hover , .menu-more-content a:visited{
+	color: rgb(0, 110, 255);
+	text-decoration: none;
 }
-.menu-more-content a:hover{
-	color: #000099;
-	text-decoration:none;
-}
-.menu-more-content a:visited{
-	color: #000099;
+.menu-more-content a:hover {
+	color: black;
 }
 .brands {
 	float: left;
 	width: 100%;
 	margin-top: 20px;
-	border-top: 1px solid #C3D32B;
+	border-top: 1px solid #ddd;
 }
 .brands-tittle {
 	text-align: center;
+}
+.brands-tittle h2{
+	font-size: 25px;
+	padding-bottom: 15px;
 }
 .brands-content {
 	width: 100%;
@@ -739,8 +689,8 @@ h4 { display: block; text-align: center; }
 	margin-bottom: 15px;
 } 
 .brands-details-tittle {
-	background-color: #000099;
-	color: #C3D32B;
+	background-color: rgb(0, 110, 255);
+	color: white;
 }
 .brands-details-tittle h4 {
 	margin-bottom: 0px;
@@ -752,16 +702,13 @@ h4 { display: block; text-align: center; }
 	height: 150px;
 }
 .brands-details-content a:link ,.brands-details-content a:hover , .brands-details-content a:visited {
-	color: red;
+	color: rgb(0, 110, 255);
 	text-decoration:none;
 	font-size: 15px
 }
 .quangcao {
 	float: left;
 	width: 100%;
-	margin-top: 20px;
-	border-top: 1px solid #C3D32B;
-	border-bottom: 1px solid #C3D32B;
 	background-color: rgba(0,0,0,.075);
 }
 .quangcao-content{
@@ -775,80 +722,31 @@ h4 { display: block; text-align: center; }
 .quangcao-tittle {
 	text-align: center;
 }
+.quangcao-tittle h2 {
+	font-size: 25px;
+}
 .quangcao-content {
 	padding-bottom: 20px;
 }
 .quangcao-details {
 	padding-top: 15px;
-	color: #000099;
-}
-.danhgia {
-	float: left;
-	width: 100%;
-}
-.danhgia-tittle {
-	text-align: center;
-}
-.danhgia-content {
-	float: left;
-	width: 80%;
-	text-align: center;
-	margin-right: 10%;
-	margin-left: 10%;
-	border-top: 1px solid #C3D32B;
-	margin-top: 15px;
-	margin-bottom:15px;
-}
-.danhgia-content p {
-	padding-top: 15px;
-}
-.danhgia-under {
-	float: left;
-	width: 100%;
-	text-align: center;
-}
-.danhgia-under a:link {
-	color: red;
-	text-decoration: underline;
-	font-style: italic;
-	font-size: 16px
-}
-.danhgia-under a:hover {
-	color: red;
-	text-decoration: underline;
-	font-style: italic;
-	font-size: 16px
-}
-.danhgia-under a:visited {
-	color: red;
-	text-decoration: underline;
-	font-style: italic;
-	font-size: 16px
 }
 .blog {
 	float: left;
 	width: 100%;
 	margin-top: 15px;
-	border-bottom: 1px solid #C3D32B;
-	border-top: 1px solid #C3D32B;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
 	padding-bottom: 20px;
 	padding-top: 20px;
-
+	background: url('../img/blog/banner.jpg') center center;
 }
 .content-blog {
 	padding: 5px 15px 10px;
 	background: rgba(0,0,0,.075);
 }
-.title-blog a:link {
-	color: #000099;
-	text-decoration: none;
-}
-.title-blog a:hover {
-	color: #000099;
-	text-decoration: none;
-}
-.title-blog a:visited {
-	color: #000099;
+.title-blog a:link ,.title-blog a:hover ,.title-blog a:visited {
+	color: black;
 	text-decoration: none;
 }
 .title-blog h2 {
@@ -862,62 +760,37 @@ h4 { display: block; text-align: center; }
 	font-style: italic;
 	font-size: 14px;
 }
-.text-blog a:link {
-	color: #000099;
+.text-blog a:link ,.text-blog a:hover , .text-blog a:visited {
+	color: rgb(0, 110, 255) ;
 	text-decoration: none;
 }
-.text-blog a:hover {
-	color: #000099;
-	text-decoration: none;
-}
-.text-blog a:visited {
-	color: #000099;
-	text-decoration: none;
+.blog h3 {
+	font-size: 18px;
 }
 .blog-img img{
 	width: 100%;
 }
-.blog-text a:link {
-	color: #000099;
-	text-decoration: none;
-}
-.blog-text a:hover {
-	color: #000099;
-	text-decoration: none;
-}
-.blog-text a:visited {
-	color: #000099;
+.blog-text a:link , .blog-text a:hover , .blog-text a:visited{
+	color: rgb(0, 110, 255) ;
 	text-decoration: none;
 }
 .readmore {
 	padding-top: 10px;
-	padding-bottom: 10px;
 }
-.readmore a:link {
-	color: #000099;
+.readmore a:link , .readmore a:hover , .readmore a:visited {
+	color: rgb(0, 110, 255);
 	text-decoration: underline;
 	font-style: italic;
-}
-.readmore a:hover {
-	color: #000099;
-	text-decoration: underline;
-	font-style: italic;
-}
-.readmore a:visited {
-	color: #000099;
-	text-decoration: underline;
-	font-style: italic;
-}
-.readmore h3 {
-	text-align: center;
 }
 .diennuoc {
 	float: left;
 	width: 100%;
 	margin-top: 5px;
-	border-bottom: 3px solid #C3D32B;
 	padding-bottom: 20px;
 	padding-top: 20px;
+}
+.diennuoc h4 {
+	text-align: left;
 }
 .diennuoc img {
 	width: 100%;
@@ -926,56 +799,35 @@ h4 { display: block; text-align: center; }
 	width: 100%;
 	float: left;
 }
-.diennuoc-tittle h4 {
-	color: #000099;
-}
 .dien {
 	padding: 10px;
-	background: red;
+	background: rgb(0, 110, 255);
 	color: white;
 }
 footer {
 	float: left;
 	width: 100%;
+	background-color: #ddd;
 }
 .menu-footer {
 	float: left;
 	width: 100%;
 }
 .menu-footer1 {
-	border-bottom: 3px solid #C3D32B;
+	border-top: 1px solid #565656 ;
 	padding-bottom: 15px;
 }
 .menu-footer h2 {
 	text-align: center;
+	font-size: 20px;
 }
 .menu-footer3 {
 	float: left;
 	width: 100%;
 	padding-top : 10px;
 }
-.menu-footer2 a:link {
-	color: #000099;
-	text-decoration: none;
-}
-.menu-footer2 a:hover {
-	color: #000099;
-	text-decoration: none;
-}
-.menu-footer2 a:visited {
-	color: #000099;
-	text-decoration: none;
-}
-.menu-footer3 a:visited {
-	color: black;
-	text-decoration: none;
-}
-.menu-footer3 a:visited {
-	color: black;
-	text-decoration: none;
-}
-.menu-footer3 a:visited {
-	color: black;
+.menu-footer2 a:link , .menu-footer2 a:hover , .menu-footer2 a:visited , .menu-footer3 a:link , .menu-footer3 a:hover , .menu-footer3 a:visited {
+	color: #565656;
 	text-decoration: none;
 }
 .menu-footer3 ul {
@@ -987,14 +839,12 @@ footer {
 }
 .under-footer {
 	float: left;
-	border: 3px solid #C3D32B;
+	border-top: 1px solid #565656;
 	width: 100%;
 }
 .under-footer-text {
 	padding-left: 0px;
 	padding-right: 0px;
-	padding-top: 10px;
-	padding-bottom: 10px;
 }
 .under-footer-text ul {
 	list-style: none;
@@ -1008,16 +858,8 @@ footer {
 	padding-top: 5px;
 	text-align: center;
 }
-.under-footer-text a:visited {
-	color: black;
-	text-decoration: none;
-}
-.under-footer-text a:visited {
-	color: black;
-	text-decoration: none;
-}
-.under-footer-text a:visited {
-	color: black;
+.under-footer-text a:link , .under-footer-text a:hover , .under-footer-text a:visited {
+	color: #565656;
 	text-decoration: none;
 }
 .under-footer-text img {
@@ -1026,6 +868,7 @@ footer {
 	margin-left: 5px;
 }
 .banquyen h4 {
+	color: #565656;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	font-style: italic;
@@ -1039,18 +882,54 @@ footer {
 	display: none;
 }
 @media ( min-width: 750px) {
+	.searchform {
+		height: auto;
+	}
+	.searchform input {
+		font-size: 15px
+	}
 	.header1 img {
-		margin-left: 35px;
-		width: 70%;
-		margin-top: 5px;
+		margin-left: 30px;
+		width: 50%;
+	}
+	.header2 , .header1 , .header3 {
+		padding-left: 0;
+		padding-right: 0;
 	}
 	.top_logo_right {
-		padding-left: 110px;	
+		padding-top: 4px;
+		padding-left: 0px;
+	}
+	.list-inline1 li {
+		padding-top: 5px;
+		margin: 0 20px;
+	}
+	.icon-search {
+		color: rgb(0, 110, 255);
+		font-size: 17px;
+	}
+	.list-inline1 {
+		padding-left: 0px;
 	}
 	.menu-footer1 {
 		border-bottom: none;
-		border: 1px solid #C3D32B;
-		height: 200px;
+		border: 1px solid #ddd;
+	}
+	.menu-footer3 li {
+		padding-left: 0;
+	}
+	.under-footer-text li {
+		width: 20%;
+		padding-bottom: 0px;
+	}
+	.under-footer-text img {
+		width: 15%;
+		margin-right: 25px;
+		margin-left: 10px;
+	}
+	.under-footer-text {
+		padding-top: 0px;
+		padding-bottom: 0px;
 	}
 	.under-footer-text img {
 		width: 12%;
@@ -1065,29 +944,27 @@ footer {
 	}
 }
 @media ( min-width: 970px) {
-	.header1 img {
-		margin-left: 40px;
-		width: 50%;
-		margin-top: 10px;
+	.search {
+		padding-top: 22px;
 	}
-	.list-inline1 a {
-		font-size: 35px;
+	.top_logo_right {
+		padding-top: 10px;
+		padding-left: 70px;
 	}
 	.list-inline1 li {
-		margin-right: 64px;
-	}
-	.top_logo_right{
-		padding-left: 250px;
-	}
-	.menu-header {
-		padding-left: 15px;
+		padding-top: 10px;
+		margin-left: 25px;
+		margin-right: 61px;
 	}
 	.khuyenmai {
 		width: 16%;
 		left:60%;
 	}
 	.banner-right img {
-		height: 228px;
+		height: 208px;
+	}
+	.brands-logo {
+		height: 110px;
 	}
 	.quangcao-img img {
 		padding-top: 0px;
@@ -1099,9 +976,6 @@ footer {
 	.under-footer-text li {
 		width: 20%;
 	}
-	.diennuoc-tittle h4 {
-		font-size: 24px;
-	}
 	.diennuoc-tittle p {
 		padding-top: 10px;
 	}
@@ -1111,28 +985,20 @@ footer {
 	.dien {
 		padding: 20px;
 	}
-	.menu-footer1 {
-		height: 160px;
-	}
 }
 @media (min-width: 1170px){
-	.header1 img {
-		margin-left: 80px;
-		margin-top: 0px;
+	.list-inline1 a {
+		font-size: 28px;
 	}
-	.top_logo_right ul>li {
-		margin-right: 64px;
-	}
-	.top_logo_right {
-		padding-left: 260px;
-	}
-	.menu-header ul>li {
-		margin-right: 70px;
-		padding-left: 49px;
+	.menu {
+		margin: 0px;
 	}
 	.khuyenmai {
 		width: 13%;
 		left: 61%;
+	}
+	.brands-logo {
+		height: 130px;
 	}
 	.brands-tittle h2{
 		font-size: 25px;

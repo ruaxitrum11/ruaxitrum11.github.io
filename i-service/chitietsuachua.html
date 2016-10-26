@@ -23,7 +23,7 @@
 					<ul class="sidebar-nav">
 						<li class="sidebar-brand">
 							<img src="img/date1.png">
-							<a href="#">Đặt lịch trực tuyến</a>
+							<a href="datlich.html">Đặt lịch trực tuyến</a>
 						</li>
 						<li>
 							<img src="img/call.png">
@@ -65,7 +65,7 @@
 				<!-- /#page-content-wrapper -->
 			</div>
 			<div class="logo col-xs-4">
-				<img src="img/logo.png">
+				<a href="index.html"><img src="img/logo.png"></a>
 			</div>
 			<div class="header-right col-xs-4">
 				<a href="" data-toggle="modal" data-target="#modal"><img src="img/user.png"></a>
@@ -86,7 +86,7 @@
 					<img src="img/logo.png">
 				</a>
 			</div> 
-			<div class="header2 col-xs-10">
+			<div class="header2 col-xs-7">
 				<div class="top_logo_right">
 					<ul class="list-inline">
 						<li>
@@ -118,56 +118,84 @@
 					</ul>
 				</div>
 			</div>
+			<div class="header3 col-xs-3">
+				<div class="search">
+					<form method="post" action="" class="searchform">
+						<input type="text" placeholder="Tìm kiếm" name="search">
+						<button type="submit" name="btn_search">
+							<span class=" icon-search glyphicon glyphicon-search"></span>
+						</button>
+					</form>
+				</div>
+			</div>
 		</header>
-
-		<div class="duongdan hidden-xs">
-			<a href="index.html"><p id="duongdan">I-Service</p></a>
-			<p>/</p>
-			<a href="suachua.html"><p>Sửa Chữa</p></a>
-			<p>/</p>
-			<a href="chitietsuachua.html"><p>Sản Phẩm Sửa Chữa</p></a>
-			<span>Gọi ngay cho chúng tôi : 1900.1099</span>
-		</div>
-
 		<section class="main-content">
-			<div class="banner">
-				<div class="banner-left col-sm-8">
-					<h1>Dịch Vụ Sửa Chữa</h1>
-					<p id="text-banner">Chúng tôi cung cấp cho bạn dịch vụ sửa chữa chuyên nghiệp và nhanh chóng</p>
-					<div class="button">
-						<div class="button-text">
-							<p>Đặt lịch trực tuyến đơn giản , dễ dàng</p>
+			<div class="banner-xs visible-xs">
+				<img src="img/suachua/banner1.png">
+			</div>
+			<div class="banner hidden-xs">
+				<div class="banner-img">
+					<div class="slogan">
+						<div class="text-slogan col-xs-12">
+							<h3>Dịch vụ của chúng tôi chắc chắn sẽ làm bạn hài lòng </h3>
 						</div>
-						<div class="button-fixed">
-							<div class="button-date col-xs-6">
+						<div class="button-background visible-xs">
+							<div class="button col-xs-6">
 								<a href="#" class="button-call">
+									<img class="img-responsive" src="img/call1.png">
+									<span>1900.1099</span>
+								</a>
+							</div>
+							<div class="button col-xs-6">
+								<a href="datlich.html" class="button-date">
+									<img class="img-responsive" src="img/date.png">
+									<span> Đặt Lịch </span>
+								</a>
+							</div>
+						</div>
+						<div class="button-background1 hidden-xs">
+							<div class="button1 col-xs-6">
+								<a href="#" class="button-date">
 									<img class="img-responsive" src="img/date.png">
 									<span> Đặt lịch trực tuyến </span>
 								</a>
 							</div>
-							<div class="button-text1 col-xs-6">
+							<div class="button2 col-xs-6">
 								<span> Liên hệ : 1900.1099 </span>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="banner-right col-sm-4 hidden-xs">
-					<img src="img/suachua/banner.jpg">
-				</div>
-				<div class="khuyenmai hidden-xs">
-					<div class="col-xs-12">
-						<p style="text-align: center"> Giảm Giá 15% </p>
-						<span>cho thành viên của I-Services</span>
-						<a data-toggle="modal" data-target="#modal1">Đăng Ký Ngay</a>
+					<div class="menu">
+						<div class="menu-dichvu col-xs-6 col-sm-3">
+							<div class="menu-dichvu-background">
+								<a href="#giadung">Máy Móc Gia Dụng</a>
+							</div>
+						</div>
+						<div class="menu-dichvu col-xs-6 col-sm-3">
+							<div class="menu-dichvu-background">
+								<a href="#giadung">Sưởi Ấm Và Làm Lạnh</a>
+							</div>
+						</div>
+						<div class="menu-dichvu col-xs-6 col-sm-3">
+							<div class="menu-dichvu-background">
+								<a href="#giadung">Thiết Bị Điện Tử</a>
+							</div>
+						</div>
+						<div class="menu-dichvu col-xs-6 col-sm-3">
+							<div class="menu-dichvu-background">
+								<a href="#giadung">Máy Thể Dục</a>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="khuyenmai1 visible-xs">
-					<div class="col-xs-12">
-						<p style="text-align: center"> Giảm Giá 15% </p>
-						<span>cho tất cả thành viên của i-services</span>
-						<a data-toggle="modal" data-target="#modal1">Đăng Ký Ngay</a>
-					</div>
-				</div>
+			</div>
+			<div class="duongdan hidden-xs">
+				<a href="index.html"><p id="duongdan">I-Service</p></a>
+				<p>/</p>
+				<a href="suachua.html"><p>Sửa Chữa</p></a>
+				<p>/</p>
+				<a href="suachua.html"><p>Sản Phẩm Sửa Chữa</p></a>
+				<span>Gọi ngay cho chúng tôi : 1900.1099</span>
 			</div>
 			<div class="chitiet row">
 				<div class="menu-more visible-xs">
@@ -331,11 +359,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="chitiet-right col-sm-9 hidden-xs">
+				<div class="chitiet-right col-sm-9 ">
 					<div class="chitiet-right-title">
-						<h3>Dịch Vụ Sửa Chữa Nổi Bật</h3>
+						<h3>Dịch Vụ Sửa Chữa Tủ Lạnh</h3>
 					</div>
-					<div class="chitiet-right-content row">
+					<div class="chitiet-right-content">
 						<div class="chitiet-right-menu col-xs-6 col-sm-4">
 							<div class="menu-tittle">
 								<span>Tủ Lạnh Không Làm Đá</span>
@@ -353,10 +381,10 @@
 						</div>
 						<div class="chitiet-right-menu col-xs-6 col-sm-4">
 							<div class="menu-tittle">
-								<span>Thay Tụ Quạt Dàn Lạnh</span>
+								<span>Tủ Lạnh Không Vào Điện</span>
 							</div>
 							<div class="menu-img">
-								<a href=""><img src="img/suachua/dieuhoa1.jpg"></a>
+								<a href=""><img src="img/suachua/tulanh2.jpg"></a>
 							</div>
 							<div class="menu-content">
 								<p>300.000 VNĐ</p>
@@ -368,10 +396,10 @@
 						</div>
 						<div class="chitiet-right-menu col-xs-6 col-sm-4">
 							<div class="menu-tittle">
-								<span>Máy Giặt Mất Nguồn</span>
+								<span>Tủ Lạnh Không Chạy Quạt</span>
 							</div>
 							<div class="menu-img">
-								<a href=""><img src="img/suachua/maygiat1.png"></a>
+								<a href=""><img src="img/suachua/tulanh5.jpg"></a>
 							</div>
 							<div class="menu-content">
 								<p>350.000 VNĐ</p>
@@ -383,10 +411,10 @@
 						</div>
 						<div class="chitiet-right-menu col-xs-6 col-sm-4">
 							<div class="menu-tittle">
-								<span>Sửa Lò Vi Sóng Hỏng Cao Áp</span>
+								<span>Tủ Lạnh Đóng Tuyết</span>
 							</div>
 							<div class="menu-img">
-								<a href=""><img src="img/suachua/lovisong1.jpg"></a>
+								<a href=""><img src="img/suachua/tulanh3.jpg"></a>
 							</div>
 							<div class="menu-content">
 								<p>400.000 VNĐ</p>
@@ -396,12 +424,12 @@
 								<a href="">Thanh Toán</a>
 							</div>
 						</div>
-						<div class="chitiet-right-menu col-xs-6 col-sm-4">
+						<div class="chitiet-right-menu col-xs-6 col-sm-4 ">
 							<div class="menu-tittle">
-								<span>Sửa Bếp Ga Electrolux</span>
+								<span>Tủ Lạnh Chạy Không Ngắt</span>
 							</div>
 							<div class="menu-img">
-								<a href=""><img src="img/suachua/bepga1.jpg"></a>
+								<a href=""><img src="img/suachua/tulanh4.jpg"></a>
 							</div>
 							<div class="menu-content">
 								<p>250.000 VNĐ</p>
@@ -411,67 +439,88 @@
 								<a href="">Thanh Toán</a>
 							</div>
 						</div>
-						<div class="chitiet-right-menu col-xs-6 col-sm-4">
-							<div class="menu-tittle">
-								<span>Máy Hút Ẩm Hút Ẩm Kém</span>
-							</div>
-							<div class="menu-img">
-								<a href=""><img src="img/suachua/mayhutam1.jpg"></a>
-							</div>
-							<div class="menu-content">
-								<p>200.000 VNĐ</p>
-							</div>
-							<div class="thanhtoan">
-								<span class="glyphicon glyphicon-credit-card"></span>
-								<a href="">Thanh Toán</a>
-							</div>
+					</div>
+				</div>
+			</div>
+			<div class="danhgia">
+				<div class="danhgia-tittle">
+					<h2>Đánh Giá Của Khách Hàng</h2>
+					<div id="review-rating"></div>
+				</div>
+				<div class="danhgia-box">
+					<form method="post" action="">
+						<input type="text" placeholder="" name="danhgia" class="boxdanhgia">
+						<input type="submit" value="Gửi đi">
+					</form>
+				</div>
+				<div class="danhgia-content">
+					<div class="danhgia-content-details col-xs-12 col-sm-4">
+						<div class="danhgia-content-tittle">
+							<span>HuyMe</span>
 						</div>
-						<div class="chitiet-right-menu col-xs-6 col-sm-4">
-							<div class="menu-tittle">
-								<span>Sửa Lỗi MainBoard Máy Tính Bàn</span>
-							</div>
-							<div class="menu-img">
-								<a href=""><img src="img/suachua/mainboard1.jpg"></a>
-							</div>
-							<div class="menu-content">
-								<p>200.000 VNĐ</p>
-							</div>
-							<div class="thanhtoan">
-								<span class="glyphicon glyphicon-credit-card"></span>
-								<a href="">Thanh Toán</a>
-							</div>
+						<div class="danhgia-content-img ">
+							<img src="img/huyme.jpg">
 						</div>
-						<div class="chitiet-right-menu col-xs-6 col-sm-4">
-							<div class="menu-tittle">
-								<span>Sửa TiVi Plasma</span>
-							</div>
-							<div class="menu-img">
-								<a href=""><img src="img/suachua/tivi1.jpg"></a>
-							</div>
-							<div class="menu-content">
-								<p>350.000 VNĐ</p>
-							</div>
-							<div class="thanhtoan">
-								<span class="glyphicon glyphicon-credit-card"></span>
-								<a href="">Thanh Toán</a>
-							</div>
-						</div>
-						<div class="chitiet-right-menu col-xs-6 col-sm-4">
-							<div class="menu-tittle">
-								<span>Sửa Chữa Máy Chạy Bộ Điện</span>
-							</div>
-							<div class="menu-img">
-								<a href=""><img src="img/suachua/maychaybo1.jpg"></a>
-							</div>
-							<div class="menu-content">
-								<p>200.000 VNĐ</p>
-							</div>
-							<div class="thanhtoan">
-								<span class="glyphicon glyphicon-credit-card"></span>
-								<a href="">Thanh Toán</a>
-							</div>
+						<div id="review-rating3"></div>
+						<div class="danhgia-content-text">
+							<p>Dịch vụ chất lượng cao , hệ thống đặt cuộc hẹn đơn giản , rất đáng tin cậy</p>
 						</div>
 					</div>
+					<div class="danhgia-content-details col-xs-12 col-sm-4">
+						<div class="danhgia-content-tittle">
+							<span>JverMind</span>
+						</div>
+						<div class="danhgia-content-img ">
+							<img src="img/jv.jpg">
+						</div>
+						<div id="review-rating2"></div>
+						<div class="danhgia-content-text">
+							<p>Tôi có vấn đề với chiếc máy giặt của mình . Sau khi sử dụng dịch vụ của I-Services tôi cảm thấy rất hài lòng</p>
+						</div>
+					</div>
+					<div class="danhgia-content-details col-xs-12 col-sm-4">
+						<div class="danhgia-content-tittle">
+							<span>Bảo Uyên</span>
+						</div>
+						<div class="danhgia-content-img ">
+							<img src="img/baouyen.jpg">
+						</div>
+						<div id="review-rating1"></div>
+						<div class="danhgia-content-text">
+						<p>...Ahihi đồ ngốc !</p>
+						</div> 
+					</div>
+				</div>
+				<div class="danhgia-under">
+					<a href="#">Các đánh giá khác của khác hàng</a>
+				</div>
+			</div>
+			<div class="blog visible-xs">
+				<div class="content-blog">
+					<div class="title-blog">
+						<h2>Bạn cần làm gì khi tủ lạnh không làm đá</h2>
+					</div>
+					<div class="img-blog">
+						<img src="img/blog/blog4a.jpg">
+					</div>
+					<div class="text-blog">
+						<p>Tủ lạnh của bạn không thể làm đá ? Hãy cùng I-Services tìm hiểu nguyên nhân và bạn có thể tự sửa chữa ngay tại nhà ...<a href="#">Chi tiết</a>
+						</p>
+					</div>
+					<div class="readmore">
+						<h4><a href="">Những bài viết khác</a></h4>
+					</div>
+				</div>
+			</div>
+			<div class="blog hidden-xs">
+				<div class="blog-img col-sm-4">
+					<a href="#">
+						<img src="img/blog/blog4a.jpg">
+					</a>
+				</div>
+				<div class="blog-text col-sm-8">
+					<h3>Bạn cần làm gì khi tủ lạnh không làm đá</h3>
+					<span>Tủ lạnh của bạn không thể làm đá ? Hãy cùng I-Services tìm hiểu nguyên nhân và bạn có thể tự sửa chữa ngay tại nhà ...<a href="#">Chi tiết</a></span>
 				</div>
 			</div>
 			<div class="diennuoc">
@@ -487,10 +536,10 @@
 					</div>
 					<div class="diennuoc-button">
 						<button class="dien col-xs-12 col-sm-6">
-							Dịch Vụ Sửa Điện
+							Gọi Thợ Sửa Điện
 						</button>
 						<button class="dien col-xs-12 col-sm-6">
-							Dịch Vụ Sửa Nước
+							Gọi Thợ Sửa Nước
 						</button>
 					</div>
 				</div>
@@ -547,7 +596,7 @@
 				<div class="menu-footer1 col-xs-12 col-sm-4">
 					<div class="menu-footer2">
 						<h2>
-							<a href="#">Bảo Dưỡng và Làm Sạch</a>
+							<a href="#">Bảo Dưỡng</a>
 						</h2>
 					</div>
 					<div class="menu-footer3">
@@ -556,7 +605,7 @@
 								<a href="">Làm Vườn</a>
 							</li>
 							<li>
-								<a href="">Hệ Thống VAC</a>
+								<a href="">HVAC</a>
 							</li>
 							<li>
 								<a href="">Làm Sạch Nhà</a>
@@ -600,271 +649,283 @@
 			</div>
 		</footer>
 	</div>
-
-	<div class="back hidden-xs hidden-sm">
-		<a href="#back"><img src="img/back.png"></a>
-	</div>
-	<!--modal đăng nhâp -->
-	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modallabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content" >
-				<section class="container-fluid"> 
-					<div class="row "> 
-						<div class="col-sx-12  col-sm-12  login widget well well-sm"> 
-							<div style=" margin-top:-70px; background-color:#efefef"> 
-								<div class="modal-header"> 
-									<legend> 
-										Đăng nhập
-									</legend> 
-								</div> 
-								<div class="modal-body"> 
-									<div class="box"> 
-										<div class="content"> 
-											<div class="social"> <a class="circle github"> <i class="fa fa-github fa-fw"></i> </a> <a id="google_login" class="circle google"> <i class="fa fa-google-plus fa-fw"></i> </a> <a id="facebook_login" class="circle facebook"> <i class="fa fa-facebook fa-fw"></i> </a> 
-											</div> 
-											<div class="division"> 
-												<div class="line l"></div> hoặc 
-												<div class="line r"></div> 
-											</div> 
-											<div class="error"></div> 
-											<div class="form loginbox" style="display: block;"> 
-												<form method="post" action="#"> <input id="email" class="form-control" type="text" placeholder="email" name="email"> <input id="password" class="form-control" type="password" placeholder="password" name="password"> 
-													<button class="btn btn-lg btn-primary btn-block" type="submit"> Đăng nhập</button>
-													<button class="btn btn-lg btn-primary btn-block" type="submit"> Đóng</button> 
-												</form> 
-											</div> 
+</div>
+<div class="back hidden-xs hidden-sm">
+	<a href="#back"><img src="img/back.png"></a>
+</div>
+<!--modal đăng nhâp -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modallabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content" >
+			<section class="container-fluid"> 
+				<div class="row "> 
+					<div class="col-sx-12  col-sm-12  login widget well well-sm"> 
+						<div style=" margin-top:-70px; background-color:#efefef"> 
+							<div class="modal-header"> 
+								<legend> 
+									Đăng nhập
+								</legend> 
+							</div> 
+							<div class="modal-body"> 
+								<div class="box"> 
+									<div class="content"> 
+										<div class="social"> <a class="circle github"> <i class="fa fa-github fa-fw"></i> </a> <a id="google_login" class="circle google"> <i class="fa fa-google-plus fa-fw"></i> </a> <a id="facebook_login" class="circle facebook"> <i class="fa fa-facebook fa-fw"></i> </a> 
 										</div> 
-									</div> 
-									<div class="box"> 
-										<div class="content registerbox" style="display: none;"> 
-											<div class="form"> 
-												<form method="post" action="#"> <input id="text1" class="form-control" type="text" placeholder="email" name="email"> <input id="password1" class="form-control" type="password" placeholder="password" name="password"> <input id="password_confirmation" class="form-control" type="password" placeholder="nhập lại password" name="password_confirmation"> <input class="btn btn-default btn-register" type="submit" value="tạo tài khoản" name="commit"> 
-												</form> 
-											</div> 
+										<div class="division"> 
+											<div class="line l"></div> hoặc 
+											<div class="line r"></div> 
+										</div> 
+										<div class="error"></div> 
+										<div class="form loginbox" style="display: block;"> 
+											<form method="post" action="#"> <input id="email" class="form-control" type="text" placeholder="email" name="email"> <input id="password" class="form-control" type="password" placeholder="password" name="password"> 
+												<button class="btn btn-lg btn-primary btn-block" type="submit"> Đăng nhập</button>
+												<button class="btn btn-lg btn-primary btn-block" type="submit"> Đóng</button> 
+											</form> 
 										</div> 
 									</div> 
 								</div> 
-								<div class="modal-footer"> 
-									<div class="forgot login-footer" style="display: block;" > <a data-toggle="modal" data-target="#modal1">Tạo tài khoản mới?</a> 
-									</div> 
-									<div class="forgot register-footer" style="display: none;"> Bạn có tài khoản rồi? <a>Đăng nhập</a> 
+								<div class="box"> 
+									<div class="content registerbox" style="display: none;"> 
+										<div class="form"> 
+											<form method="post" action="#"> <input id="text1" class="form-control" type="text" placeholder="email" name="email"> <input id="password1" class="form-control" type="password" placeholder="password" name="password"> <input id="password_confirmation" class="form-control" type="password" placeholder="nhập lại password" name="password_confirmation"> <input class="btn btn-default btn-register" type="submit" value="tạo tài khoản" name="commit"> 
+											</form> 
+										</div> 
 									</div> 
 								</div> 
 							</div> 
+							<div class="modal-footer"> 
+								<div class="forgot login-footer" style="display: block;" > <a data-toggle="modal" data-target="#modal1">Tạo tài khoản mới?</a> 
+								</div> 
+								<div class="forgot register-footer" style="display: none;"> Bạn có tài khoản rồi? <a>Đăng nhập</a> 
+								</div> 
+							</div> 
 						</div> 
-					</div>
-				</section>
-			</div>
+					</div> 
+				</div>
+			</section>
 		</div>
 	</div>
-	<!-- modal đăng kí -->
-	<div class="modal fade" tabindex="-1" id="modal1" role="dialog" aria-labelledby="modal1label">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content" >
-				<section class="container-fluid">  
-					<div class="row"> 
-						<div class="col-xs-12 col-sm-12 well well-sm" > 
-							<legend>
-								Đăng ký thành viên!
-							</legend> 
-							<form action="#" method="post" class="form" role="form"> 
-								<div class="row"> 
-									<div class="col-xs-6 col-md-6"> <input class="form-control" name="firstname" placeholder="họ" type="text"  autofocus> 
-									</div> 
-									<div class="col-xs-6 col-md-6"> <input class="form-control" name="lastname" placeholder="tên" type="text" > 
-									</div> 
+</div>
+<!-- modal đăng kí -->
+<div class="modal fade" tabindex="-1" id="modal1" role="dialog" aria-labelledby="modal1label">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content" >
+			<section class="container-fluid">  
+				<div class="row"> 
+					<div class="col-xs-12 col-sm-12 well well-sm" > 
+						<legend>
+							Đăng ký thành viên!
+						</legend> 
+						<form action="#" method="post" class="form" role="form"> 
+							<div class="row"> 
+								<div class="col-xs-6 col-md-6"> <input class="form-control" name="firstname" placeholder="họ" type="text"  autofocus> 
 								</div> 
-								<input class="form-control" name="sdt" placeholder="số điện thoại" type="sdt"> 
-								<input class="form-control" name="addr" placeholder="địa chỉ liên hệ" type="addr"> 
-								<input class="form-control" name="youremail" placeholder="email" type="email"> 
-								<input class="form-control" name="password" placeholder="mật khẩu" type="password" > 
-								<input class="form-control" name="retypepassword" placeholder="nhập lại mật khẩu" type="password"> 
+								<div class="col-xs-6 col-md-6"> <input class="form-control" name="lastname" placeholder="tên" type="text" > 
+								</div> 
+							</div> 
+							<input class="form-control" name="sdt" placeholder="số điện thoại" type="sdt"> 
+							<input class="form-control" name="addr" placeholder="địa chỉ liên hệ" type="addr"> 
+							<input class="form-control" name="youremail" placeholder="email" type="email"> 
+							<input class="form-control" name="password" placeholder="mật khẩu" type="password" > 
+							<input class="form-control" name="retypepassword" placeholder="nhập lại mật khẩu" type="password"> 
 
-								<label for=""> Năm sinh</label> 
-								<div class="row"> 
-									<div class="dangkyy col-xs-4 col-md-4"> 
-										<select class="form-control">         
-											<option value="day">ngày</option>    
-											<option value="day">1</option> 
-											<option value="day">2</option>   
-											<option value="day">3</option> 
-											<option value="day">4</option> 
-											<option value="day">5</option>       
-											<option value="day">6</option> 
-											<option value="day">7</option> 
-											<option value="day">8</option> 
-											<option value="day">9</option> 
-											<option value="day">10</option> 
-											<option value="day">11</option> 
-											<option value="day">12</option> 
-											<option value="day">13</option> 
-											<option value="day">13</option> 
-											<option value="day">14</option> 
-											<option value="day">15</option> 
-											<option value="day">16</option> 
-											<option value="day">16</option> 
-											<option value="day">17</option> 
-											<option value="day">18</option> 
-											<option value="day">19</option> 
-											<option value="day">20</option> 
-											<option value="day">21</option> 
-											<option value="day">22</option> 
-											<option value="day">23</option> 
-											<option value="day">24</option> 
-											<option value="day">25</option> 
-											<option value="day">26</option> 
-											<option value="day">27</option> 
-											<option value="day">28</option> 
-											<option value="day">29</option> 
-											<option value="day">30</option>
-											<option value="day">31</option>
-										</select> 
-									</div> 
-									<div class="dangkyy col-xs-4 col-md-4">
-										<select class="form-control">              
-											<option value="month">tháng</option>
-											<option value="month">tháng 1</option>
-											<option value="month">tháng 2</option>
-											<option value="month">tháng 3</option>
-											<option value="month">tháng 4</option>  
-											<option value="month">tháng 5</option>
-											<option value="month">tháng 6</option>
-											<option value="month">tháng 7</option>
-											<option value="month">tháng 8</option>
-											<option value="month">tháng 9</option>
-											<option value="month">tháng 10</option>
-											<option value="month">tháng 11</option>
-											<option value="month">tháng 12</option>
-										</select> 
-									</div> 
-									<div class="dangkyy col-xs-4 col-md-4">
-										<select class="form-control">              
-											<option value="year">năm</option> 
-											<option value="year">1990</option>
-											<option value="year">1991</option>
-											<option value="year">1992</option>
-											<option value="year">1993</option>          
-											<option value="year">1994</option>
-											<option value="year">1995</option>
-											<option value="year">năm</option>
-											<option value="year">năm</option>
-											<option value="year">năm</option>
-											<option value="year">năm</option>
-											<option value="year">na</option>
-											<option value="year">1999</option>
-											<option value="year">1998</option>
-											<option value="year">1997</option>
-											<option value="year">1996</option>
-										</select> 
-									</div> 
+							<label for=""> Năm sinh</label> 
+							<div class="row"> 
+								<div class="col-xs-4 col-md-4"> 
+									<select class="form-control">         
+										<option value="day">ngày</option>    
+										<option value="day">1</option> 
+										<option value="day">2</option>   
+										<option value="day">3</option> 
+										<option value="day">4</option> 
+										<option value="day">5</option>       
+										<option value="day">6</option> 
+										<option value="day">7</option> 
+										<option value="day">8</option> 
+										<option value="day">9</option> 
+										<option value="day">10</option> 
+										<option value="day">11</option> 
+										<option value="day">12</option> 
+										<option value="day">13</option> 
+										<option value="day">13</option> 
+										<option value="day">14</option> 
+										<option value="day">15</option> 
+										<option value="day">16</option> 
+										<option value="day">16</option> 
+										<option value="day">17</option> 
+										<option value="day">18</option> 
+										<option value="day">19</option> 
+										<option value="day">20</option> 
+										<option value="day">21</option> 
+										<option value="day">22</option> 
+										<option value="day">23</option> 
+										<option value="day">24</option> 
+										<option value="day">25</option> 
+										<option value="day">26</option> 
+										<option value="day">27</option> 
+										<option value="day">28</option> 
+										<option value="day">29</option> 
+										<option value="day">30</option>
+										<option value="day">31</option>
+									</select> 
 								</div> 
-								<label class="radio-inline" style="margin-left: 30%">          
-									<input type="radio" name="sex" id="inlinecheckbox1" value="male">     nam </label> 
-									<label class="radio-inline">          
-										<input type="radio" name="sex" id="inlinecheckbox2" value="female">          nữ </label> 
-										<br> 
-										<br> 
-										<button class="btn btn-lg btn-primary btn-block" type="submit"> đăng ký</button> 
-										<button class="btn btn-lg btn-primary btn-block"  data-dismiss="modal"> đóng</button> 
-									</form> 
+								<div class="col-xs-4 col-md-4">
+									<select class="form-control">              
+										<option value="month">tháng</option>
+										<option value="month">tháng 1</option>
+										<option value="month">tháng 2</option>
+										<option value="month">tháng 3</option>
+										<option value="month">tháng 4</option>  
+										<option value="month">tháng 5</option>
+										<option value="month">tháng 6</option>
+										<option value="month">tháng 7</option>
+										<option value="month">tháng 8</option>
+										<option value="month">tháng 9</option>
+										<option value="month">tháng 10</option>
+										<option value="month">tháng 11</option>
+										<option value="month">tháng 12</option>
+									</select> 
 								</div> 
-							</div>
+								<div class="col-xs-4 col-md-4">
+									<select class="form-control">              
+										<option value="year">năm</option> 
+										<option value="year">1990</option>
+										<option value="year">1991</option>
+										<option value="year">1992</option>
+										<option value="year">1993</option>          
+										<option value="year">1994</option>
+										<option value="year">1995</option>
+										<option value="year">năm</option>
+										<option value="year">năm</option>
+										<option value="year">năm</option>
+										<option value="year">năm</option>
+										<option value="year">na</option>
+										<option value="year">1999</option>
+										<option value="year">1998</option>
+										<option value="year">1997</option>
+										<option value="year">1996</option>
+									</select> 
+								</div> 
+							</div> 
+							<label class="radio-inline" style="margin-left: 30%">          
+								<input type="radio" name="sex" id="inlinecheckbox1" value="male">     nam </label> 
+								<label class="radio-inline">          
+									<input type="radio" name="sex" id="inlinecheckbox2" value="female">          nữ </label> 
+									<br> 
+									<br> 
+									<button class="btn btn-lg btn-primary btn-block" type="submit"> đăng ký</button> 
+									<button class="btn btn-lg btn-primary btn-block"  data-dismiss="modal"> đóng</button> 
+								</form> 
+							</div> 
 						</div>
 					</div>
 				</div>
-				<!-- /#wrapper -->
-				<!-- jquery -->
-				<script src="js/jquery.js"></script>
-				<!-- bootstrap core javascript -->
-				<script src="js/bootstrap.min.js"></script>
-				<script src="js/jquery.star-rating-svg.min.js"></script>
-				<script src="js/wow.min.js"></script>
-				<!-- menu toggle script -->
-				<script>
-					$("#menu-toggle").click(function(e) {
-						e.preventDefault();
-						$("#wrapper").toggleClass("toggled");
-					});
-				</script>
+			</div>
+			<!-- /#wrapper -->
+			<!-- jquery -->
+			<script src="js/jquery.js"></script>
+			<!-- bootstrap core javascript -->
+			<script src="js/bootstrap.min.js"></script>
+			<script src="js/jquery.star-rating-svg.min.js"></script>
+			<script src="js/wow.min.js"></script>
+			<!-- menu toggle script -->
+			<script>
+				$("#menu-toggle").click(function(e) {
+					e.preventDefault();
+					$("#wrapper").toggleClass("toggled");
+				});
+			</script>
 
-				<script>
-					var x = $(".button-fixed").offset();
-					$(window).bind('scroll', function () {
 
-						if ($(window).scrollTop() > x.top) {
-							$('.button-fixed').addClass('fixed');
-						} else {
-							$('.button-fixed').removeClass('fixed');
-						}
-					});
-				</script>
-				<script>
-					$(window).bind('scroll', function () {
+			<script>
+				var x = $(".button-background").offset();
+				$(window).bind('scroll', function () {
 
-						if ($(window).scrollTop() > 200) {
-							$('.back img').css('display','block');
-						} else {
-							$('.back img').css('display','none');
-						}
-					});
-				</script>
-				<script>
-					$('#review-rating').starRating({
-						starSize: 40,
-					// initialRating: 4.5,
-					// readOnly: true,
-					hoverColor :'red',
-					activeColor: 'red',
+					if ($(window).scrollTop() > x.top) {
+						$('.button-background').addClass('fixed');
+					} else {
+						$('.button-background').removeClass('fixed');
+					}
+				});
+			</script>
+			<script>
+				var y = $(".button-background1").offset();
+				$(window).bind('scroll', function () {
+
+					if ($(window).scrollTop() > y.top) {
+						$('.button-background1').addClass('fixed');
+					} else {
+						$('.button-background1').removeClass('fixed');
+					}
+				});
+			</script>
+			<script>
+				$(window).bind('scroll', function () {
+
+					if ($(window).scrollTop() > 200) {
+						$('.back img').css('display','block');
+					} else {
+						$('.back img').css('display','none');
+					}
+				});
+			</script>
+			<script>
+				$('#review-rating').starRating({
+					starSize: 40,
+                    // initialRating: 4.5,
+                    // readOnly: true,
+                    hoverColor :'rgb(0, 110, 255)',
+                    activeColor: 'rgb(0, 110, 255)',
+                    useGradient: false
+                });
+			</script>
+			<script>
+				$('#review-rating1').starRating({
+					starSize: 20,
+					initialRating: 5,
+					readOnly: true,
+					hoverColor :'rgb(0, 110, 255)',
+					activeColor: 'rgb(0, 110, 255)',
 					useGradient: false
 				});
-				</script>
-				<script>
-					$('#review-rating1').starRating({
-						starSize: 20,
-						initialRating: 5,
-						readOnly: true,
-						hoverColor :'red',
-						activeColor: 'red',
-						useGradient: false
-					});
-				</script>
-				<script>
-					$('#review-rating2').starRating({
-						starSize: 20,
-						initialRating: 4.5,
-						readOnly: true,
-						hoverColor :'red',
-						activeColor: 'red',
-						useGradient: false
-					});
-				</script>
-				<script>
-					$('#review-rating3').starRating({
-						starSize: 20,
-						initialRating: 4,
-						readOnly: true,
-						hoverColor :'red',
-						activeColor: 'red',
-						useGradient: false
-					});
-				</script>
-				<script>
-					$('#review-rating4').starRating({
-						starSize: 20,
-						initialRating: 5,
-						readOnly: true,
-						hoverColor :'red',
-						activeColor: 'red',
-						useGradient: false
-					});
-				</script>
-				<script>
-					new WOW().init();
-				</script>
-				<script>
-					$(".dien").click(function(){
-						location.href = "#"
-					})
-				</script>
-			</body>
-			</html>
+			</script>
+			<script>
+				$('#review-rating2').starRating({
+					starSize: 20,
+					initialRating: 4.5,
+					readOnly: true,
+					hoverColor :'rgb(0, 110, 255)',
+					activeColor: 'rgb(0, 110, 255)',
+					useGradient: false
+				});
+			</script>
+			<script>
+				$('#review-rating3').starRating({
+					starSize: 20,
+					initialRating: 4,
+					readOnly: true,
+					hoverColor :'rgb(0, 110, 255)',
+					activeColor: 'rgb(0, 110, 255)',
+					useGradient: false
+				});
+			</script>
+			<script>
+				$('#review-rating4').starRating({
+					starSize: 20,
+					initialRating: 5,
+					readOnly: true,
+					hoverColor :'rgb(0, 110, 255)',
+					activeColor: 'rgb(0, 110, 255)',
+					useGradient: false
+				});
+			</script>
+			<script>
+				new WOW().init();
+			</script>
+			<script>
+				$(".dien").click(function(){
+					location.href = "#"
+				})
+			</script>
+		</body>
+		</html>

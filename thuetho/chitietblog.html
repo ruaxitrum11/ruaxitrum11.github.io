@@ -12,7 +12,7 @@
     <link href="css/star-rating-svg.css" media="all" rel="stylesheet" type="text/css" />
     <!-- optionally if you need to use a theme, then include the theme CSS file as mentioned below -->
     <link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/datlich.css">
+    <link rel="stylesheet" type="text/css" href="css/chitietblog.css">
 </head>
 <body>
     <div class="wrap container">
@@ -23,7 +23,7 @@
                     <ul class="sidebar-nav">
                         <li class="sidebar-brand">
                             <img src="img/date1.png">
-                            <a href="#">Đặt lịch trực tuyến</a>
+                            <a href="datlich.html">Đặt lịch trực tuyến</a>
                         </li>
                         <li>
                             <img src="img/call.png">
@@ -133,177 +133,140 @@
             <div class="duongdan hidden-xs">
                 <a href="index.html"><p id="duongdan">I-Service</p></a>
                 <p>/</p>
-                <a href="index.html"><p>Đặt Lịch</p></a>
-                <span>Liên Hệ : 1900.1099</span>
+                <a href="suachua.html"><p>Blog</p></a>
+                <p>/</p>
+                <a href="suachua.html"><p>4 Bước Vệ Sinh Lò Vi Sóng</p></a>
+                <span>Gọi ngay cho chúng tôi : 1900.1099</span>
             </div>
-            <div class="main-content">
-                <div class="main-content-left col-xs-12 col-sm-7">
-                    <div class="left-tittle">
-                        <h3>Đặt Lịch Nhanh</h3>
-                        <p>Xin vui lòng hoàn thành những thông tin sau đây để tiến hành đặt lịch sửa chữa</p>
-                    </div>
-                    <div class="left-content">
-                        <div class="left-content-details">
-                            <form method="post" action="">
-                                <span>Họ và tên</span>
-                                <input type="text" class="content-details">
-                            </form>
-                        </div>
-                        <div class="left-content-details">
-                            <form method="post" action="">
-                                <span>Số điện thoại</span>
-                                <input type="text" class="content-details">
-                            </form>
-                        </div>
-                        <div class="left-content-details">
-                            <form method="post" action="">
-                                <span>Email</span>
-                                <input type="text" class="content-details">
-                            </form>
-                        </div>
-                        <div class="left-content-details">
-                            <form method="post" action="">
-                                <span>Địa chỉ</span>
-                                <input type="text" class="content-details">
-                            </form>
-                        </div>
-                        <div class="left-content-details">
-                            <form method="post" action="">
-                                <span>Chọn dịch vụ</span>
-                                <div class="left-content-box">
-                                    <input type="radio" name="dichvu"><label class="left-content-box-label">Sửa Chữa</label>
-                                    <input type="radio" name="dichvu" > <label class="left-content-box-label">Nâng Cấp</label>
-                                    <input type="radio" name="dichvu" > <label class="left-content-box-label">Bảo Dưỡng</label>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="left-content-details">
-                            <form method="post" action="">
-                                <span>Nhóm sản phẩm</span>
-                                <div class="left-content-box1">
-                                    <select>
-                                        <option hidden selected=""></option>
-                                        <option value="suachua">Máy móc gia dụng</option>
-                                        <option value="suachua">Sưởi ấm và làm lạnh</option>
-                                        <option value="suachua">Thiết bị điện tử</option>
-                                        <option value="suachua">Máy thể dục</option>
-                                    </select>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="left-content-details">
-                            <form method="post" action="">
-                                <span>Chọn sản phẩm&nbsp;</span>
-                                <div class="left-content-box1">
-                                    <select>
-                                        <option hidden selected=""></option>
-                                        <option value="sanpham">Tủ Lạnh</option>
-                                        <option value="sanpham">Máy Giặt</option>
-                                        <option value="sanpham">Lò Vi Sóng</option>
-                                        <option value="sanpham">Máy Sấy Khô</option>
-                                        <option value="sanpham">Bếp Gas</option>
-                                        <option value="sanpham">Máy Lọc Nước</option>
-                                        <option value="sanpham">Máy Rửa Chén</option>
-                                    </select>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="left-content-details">
-                            <form method="post" action="">
-                                <span>Chi tiết dịch vụ&nbsp;&nbsp;&nbsp;</span>
-                                <div class="left-content-box1">
-                                    <select>
-                                        <option hidden selected=""></option>
-                                        <option value="suachua">Tủ lạnh không làm đá</option>
-                                        <option value="suachua">Tủ lạnh không vào điện</option>
-                                        <option value="suachua">Tủ lạnh không chạy quạt</option>
-                                        <option value="suachua">Tủ lạnh đóng tuyết</option>
-                                        <option value="suachua">Tủ lạnh chạy không ngắt</option>
-                                    </select>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="left-content-details-mota">
-                            <form method="post" action="">
-                                <span>Dịch vụ khác</span>
-                                <textarea rows="2" cols="39" placeholder=" Hãy cho chúng tôi biết bạn cần gì"></textarea>
-                            </form>
-                        </div>
-                        <div class="left-content-details-tien">
-                          <form method="post" action="">
-                            <span>Thành Tiền&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <textarea rows="1" cols="20"></textarea>
-                        </form>
-                    </div>
+            <div class="blog">
+                <div class="blog-tittle">
+                    <h3>4 Bước Lò Vi Sóng Đơn Giản</h3>
+                    <p>Để chùi rửa các mẩu thức ăn bám trong lò vi sóng không hề khó như bạn tưởng. Bạn có thể dễ dàng thử cách vệ sinh lò vi sóng sạch bong chỉ trong vòng vài phút với 4 mẹo đơn giản sau đây </p>
                 </div>
-                <div class="left-under">
-                   <!-- Button trigger modal -->
-                   <div class="left-under-button">
-                   <button id="thanhtoan" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                           Thanh Toán
-                       </button>
-                   </div>
-                   <!-- Modal -->
-                   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Hóa Đơn</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Họ và tên </p><i>:</i><span>Đỗ Trung Hiếu</span></br>
-                            <p>Số điện thoại </p><i>:</i><span>01689187670</span></br>
-                            <p>Email </p><i>:</i><span>pend5894@gmail.com</span></br>
-                            <p>Địa chỉ </p><i>:</i><span>Hà Nội</span></br>
-                            <p>Chọn dịch vụ </p><i>:</i><span>Sửa chữa</span></br>
-                            <p>Nhóm sản phẩm </p><i>:</i><span>Máy móc gia dụng</span></br>
-                            <p>Chọn sản phẩm </p><i>:</i><span>Tủ Lạnh</span></br>
-                            <p>Chi tiết dịch vụ </p><i>:</i><span>Tủ Lạnh Không Làm Đá</span></br>
-                            <p>Thành Tiền </p><i>:</i><span>200.000 VNĐ </span>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
-                            <button type="button" class="btn btn-primary">Xác Nhận</button>
-                        </div>
+                <div class="blog-content">
+                    <p>Cách 1 : Dùng giấm trắng</p>
+                    <img src="img/blog/blog1b.jpg">
+                    <i>Pha dung dịch giấm trắng và nước </i>
+                    <span>
+                        Sau khi sử dụng lò vi sóng hâm nóng thức ăn, bạn đổ đầy nửa tô nước, rồi thêm vào một muỗng giấm trắng, cho tô vào trong lò vi sóng và bật lò trong vòng 5 phút. Nếu lò nhà bạn có công suất cao thì chỉ cần ít thời gian hơn. Hãy bật lò ở khoảng 2 phút trước rồi quan sát quá trình bốc hơi để điều chỉnh cho phù hợp.
+                    </span>
+                    <img src="img/blog/blog1c.jpg">
+                    <i>Dùng khăn giấy lau sạch bên trong lò</i>
+                    <span>
+                        Dung dịch giấm trắng bốc hơi bên trong lò sẽ làm bong các vết bẩn cứng đầu trong lò. Lấy tô giấm ra rồi dùng giẻ vệ sinh lò vi sóng một cách dễ dàng.
+                    </span>
+                    <img src="img/blog/blog1d.jpg">
+                    <i>Tháo và vệ sinh đĩa quay</i>
+                    <span>
+                        Tháo chiếc đĩa quay ra rồi rửa sạch như rửa chén dĩa bình thường.
+                    </span>
+                    <p>Cách 2 : Dùng chanh</p>
+                    <img src="img/blog/blog1e.jpg">
+                    <i>Cắt nửa quả chanh cho vào đĩa có nước</i>
+                    <span>
+                        Cắt nửa quả chanh rồi đặt úp mặt xuống trên đĩa, đổ thêm một muỗng nước. Cho đĩa chanh vào lò vi sóng trong khoảng 1 phút, đến khi trái chanh nóng lên và có xuất hiện hơi nước trong lò. Dùng giấy hoặc giẻ lau lau sạch bên trong lò rồi rửa đĩa quay, thế là xong! Ngoài ra, bạn còn có thể tận dụng hai miếng chanh nóng khi nãy để khử mùi cho cái lược rác trên bồn rửa. Cắt hai nửa chanh thành nhiều miếng nhỏ hơn, bỏ lên chỗ lược rác rồi dội nhiều nước để mùi chanh khử mùi hôi hiệu quả.
+                    </span>
+                    <p>Cách 3 : Dùng nước rửa chén</p>
+                    <img src="img/blog/blog1f.jpg">
+                    <i>Tùy theo lò dơ đến đâu mà gia giảm lượng nước rửa chén</i>
+                    <span>
+                        Đổ nước ấm vào một cái tô rồi cho nước rửa chén vào. Cho tô vào trong lò vi sóng khoảng 1 phút đến khi thấy bốc hơi bên trong lò. Hơi nước rửa chén sẽ làm loãng các vết bẩn nên bạn dễ dàng dùng giẻ ướt lau sạch bên trong lò. Để khử mùi thức ăn còn sót lại, hãy cho vài muỗng baking soda vào tô nước rửa chén.
+                    </span>
+                    <p>Cách 4 : Nước lau kiếng</p>
+                    <span>
+                        Đầu tiên, trộn hai phần dung dịch nước lau kiếng với một phần nước. Hỗn hợp pha loãng này đủ sức để chùi rửa sạch bong cả trong lẫn ngoài chiếc lò vi sóng.
+                    </span>
+                    <img src="img/blog/blog1g.jpg">
+                    <i>Dùng bọt biển thấm nước chùi sạch lò</i>
+                    <span>
+                        Dùng miếng bọt biển thấm nước rửa rồi kì cọ bên trong lò. Tháo đĩa quay ra chùi sạch, lau phần đế quay, chùi thật kĩ lỗ thông gió của lò để làm sạch những vết bẩn tích tụ tại đây. Chú ý rút chốt cắm của lò khi lau chùi. Cẩn thận chùi kĩ cả 4 phía thành lò vì thức ăn thường bị văng và dính lên phía trên thành lò.
+                    </span>
+                    <img src="img/blog/blog1h.jpg">
+                    <i>Chùi sạch lò đến khi không còn nghe mùi nước lau kính</i>
+                    <span>
+                        Sau khi chùi sạch bên trong lò, lau lại lần nữa bằng nước sạch. Cẩn thận lau thật kĩ để không còn thừa hóa chất từ dung dịch nước lau kính. Dùng giẻ khô lau lại thêm một lần nữa. Nếu vẫn còn vết ố cứng đầu, bạn có thể dùng giẻ thấm dầu oliu để chùi cho thật sạch. Chờ cho chiếc lò vi sóng khô hẳn rồi ngửi mùi xem nó đã an toàn để sử dụng chưa.</br></br>
+                        Nếu còn nghe mùi nước lau kính thì bạn nên nhúng nước giẻ sạch để chùi lại. Bạn có thể dùng dung dịch lau kính trên để chùi sạch bên ngoài lò. Lau chùi thật kĩ để đánh tan lớp bụi bẩn, dầu mỡ bám ở nút vặn, hai bên hông lò.</br></br>
+                        Khi lau chùi lò vi sóng cần cẩn thận với chất liệu của các miếng giẻ, chẳng hạn như miếng nhám rửa chén dễ để lại những mảnh vụn, và chúng có thể bắt lửa nếu bật lò. Tránh dùng các hóa chất tẩy rửa mạnh để không gây nhiễm độc thực phẩm, hãy dùng những cách tự nhiên như giấm trắng và chanh để đảm bảo an toàn cho sức khỏe.
+                    </span>
+                </div>
+                <div class="blog-under">
+                    <div class="tacgia">
+                        <img src="img/blog/tacgia.jpg">
+                        <p>Tác giả : Tùng Mountain</p>
+                    </div>
+                    <div class="blogkhac">
+                        <div class="blog1 visible-xs">
+                            <div class="content-blog1">
+                                <div class="title-blog1">
+                                 <h2>16 Nguyên Nhân Khiến Điều Hòa Hỏng</h2>
+                             </div>
+                             <div class="img-blog1">
+                             <img src="img/blog/blog2a.jpg">
+                             </div>
+                             <div class="text-blog1">
+                                 <p>Máy điều hòa không khí là một hệ thống kín và gas lạnh bên trong máy là loại hóa chất rất bền không bị phân hủy trong điều kiện hoạt động của máy nên không có hiện tượng hao hụt gas. Máy chỉ thiếu gas, hết gas trong trường hợp bị rò rỉ, xì trên đường ống, tại các van, các chỗ đấu nối ống bằng rắc-co…hay trong quá trình lắp mới người lắp đặt không kiểm tra và nạp đủ gas. Khi máy bị thiếu gas hoặc hết gas sẽ có một số hiện tượng sau:... <a href="#">Chi tiết</a>
+                                 </p>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="blog1 hidden-xs">
+                       <div class="blog1-img col-sm-4">
+                           <a href="#">
+                            <img src="img/blog/blog2a.jpg">
+                        </a>
+                    </div>
+                    <div class="blog1-text col-sm-8">
+                        <h3>16 Nguyên Nhân Khiến Điều Hòa Hỏng</h3>
+                        <span>Máy điều hòa không khí là một hệ thống kín và gas lạnh bên trong máy là loại hóa chất rất bền không bị phân hủy trong điều kiện hoạt động của máy nên không có hiện tượng hao hụt gas. Máy chỉ thiếu gas, hết gas trong trường hợp bị rò rỉ, xì trên đường ống, tại các van, các chỗ đấu nối ống bằng rắc-co…hay trong quá trình lắp mới người lắp đặt không kiểm tra và nạp đủ gas. Khi máy bị thiếu gas hoặc hết gas sẽ có một số hiện tượng sau:... <a href="#">Chi tiết</a></span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="main-content-right col-xs-12 col-sm-5">
-        <div class="right-dangnhap">
-            <h4>Bạn đã là thành viên của I-Services ? </h4>
-            <span>Xin vui lòng </span> <a  data-toggle="modal" data-target="#modal">Đăng Nhập</a>
+    </section>
+    <footer>
+        <div class="menu-footer">
+            <div class="menu-footer1 col-xs-12 col-sm-4">
+                <div class="menu-footer2">
+                    <h2>
+                        <a href="suachua.html">Thiết bị sửa chữa</a>
+                    </h2>
+                </div>
+                <div class="menu-footer3">
+                    <ul>
+                        <li>
+                            <a href="">Tủ Lạnh</a>
+                        </li>
+                        <li>
+                         <a href="">Điều Hòa</a>
+                     </li>
+                     <li>
+                        <a href="">Máy Giặt</a>
+                    </li>
+                    <li>
+                        <a href="">Lò Vi Sóng</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="right-dangky">
-            <h4>Bạn muốn nhận nhiều ưu đãi khi sử dụng dịch vụ của I-Services ?</h4>
-            <span>Xin vui lòng </span> <a data-toggle="modal" data-target="#modal1">Đăng Ký</a>
-        </div>
-    </div>
-</div>
-</section>
-<footer>
-    <div class="menu-footer">
         <div class="menu-footer1 col-xs-12 col-sm-4">
             <div class="menu-footer2">
                 <h2>
-                    <a href="suachua.html">Thiết bị sửa chữa</a>
+                    <a href="#">Dịch Vụ Nâng Cấp</a>
                 </h2>
             </div>
             <div class="menu-footer3">
                 <ul>
                     <li>
-                        <a href="">Tủ Lạnh</a>
+                        <a href="">HVAC</a>
                     </li>
                     <li>
-                     <a href="">Điều Hòa</a>
+                     <a href="">Thay Cửa Sổ</a>
                  </li>
                  <li>
-                    <a href="">Máy Giặt</a>
+                    <a href="">Lợp Nhà</a>
                 </li>
                 <li>
-                    <a href="">Lò Vi Sóng</a>
+                    <a href="">Làm Vách Ngoài</a>
                 </li>
             </ul>
         </div>
@@ -311,48 +274,25 @@
     <div class="menu-footer1 col-xs-12 col-sm-4">
         <div class="menu-footer2">
             <h2>
-                <a href="#">Dịch Vụ Nâng Cấp</a>
+                <a href="#">Bảo Dưỡng</a>
             </h2>
         </div>
         <div class="menu-footer3">
             <ul>
                 <li>
-                    <a href="">HVAC</a>
+                    <a href="">Làm Vườn</a>
                 </li>
                 <li>
-                 <a href="">Thay Cửa Sổ</a>
+                 <a href="">HVAC</a>
              </li>
              <li>
-                <a href="">Lợp Nhà</a>
+                <a href="">Làm Sạch Nhà</a>
             </li>
             <li>
-                <a href="">Làm Vách Ngoài</a>
+                <a href="">Bảo Dưỡng Điện</a>
             </li>
         </ul>
     </div>
-</div>
-<div class="menu-footer1 col-xs-12 col-sm-4">
-    <div class="menu-footer2">
-        <h2>
-            <a href="#">Bảo Dưỡng</a>
-        </h2>
-    </div>
-    <div class="menu-footer3">
-        <ul>
-            <li>
-                <a href="">Làm Vườn</a>
-            </li>
-            <li>
-             <a href="">HVAC</a>
-         </li>
-         <li>
-            <a href="">Làm Sạch Nhà</a>
-        </li>
-        <li>
-            <a href="">Bảo Dưỡng Điện</a>
-        </li>
-    </ul>
-</div>
 </div>
 </div>
 <div class="under-footer">
@@ -570,6 +510,16 @@
         $("#menu-toggle").click(function(e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+     <script>
+        $(window).bind('scroll', function () {
+
+            if ($(window).scrollTop() > 200) {
+                $('.back img').css('display','block');
+            } else {
+                $('.back img').css('display','none');
+            }
         });
     </script>
 </body>

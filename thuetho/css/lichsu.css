@@ -236,7 +236,6 @@ header {
 	width: 100%;
 	background-color: white;
 }
-
 .big-login, .big-register { 
 	background-color: #00bbff;  
 	color: #FFFFFF; 
@@ -421,66 +420,37 @@ h4 { display: block; text-align: center; }
 	float: right;
 	color: white;
 	padding-right: 10px;
-	font-size: 16px;
+	font-sze: 16px;
 	padding-top: 10px;
 }
 #duongdan {
 	padding-left: 35px
 }
-.blog {
+.lichsu-banner{
 	float: left;
-	width: 100%;
-	border-bottom: 1px solid #ddd;
-	border-top: 1px solid #ddd;
-	padding-bottom: 20px;
-	padding-top: 20px;
 	background: url('../img/blog/banner.jpg') center center;
-}
-.content-blog {
-	padding: 5px 15px 10px;
-}
-.title-blog a:link ,.title-blog a:hover ,.title-blog a:visited {
-	color: black;
-	text-decoration: none;
-}
-.title-blog h2 {
-	font-size: 18px;
-	text-align: center;
-}
-.img-blog img {
 	width: 100%;
 }
-.text-blog p {
-	font-style: italic;
-	font-size: 14px;
+.lichsu {
+	margin-left: 30px;
 }
-.text-blog a:link ,.text-blog a:hover , .text-blog a:visited {
-	color: rgb(0, 110, 255) ;
-	text-decoration: none;
+.lichsu-details {
+	width: 12%;
 }
-.blog-tittle {
-	clear: both;
-	text-align: center;
-	padding: 15px 0;
+.lichsu-details-choose {
+	margin-left: 15px;
+	background-color: rgb(0, 110, 255);
+	color: white;
 }
-.blog h3 {
-	font-size: 18px;
+.lichsu-choose form{
+	margin-top: 20px;
 }
-.blog-img img{
-	width: 100%;
-	height: 175px;
+.table>tbody>tr>td , .table>thead>tr>th , .table>thead:first-child>tr:first-child>th{
+	border: 1px solid #ddd;
 }
-.blog-text a:link , .blog-text a:hover , .blog-text a:visited{
-	color: rgb(0, 110, 255) ;
-	text-decoration: none;
-}
-.readmore {
-	padding-top: 10px;
-}
-.readmore a:link , .readmore a:hover , .readmore a:visited {
-	color: rgb(0, 110, 255);
-	text-decoration: underline;
-	font-style: italic;
+.lichsu-table h3 {
+	margin-left: 30px;
+	margin-bottom : 30px;
 }
 .dieuhuong {
 	text-align: center;
@@ -489,7 +459,7 @@ h4 { display: block; text-align: center; }
 .dieuhuong-content>li>a , .dieuhuong-content>li>span {
 	border: none;
 	color: rgb(0, 110, 255);
-	font-size: 20px;
+	font-size: 15px;
 }
 footer {
 	float: left;
@@ -568,7 +538,6 @@ footer {
 	z-index: 10000;
 	display: none;
 }
-
 @media ( min-width: 750px) {
 	.searchform {
 		height: auto;
@@ -577,7 +546,8 @@ footer {
 		font-size: 15px
 	}
 	.header1 img {
-		width: 50%;
+		margin-left: 50px;
+		width: 41%;
 	}
 	.header2 , .header1 , .header3 {
 		padding-left: 0;
@@ -585,7 +555,7 @@ footer {
 	}
 	.top_logo_right {
 		padding-top: 4px;
-		padding-left: 0px;
+		padding-left: 35px;
 	}
 	.list-inline1 li {
 		padding-top: 5px;
@@ -623,12 +593,15 @@ footer {
 	}
 	.top_logo_right {
 		padding-top: 10px;
-		padding-left: 70px;
+		padding-left: 132px;
 	}
 	.list-inline1 li {
 		padding-top: 10px;
 		margin-left: 25px;
 		margin-right: 61px;
+	}
+	.header3{
+		padding-right: 25px;
 	}
 	.under-footer-text img {
 		width: 12%;
@@ -637,31 +610,39 @@ footer {
 	.under-footer-text li {
 		width: 20%;
 	}
-	.diennuoc-tittle p {
-		padding-top: 10px;
+	@media (min-width: 1170px){
+		.list-inline1 a {
+			font-size: 28px;
+		}
+		.top_logo_right {
+			padding-left: 246px;
+		}
+		.menu {
+			margin: 0px;
+		}
+		.khuyenmai p {
+			height: 60px;
+		}
+		.khuyenmai a {
+			width: 18%;
+		}
+		.danhsach-khuyenmai img {
+			width: 100%;
+		}
+		.danhsach-khuyenmai .col-xs-9 {
+			padding-top: 5px;
+		}
+		.danhsach-khuyenmai {
+			padding-bottom: 10px;
+		}
+		.under-footer-text ul {
+			padding-top: 15px;
+		}
+		.under-footer-text img {
+			margin-left: 30px;
+		}
+		.back img {
+			width: 65px;
+			right: 13px;
+		}
 	}
-	.diennuoc-button {
-		margin-top: 20px;
-	}
-	.dien {
-		padding: 20px;
-	}
-}
-@media (min-width: 1170px){
-	.list-inline1 a {
-		font-size: 28px;
-	}
-	.menu {
-		margin: 0px;
-	}
-	.under-footer-text ul {
-		padding-top: 15px;
-	}
-	.under-footer-text img {
-		margin-left: 30px;
-	}
-	.back img {
-		width: 65px;
-		right: 13px;
-	}
-}

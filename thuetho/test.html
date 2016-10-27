@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>Dịch vụ chuyên nghiệp</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/star-rating-svg.css" media="all" rel="stylesheet" type="text/css" />
+    <!-- optionally if you need to use a theme, then include the theme CSS file as mentioned below -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/test.css">
+</head>
+<body>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#lichsutien">
+      Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="lichsutien" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Lịch Sử Chuyển Tiền</h4>
+        </div>
+        <div class="modal-body chuyentien">
+            <form method="post" action="">
+                <span>Từ Ngày</span>
+                <input type="text" class="chuyentien-details" value="10/10/2016">
+                <span>Đến Ngày</span>
+                <input type="text" class="chuyentien-details" value="20/10/2016">
+                <input type="submit" class="chuyentien-details-choose" value="Xem Sao Kê">
+            </form>
+            <form method="post" action="">
+                <span>Xem toàn bộ lịch sử chuyển tiền</span>
+                <input type="submit" class="chuyentien-details-choose" value="Nhấn Vào Đây">
+            </form>
+            <div class="container">
+            <h2>Thống kê giao dịch</h2>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Thời Gian</th>
+                    <th>Mã Giao Dịch</th>
+                    <th>Hóa Đơn</th>
+                    <th>Chi Tiết</th>
+                    <th>Số Dư</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>mary@example.com</td>
+            </tr>
+            <tr>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>july@example.com</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+    <button type="button" class="btn btn-primary canhan3">Xác Nhận</button>
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="js/jquery.js"></script>
+<!-- bootstrap core javascript -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.star-rating-svg.min.js"></script>
+<script src="js/wow.min.js"></script>
+<!-- menu toggle script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+<script>
+    $(window).bind('scroll', function () {
+
+        if ($(window).scrollTop() > 200) {
+            $('.back img').css('display','block');
+        } else {
+            $('.back img').css('display','none');
+        }
+    });
+</script>
+</body>
+</html>

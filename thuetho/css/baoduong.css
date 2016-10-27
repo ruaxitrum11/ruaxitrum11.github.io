@@ -683,15 +683,28 @@ h4 { display: block; text-align: center; }
 	padding-bottom: 15px;
 }
 .brands-content {
+	width: 100%;
 	float: left;
-	width: 100%;
-	padding-top: 20px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+} 
+.brands-details-tittle {
+	background-color: rgb(0, 110, 255);
+	color: white;
 }
-.brands-logo img {
-	width: 100%;
+.brands-details-tittle h4 {
+	margin-bottom: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
-.brands-logo {
-	height: 80px;
+.brands-details-img img{
+	width: 100%;
+	height: 150px;
+}
+.brands-details-content a:link ,.brands-details-content a:hover , .brands-details-content a:visited {
+	color: rgb(0, 110, 255);
+	text-decoration:none;
+	font-size: 15px
 }
 .quangcao {
 	float: left;
@@ -709,14 +722,14 @@ h4 { display: block; text-align: center; }
 .quangcao-tittle {
 	text-align: center;
 }
+.quangcao-tittle h2 {
+	font-size: 25px;
+}
 .quangcao-content {
 	padding-bottom: 20px;
 }
 .quangcao-details {
 	padding-top: 15px;
-}
-.quangcao-tittle h2 {
-	font-size: 25px;
 }
 .blog {
 	float: left;
@@ -826,7 +839,7 @@ footer {
 }
 .under-footer {
 	float: left;
-	border: 1px solid #565656;
+	border-top: 1px solid #565656;
 	width: 100%;
 }
 .under-footer-text {
@@ -876,8 +889,8 @@ footer {
 		font-size: 15px
 	}
 	.header1 img {
-		width: 50%;
-		margin-left: 30px;
+		margin-left: 50px;
+		width: 41%;
 	}
 	.header2 , .header1 , .header3 {
 		padding-left: 0;
@@ -885,7 +898,7 @@ footer {
 	}
 	.top_logo_right {
 		padding-top: 4px;
-		padding-left: 0px;
+		padding-left: 35px;
 	}
 	.list-inline1 li {
 		padding-top: 5px;
@@ -936,12 +949,15 @@ footer {
 	}
 	.top_logo_right {
 		padding-top: 10px;
-		padding-left: 70px;
+		padding-left: 132px;
 	}
 	.list-inline1 li {
 		padding-top: 10px;
 		margin-left: 25px;
 		margin-right: 61px;
+	}
+	.header3{
+		padding-right: 25px;
 	}
 	.khuyenmai {
 		width: 16%;
@@ -977,6 +993,9 @@ footer {
 	.list-inline1 a {
 		font-size: 28px;
 	}
+	.top_logo_right {
+		padding-left: 246px;
+	}
 	.menu {
 		margin: 0px;
 	}
@@ -986,6 +1005,10 @@ footer {
 	}
 	.brands-logo {
 		height: 130px;
+	}
+	.brands-tittle h2{
+		font-size: 25px;
+		padding-bottom: 15px;
 	}
 	.quangcao-details {
 		padding-top: 5px

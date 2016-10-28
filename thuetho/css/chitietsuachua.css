@@ -676,6 +676,7 @@ div.banner-img {
 .chitiet-right {
 	float: left;
 	text-align: center;
+	background: url('../img/blog/banner.jpg') center center;
 }
 .chitiet-right-content {
 	margin-top: 15px;

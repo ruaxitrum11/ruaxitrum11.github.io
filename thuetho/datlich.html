@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="wrap container">
-     <header class="header-xs visible-xs">
+       <header class="header-xs visible-xs">
         <div class="col-xs-4 " id="wrapper" >
             <!-- sidebar -->
             <div id="sidebar-wrapper">
@@ -142,32 +142,32 @@
                     <div class="left-content-details">
                         <form method="post" action="">
                             <span>Họ và tên</span>
-                            <input type="text" class="content-details">
+                            <input type="text" class="content-details" value=" Đỗ Trung Hiếu">
                         </form>
                     </div>
                     <div class="left-content-details">
                         <form method="post" action="">
                             <span>Số điện thoại</span>
-                            <input type="text" class="content-details">
+                            <input type="text" class="content-details" value=" 01689187670">
                         </form>
                     </div>
                     <div class="left-content-details">
                         <form method="post" action="">
                             <span>Email</span>
-                            <input type="text" class="content-details">
+                            <input type="text" class="content-details" value=" pendi5894@gmail">
                         </form>
                     </div>
                     <div class="left-content-details">
                         <form method="post" action="">
                             <span>Địa chỉ</span>
-                            <input type="text" class="content-details">
+                            <input type="text" class="content-details" value=" Ngọc Lâm , Long Biên , Hà Nội">
                         </form>
                     </div>
                     <div class="left-content-details">
                         <form method="post" action="">
                             <span>Chọn dịch vụ</span>
                             <div class="left-content-box">
-                                <input type="radio" name="dichvu"><label class="left-content-box-label">Sửa Chữa</label>
+                                <input type="radio" name="dichvu"checked><label class="left-content-box-label" >Sửa Chữa</label>
                                 <input type="radio" name="dichvu" > <label class="left-content-box-label">Nâng Cấp</label>
                                 <input type="radio" name="dichvu" > <label class="left-content-box-label">Bảo Dưỡng</label>
                             </div>
@@ -178,7 +178,6 @@
                             <span>Nhóm sản phẩm</span>
                             <div class="left-content-box1">
                                 <select>
-                                    <option hidden selected=""></option>
                                     <option value="suachua">Máy móc gia dụng</option>
                                     <option value="suachua">Sưởi ấm và làm lạnh</option>
                                     <option value="suachua">Thiết bị điện tử</option>
@@ -192,7 +191,6 @@
                             <span>Chọn sản phẩm&nbsp;</span>
                             <div class="left-content-box1">
                                 <select>
-                                    <option hidden selected=""></option>
                                     <option value="sanpham">Tủ Lạnh</option>
                                     <option value="sanpham">Máy Giặt</option>
                                     <option value="sanpham">Lò Vi Sóng</option>
@@ -209,74 +207,63 @@
                             <span>Chi tiết dịch vụ&nbsp;&nbsp;&nbsp;</span>
                             <div class="left-content-box1">
                                 <select>
-                                    <option hidden selected=""></option>
                                     <option value="suachua">Tủ lạnh không làm đá</option>
                                     <option value="suachua">Tủ lạnh không vào điện</option>
                                     <option value="suachua">Tủ lạnh không chạy quạt</option>
                                     <option value="suachua">Tủ lạnh đóng tuyết</option>
                                     <option value="suachua">Tủ lạnh chạy không ngắt</option>
+                                    <option value="suachua">Dịch vụ khác</option>
                                 </select>
                             </div>
                         </form>
                     </div>
-                    <div class="left-content-details-mota">
-                        <form method="post" action="">
-                            <span>Dịch vụ khác</span>
-                            <textarea rows="2" cols="39" placeholder=" Hãy cho chúng tôi biết bạn cần gì"></textarea>
-                        </form>
+                    
+                </div>
+                <div class="left-under">
+                   <!-- Button trigger modal -->
+                   <div class="left-under-button">
+                       <button id="thanhtoan" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                           Thanh Toán
+                       </button>
+                   </div>
+                   <!-- Modal -->
+                   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Hóa Đơn</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Họ và tên </p><i>:</i><span>Đỗ Trung Hiếu</span></br>
+                            <p>Số điện thoại </p><i>:</i><span>01689187670</span></br>
+                            <p>Email </p><i>:</i><span>pend5894@gmail.com</span></br>
+                            <p>Địa chỉ </p><i>:</i><span>Hà Nội</span></br>
+                            <p>Chọn dịch vụ </p><i>:</i><span>Sửa chữa</span></br>
+                            <p>Nhóm sản phẩm </p><i>:</i><span>Máy móc gia dụng</span></br>
+                            <p>Chọn sản phẩm </p><i>:</i><span>Tủ Lạnh</span></br>
+                            <p>Chi tiết dịch vụ </p><i>:</i><span>Tủ Lạnh Không Làm Đá</span></br>
+                            <p>Thành Tiền </p><i>:</i><span>200.000 VNĐ </span>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
+                            <button type="button" class="btn btn-primary">Xác Nhận</button>
+                        </div>
                     </div>
-                    <div class="left-content-details-tien">
-                      <form method="post" action="">
-                        <span>Thành Tiền&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        <textarea rows="1" cols="20"></textarea>
-                    </form>
-                </div>
-            </div>
-            <div class="left-under">
-             <!-- Button trigger modal -->
-             <div class="left-under-button">
-                 <button id="thanhtoan" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                     Thanh Toán
-                 </button>
-             </div>
-             <!-- Modal -->
-             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Hóa Đơn</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Họ và tên </p><i>:</i><span>Đỗ Trung Hiếu</span></br>
-                    <p>Số điện thoại </p><i>:</i><span>01689187670</span></br>
-                    <p>Email </p><i>:</i><span>pend5894@gmail.com</span></br>
-                    <p>Địa chỉ </p><i>:</i><span>Hà Nội</span></br>
-                    <p>Chọn dịch vụ </p><i>:</i><span>Sửa chữa</span></br>
-                    <p>Nhóm sản phẩm </p><i>:</i><span>Máy móc gia dụng</span></br>
-                    <p>Chọn sản phẩm </p><i>:</i><span>Tủ Lạnh</span></br>
-                    <p>Chi tiết dịch vụ </p><i>:</i><span>Tủ Lạnh Không Làm Đá</span></br>
-                    <p>Thành Tiền </p><i>:</i><span>200.000 VNĐ </span>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
-                    <button type="button" class="btn btn-primary">Xác Nhận</button>
                 </div>
             </div>
         </div>
     </div>
-</div>
-</div>
-<div class="main-content-right col-xs-12 col-sm-5">
-    <div class="right-dangnhap">
-        <h4>Bạn đã là thành viên của I-Services ? </h4>
-        <span>Xin vui lòng </span> <a  data-toggle="modal" data-target="#modal">Đăng Nhập</a>
+    <div class="main-content-right col-xs-12 col-sm-5">
+        <div class="right-dangnhap">
+            <h4>Bạn đã là thành viên của I-Services ? </h4>
+            <span>Xin vui lòng </span> <a  data-toggle="modal" data-target="#modal">Đăng Nhập</a>
+        </div>
+        <div class="right-dangky">
+            <h4>Bạn muốn nhận nhiều ưu đãi khi sử dụng dịch vụ của I-Services ?</h4>
+            <span>Xin vui lòng </span> <a data-toggle="modal" data-target="#modal1">Đăng Ký</a>
+        </div>
     </div>
-    <div class="right-dangky">
-        <h4>Bạn muốn nhận nhiều ưu đãi khi sử dụng dịch vụ của I-Services ?</h4>
-        <span>Xin vui lòng </span> <a data-toggle="modal" data-target="#modal1">Đăng Ký</a>
-    </div>
-</div>
 </div>
 </section>
 <footer>
@@ -293,9 +280,9 @@
                         <a href="chitietsuachua.html">Tủ Lạnh</a>
                     </li>
                     <li>
-                     <a href="chitietsuachua.html">Điều Hòa</a>
-                 </li>
-                 <li>
+                       <a href="chitietsuachua.html">Điều Hòa</a>
+                   </li>
+                   <li>
                     <a href="chitietsuachua.html">Máy Giặt</a>
                 </li>
                 <li>
@@ -316,9 +303,9 @@
                     <a href="chitietsuachua.html">HVAC</a>
                 </li>
                 <li>
-                 <a href="chitietsuachua.html">Thay Cửa Sổ</a>
-             </li>
-             <li>
+                   <a href="chitietsuachua.html">Thay Cửa Sổ</a>
+               </li>
+               <li>
                 <a href="chitietsuachua.html">Lợp Nhà</a>
             </li>
             <li>
@@ -339,9 +326,9 @@
                 <a href="chitietsuachua.html">Làm Vườn</a>
             </li>
             <li>
-             <a href="chitietsuachua.html">HVAC</a>
-         </li>
-         <li>
+               <a href="chitietsuachua.html">HVAC</a>
+           </li>
+           <li>
             <a href="chitietsuachua.html">Làm Sạch Nhà</a>
         </li>
         <li>
@@ -405,23 +392,23 @@
             <input type="text">
         </form>
         <form method="post" action="">
-         <span class="tuyendung-text">Địa chỉ</span>
-         <input type="text">
-     </form>   
-     <form method="post" action="">
-         <span class="tuyendung-text">Thời gian làm việc</span>
-         <input type="radio" name="thoigian" value="thoigian" >7h-12h 
-         <input type="radio" name="thoigian" value="thoigian" >12h-17h 
-         <input type="radio" name="thoigian" value="thoigian" >17h-22h
-     </form>
-     <form>
-         <span class="tuyendung-text">Vị trí ứng tuyển</span>
-         <input type="radio" name="vitri" value="vitri">Nhân viên sửa chữa</br>
-         <input type="radio" name="vitri" value="vitri" class="vitri-bonus">Nhân viên nâng cấp</br>
-         <input type="radio" name="vitri" value="vitri" class="vitri-bonus">Nhân viên bảo dưỡng</br>
-     </form>
- </div>
- <div class="modal-footer">
+           <span class="tuyendung-text">Địa chỉ</span>
+           <input type="text">
+       </form>   
+       <form method="post" action="">
+           <span class="tuyendung-text">Thời gian làm việc</span>
+           <input type="radio" name="thoigian" value="thoigian" >7h-12h 
+           <input type="radio" name="thoigian" value="thoigian" >12h-17h 
+           <input type="radio" name="thoigian" value="thoigian" >17h-22h
+       </form>
+       <form>
+           <span class="tuyendung-text">Vị trí ứng tuyển</span>
+           <input type="radio" name="vitri" value="vitri">Nhân viên sửa chữa</br>
+           <input type="radio" name="vitri" value="vitri" class="vitri-bonus">Nhân viên nâng cấp</br>
+           <input type="radio" name="vitri" value="vitri" class="vitri-bonus">Nhân viên bảo dưỡng</br>
+       </form>
+   </div>
+   <div class="modal-footer">
     <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
     <button type="button" class="btn btn-primary">Xác nhận</button>
 </div>
@@ -579,7 +566,7 @@
                                     </select> 
                                 </div> 
                                 <div class="col-xs-4 col-md-4">
-                                 <select class="form-control">              
+                                   <select class="form-control">              
                                     <option value="month">tháng</option>
                                     <option value="month">tháng 1</option>
                                     <option value="month">tháng 2</option>
@@ -596,7 +583,7 @@
                                 </select> 
                             </div> 
                             <div class="col-xs-4 col-md-4">
-                             <select class="form-control">              
+                               <select class="form-control">              
                                 <option value="year">năm</option> 
                                 <option value="year">1990</option>
                                 <option value="year">1991</option>

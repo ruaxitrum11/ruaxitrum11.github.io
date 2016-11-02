@@ -646,7 +646,28 @@ footer {
 	z-index: 10000;
 	display: none;
 }
-
+.tuyendung  p  {
+	text-align: center;
+}
+.tuyendung form {
+	padding-left: 150px;
+	margin-top: 25px;
+}
+.tuyendung {
+	background: url('../img/blog/banner.jpg') center center;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+#tuyendung {
+	margin-top: 100px;
+}
+.tuyendung-text {
+	width: 120px;
+	display: inline-block;
+}
+input.vitri-bonus {
+	margin-left: 124px;
+}
 @media ( min-width: 750px) {
 	.searchform {
 		height: auto;

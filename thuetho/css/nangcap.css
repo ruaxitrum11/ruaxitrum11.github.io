@@ -799,11 +799,20 @@ h4 { display: block; text-align: center; }
 .diennuoc-button {
 	width: 100%;
 	float: left;
+	text-align: center;
+	margin-top: 10px;
 }
 .dien {
 	padding: 10px;
 	background: rgb(0, 110, 255);
 	color: white;
+	margin-right: 20px;
+	cursor: pointer;
+}
+.diennuoc a:link , .diennuoc a:hover , .diennuoc a:visited {
+	background: rgb(0, 110, 255);
+	color: white;
+	text-decoration: none;
 }
 footer {
 	float: left;
@@ -881,6 +890,42 @@ footer {
 	bottom: 0;
 	z-index: 10000;
 	display: none;
+}
+.dichvudiennuoc form , .dichvudiennuoc p {
+	text-align: center;
+	padding-top: 20px;
+}
+.goitho {
+	width: 250px;
+}
+.dichvudiennuoc {
+	background: url('../img/blog/banner.jpg') center center;
+	padding-bottom: 30px;
+}
+#dichvudiennuoc {
+	margin-top: 50px;
+}
+.tuyendung  p  {
+	text-align: center;
+}
+.tuyendung form {
+	padding-left: 150px;
+	margin-top: 25px;
+}
+.tuyendung {
+	background: url('../img/blog/banner.jpg') center center;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+#tuyendung {
+	margin-top: 100px;
+}
+.tuyendung-text {
+	width: 120px;
+	display: inline-block;
+}
+input.vitri-bonus {
+	margin-left: 124px;
 }
 @media ( min-width: 750px) {
 	.searchform {
@@ -984,7 +1029,7 @@ footer {
 		padding-top: 10px;
 	}
 	.diennuoc-button {
-		margin-top: 20px;
+		margin-top: 30px;
 	}
 	.dien {
 		padding: 20px;
@@ -1009,6 +1054,9 @@ footer {
 	}
 	.quangcao-text{
 		padding-top: 15px;
+	}
+	.diennuoc-button {
+		margin-top: 50px;
 	}
 	.under-footer-text ul {
 		padding-top: 15px;

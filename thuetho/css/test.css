@@ -1,8 +1,23 @@
-.chuyentien-details {
-	width: 20%;
+
+.tuyendung  p  {
+	text-align: center;
 }
-.chuyentien-details-choose {
-	background: rgb(0, 110, 255);
-	color: white;
-	margin-left: 15px;
+.tuyendung form {
+	padding-left: 150px;
+	margin-top: 25px;
+}
+.tuyendung {
+	background: url('../img/blog/banner.jpg') center center;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+#tuyendung {
+	margin-top: 100px;
+}
+.tuyendung-text {
+	width: 120px;
+	display: inline-block;
+}
+input.vitri-bonus {
+	margin-left: 124px;
 }

@@ -16,71 +16,52 @@
 </head>
 <body>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#lichsutien">
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#tuyendung">
       Launch demo modal
   </button>
 
   <!-- Modal -->
-  <div class="modal fade" id="lichsutien" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal fade" id="tuyendung" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Lịch Sử Chuyển Tiền</h4>
+            <h4 class="modal-title" id="myModalLabel">Đăng Ký Tuyển Dụng</h4>
         </div>
-        <div class="modal-body chuyentien">
+        <div class="tuyendung">
+            <p>Xin vui lòng điền những thông tin sau</p>
             <form method="post" action="">
-                <span>Từ Ngày</span>
-                <input type="text" class="chuyentien-details" value="10/10/2016">
-                <span>Đến Ngày</span>
-                <input type="text" class="chuyentien-details" value="20/10/2016">
-                <input type="submit" class="chuyentien-details-choose" value="Xem Sao Kê">
+            <span class="tuyendung-text">Họ và tên</span>
+                <input type="text">
             </form>
             <form method="post" action="">
-                <span>Xem toàn bộ lịch sử chuyển tiền</span>
-                <input type="submit" class="chuyentien-details-choose" value="Nhấn Vào Đây">
+                <span class="tuyendung-text">Số điện thoại</span>
+                <input type="text">
             </form>
-            <div class="container">
-            <h2>Thống kê giao dịch</h2>
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Thời Gian</th>
-                    <th>Mã Giao Dịch</th>
-                    <th>Hóa Đơn</th>
-                    <th>Chi Tiết</th>
-                    <th>Số Dư</th>
-                </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-            </tr>
-            <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-</div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-    <button type="button" class="btn btn-primary canhan3">Xác Nhận</button>
+            <form method="post" action="">
+               <span class="tuyendung-text">Địa chỉ</span>
+               <input type="text">
+           </form>   
+           <form method="post" action="">
+               <span class="tuyendung-text">Thời gian làm việc</span>
+               <input type="radio" name="thoigian" value="thoigian" >7h-12h 
+               <input type="radio" name="thoigian" value="thoigian" >12h-17h 
+               <input type="radio" name="thoigian" value="thoigian" >17h-22h
+           </form>
+           <form>
+               <span class="tuyendung-text">Vị trí ứng tuyển</span>
+               <input type="radio" name="vitri" value="vitri">Nhân viên sửa chữa</br>
+               <input type="radio" name="vitri" value="vitri" class="vitri-bonus">Nhân viên nâng cấp</br>
+               <input type="radio" name="vitri" value="vitri" class="vitri-bonus">Nhân viên bảo dưỡng</br>
+           </form>
+       </div>
+       <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary">Xác nhận</button>
+    </div>
 </div>
 </div>
 </div>
-</div>
-
-
 <script src="js/jquery.js"></script>
 <!-- bootstrap core javascript -->
 <script src="js/bootstrap.min.js"></script>

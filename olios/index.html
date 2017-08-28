@@ -1,0 +1,128 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 	<title>Test</title>
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ 	<link rel="stylesheet" href="css/style.css">
+
+ 	<link rel="stylesheet" href="css/modal.css">
+ 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+ </head>
+ <body class="main-content">
+ 	<div class="left-menu">
+ 		<div class="left-logo">
+ 			<img src="./pic/LOGO.png" alt="">
+ 		</div>
+ 		<div class="left-mid">
+ 			<div class="lm-item">
+ 				<img src="./pic/Home.png" alt="">
+ 			</div>
+ 			<div class="lm-item">
+ 				<img src="./pic/Basket.png" alt="">
+ 			</div>
+ 			<div class="lm-item" id="search_item">
+ 				<img src="./pic/Search.png" alt="" >
+ 			</div>
+ 		</div>
+ 		<div class="download-button">
+ 			<img src="./pic/In.png">
+ 		</div>
+ 	</div>
+ 	<div class="content hidden-content">
+ 		<div class="title">
+ 			<h1>OLios</h1>
+ 			<p>Newest furniture shop template</p>
+ 			<button class="button btn-flat btn-primary">View More</button>
+ 		</div>
+ 	</div>
+ 	<p class="font">Newest</p>
+ 	<div class="fab-menu" id="fab_menu">
+ 		<img src="./pic/bars.png">
+ 	</div>
+
+ 	<div class="show-hidden-fabmenu">
+ 		<div class="right-menu" id="right_menu">
+ 			<img src="./pic/CircleX.png">	
+ 		</div>
+ 		<div class="right-menu-mid">
+ 			<div class="rm-item">
+ 				<span>Living Room</span>
+ 				<img src="./pic/livingroom.png">
+ 			</div>
+ 			<div class="rm-item">
+ 				<span>office</span>
+ 				<img src="./pic/office.png">
+ 			</div>
+ 			<div class="rm-item">
+ 				<span>For kid</span>
+ 				<img src="./pic/kid.png">
+ 			</div>
+ 			<div class="rm-item">
+ 				<span>kitchen</span>
+ 				<img src="./pic/kitchen.png">
+ 			</div>
+ 			<div class="rm-item">
+ 				<span>Accesories</span>
+ 				<img src="./pic/Accesori.png">
+ 			</div>
+ 		</div>
+ 	</div>
+
+
+ 	<div class="show-hidden-search">
+ 		<div class="show-search">
+ 			<div class="content-search">
+ 				<div class="input-group">
+ 					<input type="text" class="form-control no-border" placeholder="RED SEAT">
+ 				</div><!-- /input-group -->
+ 				<div class="text-type">
+ 					<p>Type product that you are looking for</p>
+ 				</div>
+ 				<div class="row search-product" >
+ 					<div class="product col-xs-6">
+ 						<img src="pic/redseat.png">
+ 						<span>RED SEAT</span>
+ 					</div> 
+ 					<div class="product col-xs-6">
+ 						<img src="pic/darkseat.png">
+ 						<span>DARK SEAT</span>
+ 					</div> 
+ 				</div>
+ 				<div class="show-result">
+ 					<p>1 Searched result</p>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+ 	<script type="text/javascript">
+ 		$(document).ready(function(){
+ 			$("#search_item").click(function(){
+ 				$('.show-hidden-search').toggleClass('hidden-search');
+ 			});
+ 		});
+ 	</script>
+ 	<script type="text/javascript">
+ 		$(document).ready(function(){
+ 			$("#fab_menu").click(function(){
+ 				$('.show-hidden-fabmenu').toggleClass('hidden-fabmenu');
+ 			});
+ 		});
+ 	</script>
+ 	<script type="text/javascript">
+ 		$(document).ready(function(){
+ 			$("#right_menu").click(function(){
+ 				$('.show-hidden-fabmenu').toggleClass('hidden-fabmenu');
+ 			});
+ 		});
+ 	</script>
+ </body>
+ </html>
+
+
+

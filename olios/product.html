@@ -3,14 +3,16 @@
  <head>
  	<meta charset="UTF-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- 	<title>Categories</title>
+ 	<title>Product</title>
  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
  	<link rel="stylesheet" href="css/style.css">
  	<link rel="stylesheet" href="css/modal.css">
  	<link rel="stylesheet" href="css/categories.css">
+ 	<link rel="stylesheet" href="css/product.css">
+ 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
  	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
  </head>
- <body class="main-categories">
+ <body class="main-product">
  	<div class="left-menu">
  		<div class="left-logo">
  			<img src="./pic/LOGO.png" alt="">
@@ -30,57 +32,58 @@
  			<img src="./pic/In.png">
  		</div>
  	</div>
- 	<div class="content-categories">
- 		<div class="content-categories-header">
- 			<h1>Products</h1>
- 			<div class="cc-header-right">
+ 	<div class="content-product">
+ 		<div class="content-product-header">
+ 			<h2>Products</h2>
+ 			<div class="cp-header-right">
  				<span>Living Room</span>
  				<img src="./pic/livingroom.png">
  			</div>
  		</div>
- 		<div class="categories-item">
- 			<div class="item_1">
- 				<img src="./pic/redseat.png">
- 				<div class="text_item_1">
- 					<h3>Red Seat</h3>
- 					<p>Lorem ipsum dolor sit amet</p>
- 					<h5>$45</h5>
- 				</div>
+ 		<div class="content-product-section">
+ 			<div class="text_1-section">
+ 				<h1 id="h1_content">White Seat&nbsp;</h1>
+ 				<h1>- Office</h1>
  			</div>
- 			<div class="item_2">
- 				<img src="./pic/whiteseat.png">
- 				<div class="text_item_2">
- 					<h3>White Seat</h3>
- 					<p>Lorem ipsum dolor sit amet</p>
- 					<h5>$350</h5>
- 				</div>
+ 			<div class="text_2-section">
+ 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+ 				<p>Ut fermemtum interdum malesuada. Sod ornare prosuere lobortis</p>
  			</div>
- 			<div class="item_3">
- 				<img src="./pic/blueseat.png">
- 				<div class="text_item_3">
- 					<h3>Blue Seat</h3>
- 					<p>Lorem ipsum dolor sit amet</p>
- 					<h5>$35</h5>
- 				</div>
+ 			<div class="text_3-section">
+ 				<p>Cost</p>
+ 				<span>Quanlity</span>
  			</div>
- 			<div class="item_4">
- 				<img src="./pic/bed.png">
- 				<div class="text_item_4">
- 					<h3>Modern Bed</h3>
- 					<p>Lorem ipsum dolor sit amet</p>
- 					<h5>$120</h5>
+ 			<div class="text_4-section">
+ 				<h4>$65</h4>
+ 				<h6>$90</h6>
+ 				<div class="input-group">
+ 					<span class="glyphicon glyphicon-triangle-top glyphicon_up"></span>
+ 					<span class="glyphicon glyphicon-triangle-bottom glyphicon_down"></span>
+ 					<input type="t" name="quant[1]" class="form-control input-number" value="1" >
  				</div>
+ 				<a href="" class="add_to_card">Add to card</a>
  			</div>
- 			<div class="item_3">
- 				<img src="./pic/darkseat.png">
- 				<div class="text_item_3">
- 					<h3>Dark Seat</h3>
+ 		</div>
+ 		<div class="recomended">
+ 			<div class="recomended_text">
+ 				<p>recomended</p>
+ 			</div>
+ 			<div class="recomended_product">
+ 				<div class="recomended_product_item">
+ 					<img src="./pic/darkseat.png">
+ 					<h4>Dark Seat</h4>
  					<p>Lorem ipsum dolor sit amet</p>
- 					<h5>$50</h5>
  				</div>
- 			</div>
- 			<div class="show_more-item">
- 				<p>Show more products</p>
+ 				<div class="recomended_product_item">
+ 					<img src="./pic/darkseat.png">
+ 					<h4>Dark Seat</h4>
+ 					<p>Lorem ipsum dolor sit amet</p>
+ 				</div>
+ 				<div class="recomended_product_item">
+ 					<img src="./pic/darkseat.png">
+ 					<h4>Dark Seat</h4>
+ 					<p>Lorem ipsum dolor sit amet</p>
+ 				</div>
  			</div>
  		</div>
  	</div>
@@ -115,8 +118,6 @@
  		</div>
  	</div>
 
-
-
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -134,8 +135,23 @@
  			});
  		});
  	</script>
+ 	<script type="text/javascript">
+ 		var minVal = 0, newVal = 0;
+ 		$(document).on("click","span.glyphicon_up", function(){
+ 			var thisVal = $('.input-number').val();
+ 			newVal = parseInt(thisVal) +1;
+ 			$('.input-number').val(newVal)
+ 		})
+
+ 		$(document).on("click","span.glyphicon_down", function(){
+ 			var thisVal = $('.input-number').val();
+ 			if (thisVal ==1 || thisVal ==0) {
+ 				$('.input-number').val("0");
+ 			}else{
+ 				newVal = parseInt(thisVal) - 1;
+ 				$('.input-number').val(newVal);
+ 			}
+ 		})
+ 	</script>
  </body>
  </html>
-
-
-

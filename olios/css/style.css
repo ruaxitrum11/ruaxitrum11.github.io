@@ -51,7 +51,7 @@ body.main-content{
 }
 
 .fab-menu{
-	position: fixed;
+	position: absolute;
 	width: 47px;
 	height: 47px;
 	top: 40px;
@@ -74,7 +74,7 @@ body.main-content{
 	transform: translate(-50%, -50%);
 }
 .right-menu {
-	position: fixed;
+	position: absolute;
 	width: 47px;
 	height: 47px;
 	top: 40px;
@@ -83,7 +83,6 @@ body.main-content{
 	border-style: solid;
 	border-width: 2px;
 	border-color: #f8f8f8;
-	border-color: red
 	z-index: 2;
 	background: white;
 	cursor: pointer;
@@ -126,13 +125,13 @@ body.main-content{
 	text-align: center;
 	position: relative;
 	z-index: 10;
+	left: -2%;
 }
 .title h1{
 	font-family: 'Lato';
 	text-transform: uppercase;
 	font-size: 110px;
 	line-height: 1;
-	margin-top: 50px;
 	font-weight: 100;
 	color: #000000;
 }
@@ -162,8 +161,8 @@ p.font {
 	text-transform: uppercase;
 	font-size: 200px;
 	position: fixed;
-	top: 105px;
-	left: 53%;
+	top: 65px;
+	left: 50%;
 	transform: translateX(-50%);
 	color: #e7e7e7;
 	letter-spacing: 0.1;
@@ -185,7 +184,7 @@ p.font {
 }
 .show-hidden-fabmenu {
 	display: none !important;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	right: 0px;
 	width: 187px;

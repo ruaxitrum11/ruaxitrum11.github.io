@@ -6,10 +6,67 @@ body.main-product {
 .left-menu {
 	box-shadow: 12.5px 4px 15px 0px #f9f9f9;
 }
-.content-product {
+.photo-product {
+	float: left;
+	width: 38%;
+	margin-left: 7%;
+}
+.text_1-photo {
 	float: right;
+	padding-top: 55px;
+	padding-right: 39px;
+}
+.text_1-photo p {
+	display: inline;
+	font-family: 'Lato';
+	font-weight: 300;
+	font-size: 15px;
+	padding-right: 8px;
+}
+.text_1-photo span {
+	font-size: 24px;
+	color: #ff547c;
+	position: relative;
+	top: 2px;
+}
+.text_2-photo {
+	float: left;
+	padding: 82px 20px;
+	width: 100%;
+}
+.text_2-photo img {
+	width: 100%;
+}
+.text_3-photo {
+	float: left;
+	width: 100%;
+}
+.text_3-photo_zoom {
+	float: left;
+	margin-left: 33px;
+}
+.text_3-photo_zoom i {
+	border: 1.5px solid #1535ff;
+	border-radius: 50%;
+	padding: 4px;
+	color: #1535ff;
+	cursor: pointer;
+	margin-right: 12px;
+}
+.text_3-photo_icon {
+	float: right;
+	margin-right: 10px;
+}
+.text_3-photo_icon img {
+	height: 24px;
+	color: #d8d8d8;
+	margin-right: 29px;
+	cursor: pointer;
+}
+.content-product {
+	float: left;
 	background-color: #f0f0f0;
-	width: 54.78%;
+	width: 54.9%;
 }
 .content-product-header {
 	float: left;
@@ -149,7 +206,7 @@ body.main-product {
 	margin-left: 30px;
 	padding: 10px 22px;
 	background-color: #0023ff;
-	border-radius: 13.5px;
+	border-radius: 27px;
 }
 a.add_to_card  {
 	text-transform: uppercase;
@@ -165,8 +222,8 @@ a.add_to_card  {
 .recomended_text {
 	width: 3.2%;
 	float: left;
-	padding-top: 128px;
-	padding-left: 6.8%;
+	padding-top: 148px;
+	padding-left: 10%;
 }
 .recomended_text p {
 	font-family: 'Lato';
@@ -179,13 +236,13 @@ a.add_to_card  {
 .recomended_product {
 	float: left;
 	width: 90%;
-	padding: 36px 0;
+	padding: 22px 0;
+	padding-left: 5%;
 }
 .recomended_product_item {
 	float: left;
 	width: 30%;
 	padding-left: 5%;
-	text-align: center;
 }
 .recomended_product_item img {
 	height: 113px;
@@ -195,10 +252,18 @@ a.add_to_card  {
 	font-size: 11.5px;
 	font-weight: 300;
 	text-transform: uppercase;
+	margin: 5px 0;
 }
 .recomended_product_item p {
 	font-family: 'Lato';
 	font-size: 6.9px;
 	font-weight: 300;
 	color: #a8a8a8;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0;
 }

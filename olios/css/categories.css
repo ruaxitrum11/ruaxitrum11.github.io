@@ -7,7 +7,7 @@ body.main-categories{
 	float: left;
 	height: auto;
 	width: 100%;
-	padding: 27px 205px 27px 117px;
+	padding: 27px 205px 0 197px;
 }
 .content-categories-header h1 {
 	font-family: 'Lato';
@@ -17,7 +17,7 @@ body.main-categories{
 	float: left;
 }
 .content-categories-header {
-	float: left;	
+	float: left;
 	width: 100%;
 }
 .cc-header-right {
@@ -72,7 +72,7 @@ body.main-categories{
 	color : #0023ff;
 }
 .item_2 {
-	float: left;	
+	float: left;
 	width: 75%;
 	margin-left: 2%;
 	background-color : #ffffff;
@@ -142,6 +142,7 @@ body.main-categories{
 .item_4 {
 	width: 50%;
 	margin-left: 2%;
+	margin-right: 2%;
 	height: auto;
 	text-align: center;
 	background-color: #ffffff;
@@ -174,5 +175,18 @@ body.main-categories{
 	font-family: 'Lato';
 	font-weight: 700;
 	font-size: 9px;
+	color : #0023ff;
+}
+.show_more-item {
+	float: left;
+	width: 100%;
+	padding-top: 66px;
+}
+.show_more-item p{
+	text-align: center;
+	font-family: 'Lato';
+	font-weight: 900;
+	font-size: 9px;
+	text-transform: uppercase;
 	color : #0023ff;
 }

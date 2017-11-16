@@ -1,6 +1,9 @@
 .container-fluid{
 	padding: 0;
 }
+body{
+	padding: 0!important;
+}
 .navbar-default-header {
 	padding: 10px 0;
 	background-color: #1f1e1e;
@@ -338,7 +341,7 @@ a.icon-close-singin :hover , a.icon-close-singin :focus {
 	z-index: 9;
 }
 .products-favored-content h3{
-	font-size: 4.3rem;
+	font-size: 3.6rem;
 	line-height: 55px;
 }
 .products-favored-content p{
@@ -411,7 +414,7 @@ a.icon-close-singin :hover , a.icon-close-singin :focus {
 	background-image: url(../img/homepage/item1.jpg);
 	background-position :center;
 	background-size : cover;
-	height: 350px;
+	height: 400px;
 	background-color: #1f1e1e;
 	color: #fff;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -420,7 +423,7 @@ a.icon-close-singin :hover , a.icon-close-singin :focus {
 	background-image: url(../img/homepage/item2.jpg);
 	background-position :center;
 	background-size : cover;
-	height: 350px;
+	height: 400px;
 	background-color: #1f1e1e;color: #fff;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
@@ -428,7 +431,7 @@ a.icon-close-singin :hover , a.icon-close-singin :focus {
 	background-image: url(../img/homepage/item3.jpg);
 	background-position :center;
 	background-size : cover;
-	height: 350px;
+	height: 400px;
 	background-color: #1f1e1e;color: #fff;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
@@ -436,7 +439,7 @@ a.icon-close-singin :hover , a.icon-close-singin :focus {
 	background-image: url(../img/homepage/item4.jpg);
 	background-position :center;
 	background-size : cover;
-	height: 350px;
+	height: 400px;
 	background-color: #1f1e1e;
 	color: #fff;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;

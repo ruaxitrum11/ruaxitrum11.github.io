@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GearShop</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="../img/homepage/gear.png">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/homepage.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+	<!-- Header Homepage -->
+
+	<header class="nav-wrap">
+		<nav class="navbar navbar-default navbar-default-header">
+			<div class="container-fluid">
+				<div class="navbar-header col-md-3">
+					<img src="../img/homepage/gear.png">
+					<a class="navbar-brand" href="#">Gear Shop</a>
+				</div>
+				<div class="navbar-menu navbar-menu-items col-md-6">
+					<ul class="nav navbar-nav" >
+						<li class="navbar-item"><a href="#">Tất Cả Sản Phẩm</a></li>
+						<li class="navbar-item"><a href="#">Chuột</a></li>
+						<li class="navbar-item"><a href="#">Bàn Phím</a></li>
+						<li class="navbar-item"><a href="#">Tai Nghe</a></li>
+						<li class="navbar-item navbar-item-dropdown">
+							<a href="#" class="dropbtn">
+								Sản Phẩm Khác
+								<i class="fa fa-chevron-down" aria-hidden="true"></i>
+							</a>
+							<div class="dropdown-content">
+								<a href="#">Mousepads</a>
+								<a href="#">Cặp , Ba lô , Túi Gaming</a>
+								<a href="#">Tay Cầm Chơi Game ( GAME PAD)</a>
+								<a href="#">Phụ kiện khác</a>
+							</div>
+						</li>	
+					</ul>
+				</div>
+				<div class="navbar-menu-right col-md-3">
+					<ul class="nav navbar-nav navbar-nav-right" >
+						<li class="navbar-item">
+							<a href="#" class="btn btn-lg" data-toggle="modal" data-target="#login-modal">
+								<i class="fa fa-user" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li class="navbar-item">
+							<a href="#" data-toggle="modal" data-target="#search-modal">
+								<i class="fa fa-search" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li class="navbar-item ">
+							<a href="#" data-toggle="modal" data-target="#cart-modal" data-direction='right'>
+								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+							</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Modal Header -->
+	<div id="cart-modal" class="modal right fade" role="dialog">
+		<div class="modal-dialog modal-dialog-cart">
+
+			<!-- Modal content-->
+			<div class="modal-content modal-content-cart">
+				<h3 class="form-cart-title">Giỏ Hàng</h3>
+				<hr>
+				<p>Hiện không có sản phẩm nào trong giỏ hàng của bạn</p>
+				<a href="">Tiếp Tục Mua Hàng</a>
+			</div>
+
+		</div>
+	</div>
+	<div id="login-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-dialog-login">
+			<!-- Modal content-->
+			<div class="modal-content modal-content-login">
+				<div class="modal-login-left col-md-6">
+					<div class="modal-form-login">
+						<h5 class="form-login-title">
+							Đăng Nhập
+						</h5>
+						<form>
+							<div class="form-input-wrapper">
+								<input type="text" name="" placeholder="Tài Khoản">
+							</div>
+							<div class="form-input-wrapper">
+								<input type="text" name="" placeholder="Mật Khẩu">
+							</div>
+							<div class="form-button-wrapper">
+								<input type="submit" name="" value="Đăng Nhập">
+								<a href="">Quên Mật Khẩu?</a>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="modal-login-right col-md-6">
+					<a href="#" class="icon-close" data-dismiss="modal">
+						<i class="fa fa-times" aria-hidden="true"></i>
+					</a>
+					<div class="modal-form-login">
+						<h5 class="form-login-title flt-right">
+							Bạn là thành viên mới?
+						</h5>
+						<p>Đăng ký thành viên để có thể :</p>
+						<ul>
+							<li>Mua trực tuyến các sản phẩm của Gear Shop</li>
+							<li>Nhập mã khuyến mại khi mua sản phẩm</li>
+							<li>Được hỗ trợ các câu hỏi hay các vấn đề kỹ thuật </li>
+						</ul>
+						<div class="form-button-wrap-singin">
+							<a href="#"  data-toggle="modal" data-target="#singin-modal"
+							data-dismiss="modal">Đăng Ký
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="singin-modal" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-dialog-login">
+		<!-- Modal content-->
+		<div class="modal-content modal-content-singin">
+			<div class="modal-singin-left col-md-6">
+				<div class="modal-form-singin">
+					<h5 class="form-singin-title-left">
+						Bạn đã có tài khoản?
+					</h5>
+					<p>Đăng nhập tài khoản của bạn tại Gear Shop để có thể mua các sản phẩm trực tuyến , nhận các mã khuyến mãi , quản lý các đơn đặt hàng và tài khoản của bạn </p>
+					<div class="form-button-wrap-login">
+						<a href="#"  data-toggle="modal" data-target="#login-modal"
+						data-dismiss="modal">
+						Đăng Nhập
+					</a>
+				</div>
+			</div>
+
+		</div>
+		<div class="modal-singin-right col-md-6">
+			<a href="#" class="icon-close-singin" data-dismiss="modal">
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</a>
+			<div class="modal-form-singin">
+				<h5 class="form-singin-title-right">
+					Đăng Ký
+				</h5>
+				<form>
+					<div class="form-input-wrapper">
+						<input type="text" name="" placeholder="Tài Khoản">
+					</div>
+					<div class="form-input-wrapper">
+						<input type="text" name="" placeholder="Mật Khẩu">
+					</div>
+					<div class="form-input-wrapper">
+						<input type="text" name="" placeholder="Xác nhận mật khẩu">
+					</div>
+					<div class="form-input-wrapper">
+						<input type="text" name="" placeholder="Email">
+					</div>
+					<div class="form-button-wrapper">
+						<input type="submit" name="" value="Đăng Ký">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div id="search-modal" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-dialog-search" >
+
+		<!-- Modal content-->
+		<div class="modal-content modal-content-search">
+			<div class="modal-search-icon col-md-2">
+				<i class="fa fa-search" aria-hidden="true"></i>	
+			</div>	
+			<div class="modal-search-input col-md-10">
+				<form>
+					<input type="" name="" placeholder="Tìm kiếm">
+				</form>
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- Section Homepage -->
+<section>
+	<div class="background-image-area">
+		<div class="container-fluid">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="../img/homepage/bg1.jpg">
+					</div>
+					<div class="item">
+						<img src="../img/homepage/bg4.png">
+					</div>
+					<div class="item">
+						<img src="../img/homepage/bg2.jpg">
+					</div>
+					<div class="item">
+						<img src="../img/homepage/bg3.jpg">
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="products-favored-area">
+		<div class="container-fluid">
+			<div class="products-favored-content">
+				<div class="products-favored-item2 col-md-6">
+					<div class="products-favored-text-right">
+						<h3>Steelseries Apex M750 TKL</h3>
+						<h5>Bàn phím cơ chất lượng cao</h5>
+						<p>2,000,000
+							<span>VNĐ</span>
+						</p>
+						<a href="#">Chi Tiết Sản Phẩm</a>
+					</div>
+				</div>
+				<div class="products-favored-item3 col-md-6">
+					<div class="products-favored-text-left">
+						<h3>Razer Wolverine Ultimate</h3>
+						<h5>Controller được thiết kế gọn gàng</h5>
+						<p>2,500,000
+							<span>VNĐ</span>
+						</p>
+						<a href="#">Chi Tiết Sản Phẩm</a>
+					</div>
+				</div>
+				<div class="products-favored-item4 col-md-6">
+					<div class="products-favored-text-right">
+						<h3>Razer Mamba Tournament</h3>
+						<h5>Đèn Chroma với 16,8 triệu màu</h5>
+						<p>1,200,000
+							<span>VNĐ</span>
+						</p>
+						<a href="#">Chi Tiết Sản Phẩm</a>
+					</div>
+				</div>
+				<div class="products-favored-item1 col-md-6">
+					<div class="products-favored-text-left">
+						<h3>Arctis 3 Bluetooth</h3>
+						<h5>Wired for Gaming , Bluetooth for Life</h5>
+						<p>1,600,000
+							<span>VNĐ</span>
+						</p>
+						<a href="#">Chi Tiết Sản Phẩm</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="why-choose-area">
+		<div class="container-fluid">
+			<div class="why-choose-img col-md-5">
+				<img src="../img/homepage/item-03.jpg">
+			</div>
+			<div class="why-choose-text col-md-7">
+				<h3>GearShop
+					<span>cung cấp cho bạn :</span></h3>
+					<ol>
+						<li>
+							<i class="fa fa-check-square-o" aria-hidden="true"></i>
+							<p>Các sản phẩm chính hãng</p>
+						</li>
+						<li>
+							<i class="fa fa-check-square-o" aria-hidden="true"></i>
+							<p>Dịch vụ mua hàng trực tuyến nhanh chóng</p>
+						</li>
+						<li>
+							<i class="fa fa-check-square-o" aria-hidden="true"></i>
+							<p>Dịch vụ giao hàng miễn phí</p>
+						</li>
+						<li>
+							<i class="fa fa-check-square-o" aria-hidden="true"></i>
+							<p>Chính sách bảo hành hợp lý</p>
+						</li>
+						<li>
+							<i class="fa fa-check-square-o" aria-hidden="true"></i>
+							<p>Dịch vụ hỗ trợ khách hàng 24/7</p>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<div class="follow-us" id="support-social">
+			<div class="container-fluid">
+				<div class="follow-us-title">
+					<h3>Liên Hệ Với Chúng Tôi</h3>
+				</div>
+				<div class="follow-us-text">
+					Truy cập mạng xã hội của chúng tôi để nhận được thông tin sản phẩm mới , các chương trình khuyến mãi và mọi ý kiến thắc mắc của bạn đều được chúng tôi hỗ trợ
+				</div>
+				<div class="follow-us-icon">
+					<ul>
+						<li>
+							<a href="https://www.facebook.com/" class="icon-facebook">
+								<i class="fa fa-facebook-square" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://twitter.com" class="icon-twitter">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.twitch.tv/" class="icon-twitch">
+								<i class="fa fa-twitch" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.youtube.com" class="icon-youtube">
+								<i class="fa fa-youtube-play" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/" class="icon-instagram">
+								<i class="fa fa-instagram" aria-hidden="true"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="homepage-footer">
+			<div class="container-fluid">
+				<div class="footer-logo col-md-3">
+					<img src="../img/homepage/gear.png">
+				</div>
+				<div class="footer-text col-md-9">
+					<div class="homepage-footer-products">
+						<span>Các Sản Phẩm</span>
+						<ul>
+							<a href="#"><li>Bàn Phím</li></a>
+							<a href="#"><li>Chuột</li></a>
+							<a href="#"><li>Tai Nghe</li></a>
+							<a href="#"><li>Mousepads</li></a>
+							<a href="#"><li>Túi Gamimg</li></a>
+							<a href="#"><li>Game Pad</li></a>
+							<a href="#"><li>Phụ Kiện Khác</li></a>
+							<a href="#"><li>Tất cả sản phẩm</li></a>
+						</ul>
+					</div>
+					<div class="homepage-footer-products homepage-footer-support">
+						<span>Thông Tin</span>
+						<ul>
+							<a href="#s"><li>Về Chúng Tôi</li></a>
+							<a href="#"><li>Blog</li></a>
+							<a href="#"><li>Khuyến Mãi</li></a>
+							<a href="#"><li>Đại Lý</li></a>
+							<a href="#"><li>Điều Kiện và Chính Sách</li></a>
+						</ul>
+					</div>
+					<hr>
+					<div class="homepage-footer-products footer-address">
+						<div class="footer-address-item">
+							<p>Văn Phòng Chính</p><span>:&nbsp;&nbsp;&nbsp;&nbsp;Số 22-04 , Tòa nhà Icon4 , 243A Đê la Thành - Quận Đống Đa - TP.Hà Nội</span>
+						</div>
+						<div class="footer-address-item">
+							<p>Tổng Đài Hỗ Trợ</p><span>:&nbsp;&nbsp;&nbsp;&nbsp;1900.1009</span>
+						</div>
+						<div class="footer-address-item">
+							<p>Liên Hệ Quảng Cáo</p><span>:&nbsp;&nbsp;&nbsp;&nbsp;01689.187.670</span>
+						</div>
+						<div class="footer-address-item">
+							<p>Email</p><span>:&nbsp;&nbsp;&nbsp;&nbsp;pendi5894@gmail.com
+							</span>
+						</div>
+						<hr>
+						<div class="copyright">
+							<p>Copyright <i class="fa fa-copyright" aria-hidden="true"></i>
+							2017 GearShop</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+
+
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/homepage.js"></script>
+</body>
+</html>

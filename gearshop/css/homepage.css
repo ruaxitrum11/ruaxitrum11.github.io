@@ -340,117 +340,128 @@ a.icon-close-singin :hover , a.icon-close-singin :focus {
 	border-color: #FE0000;
 	z-index: 9;
 }
-.products-favored-content h3{
+.products-favored-area{
+	background-color: #000;
+}
+.products-favored-content{
+	float: left;
+	width: 100%;
+	padding: 30px 0;
+}
+.products-favored-content-center {
+	background-image: url(../img/homepage/bg.png);
+	height: 800px;
+	background-position: center;
+	background-size: cover;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color: #ddd;
+}
+.products-favored-title{
+	text-align: center;
+	font-weight: 700;
+	letter-spacing: 2px;
 	font-size: 3.6rem;
-	line-height: 55px;
+	text-transform: capitalize;
+	padding-bottom: 100px;
 }
-.products-favored-content p{
-	font-size: 1.6rem;
-	padding: 10px 0 20px 0;
+.products-favored-content-center a{
+	float: left;
+	width: 100%;
 }
-.products-favored-text-right{
-	width: 50%;
-	float: right;
+.products-favored-name {
+	float: left;
+	width: 100%;
+	text-align: center;
+	font-weight: 900;
+	letter-spacing: 3px;
+	font-size: 4rem;
+	color: #ddd;
+	text-transform: uppercase;
 }
-.products-favored-text-right p{
-	float: right;
-	font-size: 2.6rem;
-	display: inline-block;
-}
-.products-favored-text-right h5{
-	float: right;
+.products-favored-introduce{
+	float: left;
+	width: 100%;
+	text-align: center;
 	font-size: 2rem;
 	font-style: italic;
+	padding: 20px 0;
 }
-.products-favored-text-right span{
-	font-size: 1.5rem;
-}
-.products-favored-text-right a{
-	text-decoration: none;
-	padding: 15px 30px;
-	border: solid 1px #fff;
-	color: #fff;
-	float: right;
-}
-.products-favored-text-right a:hover{
-	text-decoration: none;
-	padding: 15px 30px;
-	border: solid 1px #fff;
-	color: #8f9090;
-	background-color: #fff;
-}
-.products-favored-text-left{
-	width: 50%;
-	float: left;
-}
-.products-favored-text-left p{
-	float: left;
-	font-size: 2.6rem;
-	display: inline-block;
-}
-.products-favored-text-left h5{
-	float: left;
-	font-size: 2rem;
-	font-style: italic;
-}
-.products-favored-text-left span{
-	font-size: 1.5rem;
-}
-.products-favored-text-left a{
-	text-decoration: none;
-	padding: 15px 30px;
-	border: solid 1px #fff;
-	color: #fff;
-	float: left;
-}
-.products-favored-text-left a:hover{
-	text-decoration: none;
-	padding: 15px 30px;
-	border: solid 1px #fff;
-	color: #8f9090;
-	background-color: #fff;
-}
-.products-favored-item1{
-	background-image: url(../img/homepage/item1.jpg);
-	background-position :center;
-	background-size : cover;
-	height: 400px;
-	background-color: #1f1e1e;
-	color: #fff;
+.products-favored-price{
+	font-size: 3.2rem;
+	padding: 10px 40px;
+	border: 2px solid #FE0000;
 	position: relative;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	float: left;
+	left: 27%;
+	border-radius: 10px;
+	background-color: #420808;
 }
-.products-favored-item2{
-	background-image: url(../img/homepage/item2.jpg);
-	background-position :center;
-	background-size : cover;
-	height: 400px;
-	background-color: #1f1e1e;color: #fff;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+.products-favored-price p{
+	margin: 0;
 }
-.products-favored-item3{
-	background-image: url(../img/homepage/item3.jpg);
-	background-position :center;
-	background-size : cover;
-	height: 400px;
-	background-color: #1f1e1e;color: #fff;
+.products-favored-content-center img {
+	width: 100%;
+}
+.products-favored-content-left ul,
+.products-favored-content-right ul {
+	float: left;
+	width: 100%;
+	text-align: center;
+	padding-left: 0;
+	padding-right: 40px;
+	padding-top: 90px;
+}
+.products-favored-content-left ul>a,
+.products-favored-content-right ul>a{
+	float: left;
+	width: 100%;
+	text-decoration: none;
+}
+.products-favored-content-left ul>a>li>p:hover,
+.products-favored-content-right ul>a>li>p:hover{
+	color: #FE0000;
+}
+.products-favored-content-left ul>a>li,
+.products-favored-content-right ul>a>li{
+	list-style-type: none;
+	margin-bottom: 80px;
+}
+.products-favored-content-left ul>a>li>p,
+.products-favored-content-right ul>a>li>p{
+	color: #ddd;
+	border-top: 2px solid #FE0000;
+	border-bottom: 2px solid #FE0000;
+	border-radius: 10px;
+	padding: 5px 0;
+	margin-top: 10px;
+	font-size: 2rem;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
-.products-favored-item4{
-	background-image: url(../img/homepage/item4.jpg);
-	background-position :center;
-	background-size : cover;
-	height: 400px;
-	background-color: #1f1e1e;
+.subcirbe-area{
+	background-color: #000;
+	text-align: center;
+	padding: 20px 20%;
+	border-bottom: solid 2px #FE0000;
 	color: #fff;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.subcirbe-area h3{
+	font-size: 3.6rem;
+	font-weight: 700;
+}
+.subcirbe-area p{
+	font-size: 1.6rem;
+}
+.subcirbe-area p>span{
+	font-size: 2rem;
+	color: #FE0000;
 }
 .why-choose-area{
 	width: 100%;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	color: #fff;
-	background-image: url(../img/homepage/background-whychoose.jpg);
+	background-image: url(../img/homepage/original.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -460,7 +471,7 @@ a.icon-close-singin :hover , a.icon-close-singin :focus {
 	border-top: 2px solid #FE0000;
 }
 .why-choose-text {
-	padding: 0 25% 0 37%;
+	padding: 30px 0 0 15%;
 }
 .why-choose-text h3{
 	font-size: 5rem;
@@ -480,43 +491,44 @@ a.icon-close-singin :hover , a.icon-close-singin :focus {
 }
 .why-choose-text ol>li>i{
 	list-style-type: none;
-	font-size: 3.5rem;
+	font-size: 3rem;
 	color: #FE0000;
-	margin-right: 20px
 }
 .why-choose-text ol>li>p{
 	display: inline;
 	font-size: 2rem;
+	padding-left: 10px;
 }
 .follow-us-icon ul{
-	padding: 40px 0 0 0;
+	padding: 20px 0;
 }
 .follow-us-icon ul>li{
 	display: inline;
 	margin-right: 30px;
-	font-size: 4rem;	
+	margin-left: 30px;
+	font-size: 5rem;	
 }
 .follow-us-icon ul>li>a{
 	color: #fff;
 	text-decoration: none;
 }
-.follow-us-icon ul>li>a.icon-twitter :hover{
-	color: #00aced;
-	text-decoration: none;
-}
-.follow-us-icon ul>li>a.icon-facebook :hover{
+.follow-us-icon ul>li>a.icon-facebook>i:hover{
 	color: #4267b2;
 	text-decoration: none;
 }
-.follow-us-icon ul>li>a.icon-youtube :hover{
+.follow-us-icon ul>li>a.icon-twitter>i:hover{
+	color: #00aced;
+	text-decoration: none;
+}
+.follow-us-icon ul>li>a.icon-youtube>i:hover{
 	color: #FF0000;
 	text-decoration: none;
 }
-.follow-us-icon ul>li>a.icon-instagram :hover{
+.follow-us-icon ul>li>a.icon-instagram>i:hover{
 	color: #c1327f;
 	text-decoration: none;
 }
-.follow-us-icon ul>li>a.icon-twitch :hover{
+.follow-us-icon ul>li>a.icon-twitch>i:hover{
 	color: #4B367C;
 	text-decoration: none;
 }

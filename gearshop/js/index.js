@@ -1,0 +1,47 @@
+new WOW().init();
+
+$(".header-xs-details").hide();
+$(".header-xs-search").hide();
+$(".header-xs-cart").hide();
+$(".header-xs-user").hide();
+$(".header-xs-form-login").hide();
+$(".header-xs-form-singin").hide();
+
+$(".bar-item").click(function(){
+	$(".header-xs-details").toggle(".header-xs-details-transition");
+	$(".header-xs-search").hide(500);
+	$(".header-xs-cart").hide(500);
+	$(".header-xs-user").hide(500);
+	$(".header-xs-form-singin").hide(500);
+	$(".header-xs-form-login").hide(500);
+});
+$(".fa-search").click(function(){
+	$(".header-xs-search").toggle(".header-xs-search-transition");
+	$(".header-xs-details").hide(500);
+	$(".header-xs-cart").hide(500);
+	$(".header-xs-user").hide(500);
+	$(".header-xs-form-singin").hide(500);
+	$(".header-xs-form-login").hide(500);
+});
+$(".fa-shopping-cart").click(function(){
+	$(".header-xs-cart").toggle(".header-xs-cart-transition");
+	$(".header-xs-details").hide(500);
+	$(".header-xs-search").hide(500);
+	$(".header-xs-user").hide(500);
+	$(".header-xs-form-singin").hide(500);
+	$(".header-xs-form-login").hide(500);
+})
+$(".fa-user").click(function(){
+	$(".header-xs-user").toggle(".header-xs-user-transition");
+	$(".header-xs-details").hide(500);
+	$(".header-xs-search").hide(500);
+	$(".header-xs-cart").hide(500);
+});
+$(".header-xs-login").click(function(){
+	$(".header-xs-form-login").toggle(".header-xs-form-login-transition");	
+	$(".header-xs-form-singin").hide(500);
+});
+$(".header-xs-singin").click(function(){
+	$(".header-xs-form-singin").toggle(".header-xs-form-singin-transition");	
+	$(".header-xs-form-login").hide(500);
+});

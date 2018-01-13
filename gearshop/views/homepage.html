@@ -1,50 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-	<title>GearShop</title>
-
+	<title>ghost gaming gear</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="shortcut icon" href="../img/homepage/gear.png">
+	<link rel="shortcut icon" href="../img/homepage/logo.png">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/homepage.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href='../css/font-awesome.min.css'>
+	<link rel="stylesheet" href="../css/animate.css">
+
 </head>
 <body>
 
-	<!-- Header Homepage -->
+	<!-- header homepage -->
 
-	<header class="nav-wrap">
+	<!-- header xs-sm -->
+
+	<header class="header-xs visible-xs visible-sm">
+		<div class="header-xs-title">
+			<a href="homepage.html"><img src="../img/homepage/logo.png"></a>
+		</div>
+		<div class="header-xs-content">
+			<div class="header-xs-content-item col-xs-3">
+				<i class="fa fa-bars bar-item" aria-hidden="true">
+				</i>
+			</div>
+			<div class="header-xs-content-item col-xs-3">
+				<a href="#">
+					<i class="fa fa-user" aria-hidden="true"></i>
+				</a>
+			</div>
+			<div class="header-xs-content-item col-xs-3">
+				<i class="fa fa-search" aria-hidden="true"></i>
+			</div>
+			<div class="header-xs-content-item col-xs-3">
+				<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			</div>
+		</div>
+		<div class="header-xs-details">
+			<a href="">sản phẩm mới</a>
+			<a href="">bàn phím</a>
+			<a href="">chuột</a>
+			<a href="">tai nghe</a>
+			<a href="">mousepads</a>
+			<a href="">cặp , ba lô , túi gaming</a>
+			<a href="">game pad</a>
+			<a href="">phụ kiện khác</a>
+		</div>
+		<div class="header-xs-search">
+			<input type="text" name="" placeholder="tìm kiếm">
+		</div>
+		<div class="header-xs-cart">
+			<h3>giỏ hàng</h3>
+			<p>hiện không có sản phẩm nào trong giỏ hàng của bạn</p>
+			<a href="">tiếp tục mua hàng</a>
+		</div>
+		<div class="header-xs-user">
+			<div class="header-xs-login col-xs-6">
+				<p>đăng nhập</p>
+			</div>
+			<div class="header-xs-singin col-xs-6">
+				<p>đăng ký</p>
+			</div>
+			<div class="modal-form-login header-xs-form-login">
+				<h5 class="form-login-title">
+					đăng nhập
+				</h5>
+				<form>
+					<div class="form-input-wrapper">
+						<input type="text" name="" placeholder="tài khoản">
+					</div>
+					<div class="form-input-wrapper">
+						<input type="text" name="" placeholder="mật khẩu">
+					</div>
+					<div class="form-button-wrapper">
+						<input type="submit" name="" value="đăng nhập">
+						<a href="">quên mật khẩu?</a>
+					</div>
+				</form>
+			</div>
+			<div class="modal-form-singin header-xs-form-singin">
+				<h5 class="form-singin-title-right">
+					đăng ký
+				</h5>
+				<form>
+					<div class="form-input-wrapper">
+						<input type="text" name="" placeholder="tài khoản">
+					</div>
+					<div class="form-input-wrapper">
+						<input type="text" name="" placeholder="mật khẩu">
+					</div>
+					<div class="form-input-wrapper">
+						<input type="text" name="" placeholder="xác nhận mật khẩu">
+					</div>
+					<div class="form-input-wrapper">
+						<input type="text" name="" placeholder="email">
+					</div>
+					<div class="form-button-wrapper">
+						<input type="submit" name="" value="đăng ký">
+					</div>
+				</form>
+			</div>
+		</div>
+	</header>
+
+
+
+	<!-- header md -->
+	<header class="nav-wrap hidden-xs hidden-sm">
 		<nav class="navbar navbar-default navbar-default-header">
 			<div class="container-fluid">
-				<div class="navbar-header col-md-3">
-					<img src="../img/homepage/gear.png">
-					<a class="navbar-brand" href="#">GearShop</a>
+				<div class="navbar-header col-md-2">
+					<a href="homepage.html"><img src="../img/homepage/logo.png"></a>
 				</div>
-				<div class="navbar-menu navbar-menu-items col-md-6">
+				<div class="navbar-menu navbar-menu-items col-md-8">
 					<ul class="nav navbar-nav" >
-						<li class="navbar-item"><a href="#">Tất Cả Sản Phẩm</a></li>
-						<li class="navbar-item"><a href="#">Chuột</a></li>
-						<li class="navbar-item"><a href="#">Bàn Phím</a></li>
-						<li class="navbar-item"><a href="#">Tai Nghe</a></li>
+						<li class="navbar-item"><a href="#">sản phẩm mới</a></li>
+						<li class="navbar-item"><a href="#">bàn phím</a></li>
+						<li class="navbar-item"><a href="#">chuột</a></li>
+						<li class="navbar-item"><a href="#">tai nghe</a></li>
+						
 						<li class="navbar-item navbar-item-dropdown">
 							<a href="#" class="dropbtn">
-								Sản Phẩm Khác
+								sản phẩm khác
 								<i class="fa fa-chevron-down" aria-hidden="true"></i>
 							</a>
 							<div class="dropdown-content">
-								<a href="#">Mousepads</a>
-								<a href="#">Cặp , Ba lô , Túi Gaming</a>
-								<a href="#">Tay Cầm Chơi Game ( GAME PAD)</a>
-								<a href="#">Phụ kiện khác</a>
+								<a href="#">mousepads</a>
+								<a href="#">cặp , ba lô , túi gaming</a>
+								<a href="#">tay cầm chơi game ( game pad)</a>
+								<a href="#">phụ kiện khác</a>
 							</div>
 						</li>	
 					</ul>
 				</div>
-				<div class="navbar-menu-right col-md-3">
+				<div class="navbar-menu-right col-md-2">
 					<ul class="nav navbar-nav navbar-nav-right" >
 						<li class="navbar-item">
 							<a href="#" class="btn btn-lg" data-toggle="modal" data-target="#login-modal">
@@ -62,45 +158,31 @@
 							</a>
 						</li>
 					</ul>
-
 				</div>
 			</div>
 		</nav>
 	</header>
 
-	<!-- Modal Header -->
-	<div id="cart-modal" class="modal right fade" role="dialog">
-		<div class="modal-dialog modal-dialog-cart">
-
-			<!-- Modal content-->
-			<div class="modal-content modal-content-cart">
-				<h3 class="form-cart-title">Giỏ Hàng</h3>
-				<hr>
-				<p>Hiện không có sản phẩm nào trong giỏ hàng của bạn</p>
-				<a href="">Tiếp Tục Mua Hàng</a>
-			</div>
-
-		</div>
-	</div>
+	<!-- modal header -->
 	<div id="login-modal" class="modal fade" role="dialog">
 		<div class="modal-dialog modal-dialog-login">
-			<!-- Modal content-->
+			<!-- modal content-->
 			<div class="modal-content modal-content-login">
 				<div class="modal-login-left col-md-6">
 					<div class="modal-form-login">
 						<h5 class="form-login-title">
-							Đăng Nhập
+							đăng nhập
 						</h5>
 						<form>
 							<div class="form-input-wrapper">
-								<input type="text" name="" placeholder="Tài Khoản">
+								<input type="text" name="" placeholder="tài khoản">
 							</div>
 							<div class="form-input-wrapper">
-								<input type="text" name="" placeholder="Mật Khẩu">
+								<input type="text" name="" placeholder="mật khẩu">
 							</div>
 							<div class="form-button-wrapper">
-								<input type="submit" name="" value="Đăng Nhập">
-								<a href="">Quên Mật Khẩu?</a>
+								<input type="submit" name="" value="đăng nhập">
+								<a href="">quên mật khẩu?</a>
 							</div>
 						</form>
 					</div>
@@ -111,17 +193,17 @@
 					</a>
 					<div class="modal-form-login">
 						<h5 class="form-login-title flt-right">
-							Bạn là thành viên mới?
+							bạn là thành viên mới?
 						</h5>
-						<p>Đăng ký thành viên để có thể :</p>
+						<p>đăng ký thành viên để có thể :</p>
 						<ul>
-							<li>Mua trực tuyến các sản phẩm của Gear Shop</li>
-							<li>Nhập mã khuyến mại khi mua sản phẩm</li>
-							<li>Được hỗ trợ các câu hỏi hay các vấn đề kỹ thuật </li>
+							<li>mua trực tuyến các sản phẩm của gear shop</li>
+							<li>nhập mã khuyến mại khi mua sản phẩm</li>
+							<li>được hỗ trợ các câu hỏi hay các vấn đề kỹ thuật </li>
 						</ul>
 						<div class="form-button-wrap-singin">
 							<a href="#"  data-toggle="modal" data-target="#singin-modal"
-							data-dismiss="modal">Đăng Ký
+							data-dismiss="modal">đăng ký
 						</a>
 					</div>
 				</div>
@@ -131,18 +213,18 @@
 </div>
 <div id="singin-modal" class="modal fade" role="dialog">
 	<div class="modal-dialog modal-dialog-login">
-		<!-- Modal content-->
+		<!-- modal content-->
 		<div class="modal-content modal-content-singin">
 			<div class="modal-singin-left col-md-6">
 				<div class="modal-form-singin">
 					<h5 class="form-singin-title-left">
-						Bạn đã có tài khoản?
+						bạn đã có tài khoản?
 					</h5>
-					<p>Đăng nhập tài khoản của bạn tại Gear Shop để có thể mua các sản phẩm trực tuyến , nhận các mã khuyến mãi , quản lý các đơn đặt hàng và tài khoản của bạn </p>
+					<p>đăng nhập tài khoản của bạn tại gear shop để có thể mua các sản phẩm trực tuyến , nhận các mã khuyến mãi , quản lý các đơn đặt hàng và tài khoản của bạn </p>
 					<div class="form-button-wrap-login">
 						<a href="#"  data-toggle="modal" data-target="#login-modal"
 						data-dismiss="modal">
-						Đăng Nhập
+						đăng nhập
 					</a>
 				</div>
 			</div>
@@ -154,23 +236,23 @@
 			</a>
 			<div class="modal-form-singin">
 				<h5 class="form-singin-title-right">
-					Đăng Ký
+					đăng ký
 				</h5>
 				<form>
 					<div class="form-input-wrapper">
-						<input type="text" name="" placeholder="Tài Khoản">
+						<input type="text" name="" placeholder="tài khoản">
 					</div>
 					<div class="form-input-wrapper">
-						<input type="text" name="" placeholder="Mật Khẩu">
+						<input type="text" name="" placeholder="mật khẩu">
 					</div>
 					<div class="form-input-wrapper">
-						<input type="text" name="" placeholder="Xác nhận mật khẩu">
+						<input type="text" name="" placeholder="xác nhận mật khẩu">
 					</div>
 					<div class="form-input-wrapper">
-						<input type="text" name="" placeholder="Email">
+						<input type="text" name="" placeholder="email">
 					</div>
 					<div class="form-button-wrapper">
-						<input type="submit" name="" value="Đăng Ký">
+						<input type="submit" name="" value="đăng ký">
 					</div>
 				</form>
 			</div>
@@ -178,247 +260,267 @@
 	</div>
 </div>
 </div>
+<div id="cart-modal" class="modal right fade" role="dialog">
+	<div class="modal-dialog modal-dialog-cart">
+
+		<!-- modal content-->
+		<div class="modal-content modal-content-cart">
+			<h3 class="form-cart-title">giỏ hàng</h3>
+			<hr>
+			<p>hiện không có sản phẩm nào trong giỏ hàng của bạn</p>
+			<a href="">tiếp tục mua hàng</a>
+		</div>
+
+	</div>
+</div>
 <div id="search-modal" class="modal fade" role="dialog">
 	<div class="modal-dialog modal-dialog-search" >
 
-		<!-- Modal content-->
+		<!-- modal content-->
 		<div class="modal-content modal-content-search">
 			<div class="modal-search-icon col-md-2">
 				<i class="fa fa-search" aria-hidden="true"></i>	
 			</div>	
 			<div class="modal-search-input col-md-10">
 				<form>
-					<input type="" name="" placeholder="Tìm kiếm">
+					<input type="" name="" placeholder="tìm kiếm">
 				</form>
 			</div>	
 		</div>
 	</div>
 </div>
 
-<!-- Section Homepage -->
+<!-- section homepage -->
 <section>
-	<div class="background-image-area">
-		<div class="container-fluid">
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-					<li data-target="#myCarousel" data-slide-to="3"></li>
-				</ol>
+	<div class="homepage-banner-area">
+		<div id="mycarousel" class="carousel slide" data-ride="carousel">
+			<!-- indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#mycarousel" data-slide-to="1"></li>
+				<li data-target="#mycarousel" data-slide-to="2"></li>
+			</ol>
 
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner">
-					<div class="item active">
-						<img src="../img/homepage/bg1.jpg">
+			<!-- wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+
+				<div class="item active">
+					<img src="../img/homepage/banner1.jpg">
+					<div class="carousel-caption ">
+						<h2 class="wow fadeInDown" data-wow-duration="2s">rival 600</h2>
+						<a class="wow fadeInUp" data-wow-duration="2s">mua hàng</a>
 					</div>
-					<div class="item">
-						<img src="../img/homepage/bg3.jpg">
+				</div>
+
+				<div class="item">
+					<img src="../img/homepage/banner3.jpg">
+					<div class="carousel-caption">
+						<h2 class="wow zoomIn" data-wow-duration="2s">razer nommo chrome</h2>
+						<a class="wow zoomIn" data-wow-duration="2s">mua hàng</a>
 					</div>
-					<div class="item">
-						<img src="../img/homepage/bg4.jpg">
-					</div>
-					<div class="item">
-						<img src="../img/homepage/bg2.jpg">
+				</div>
+
+				<div class="item">
+					<img src="../img/homepage/banner2.jpg">
+					<div class="carousel-caption">
+						<h2 class="wow fadeInLeft" data-wow-duration="2s">apex m750 tkl</h2>
+						<a class="wow fadeInRight" data-wow-duration="2s">mua hàng</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="products-favored-area">
-		<div class="container-fluid">
-			<div class="products-favored-content">
-				<div class="products-favored-content-left col-md-3">
-					<ul>
-						<a href="">
-							<li>
-								<img src="../img/homepage/thumb1.png">
-								<p>Strike Pro Spectra</p>
-							</li>
-						</a>
-						<a href="">
-							<li>
-								<img src="../img/homepage/thumb1.png">
-								<p>Strike Pro Spectra</p>
-							</li>
-						</a>
-						<a href="">
-							<li>
-								<img src="../img/homepage/thumb1.png">
-								<p>Strike Pro Spectra</p>
-							</li>
-						</a>
-						<a href="">
-							<li>
-								<img src="../img/homepage/thumb1.png">
-								<p>Strike Pro Spectra</p>
-							</li>
-						</a>
-					</ul>
-				</div>
-				<div class="products-favored-content-center col-md-6">
-					<p class="products-favored-title">sản phẩm nổi bật</p>
-					<a href="">
-						<img src="../img/homepage/strikepro_spectra.png">
-					</a>
-					<div class="products-favored-name">
-						<p>
-							Strike Pro Spectra
-						</p>
+	<div class="new-product-area">
+		<div class="container">
+			<div class="introduce">
+				<div class="row">
+					<div class="introduce-content col-xs-4">
+						<i class="fa fa-angellist" aria-hidden="true"></i>
+						<p>Sản phẩm chất lượng cao</p>
 					</div>
-					<div class="products-favored-introduce">
-						<p>Các phím Mutiplay hỗ trợ khi cần</p>
-						<p>LED 16.8 triệu màu</p>
+					<div class="introduce-content introduce-content-between col-xs-4">
+						<i class="fa fa-truck" aria-hidden="true"></i>
+						<p>Giao hàng toàn quốc</p>
 					</div>
-					<div class="products-favored-price">
-						<p>2,000,000 VNĐ</p>					</div>
-					</div>
-					<div class="products-favored-content-right col-md-3">
-						<ul>
-							<a href="">
-								<li>
-									<img src="../img/homepage/thumb1.png">
-									<p>Strike Pro Spectra</p>
-								</li>
-							</a>
-							<a href="">
-								<li>
-									<img src="../img/homepage/thumb1.png">
-									<p>Strike Pro Spectra</p>
-								</li>
-							</a>
-							<a href="">
-								<li>
-									<img src="../img/homepage/thumb1.png">
-									<p>Strike Pro Spectra</p>
-								</li>
-							</a>
-							<a href="">
-								<li>
-									<img src="../img/homepage/thumb1.png">
-									<p>Strike Pro Spectra</p>
-								</li>
-							</a>
-						</ul>
+					<div class="introduce-content col-xs-4">
+						<i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+						<p>Dịch vụ hỗ trợ 24/7</p>
 					</div>
 				</div>
 			</div>
-		</div>
-
-		<div class="why-choose-area">
-			<div class="container-fluid">
-				<div class="why-choose-text">
-					<h3>GearShop
-						<span>cung cấp cho bạn :</span></h3>
-						<ol>
-							<li>
-								<i class="fa fa-check-square-o" aria-hidden="true"></i>
-								<p>Các sản phẩm Gaming Gear chính hãng</p>
-							</li>
-							<li>
-								<i class="fa fa-check-square-o" aria-hidden="true"></i>
-								<p>Dịch vụ mua hàng trực tuyến nhanh chóng</p>
-							</li>
-							<li>
-								<i class="fa fa-check-square-o" aria-hidden="true"></i>
-								<p>Các sản phẩm chất lượng , giá cả hợp lý</p>
-							</li>
-							<li>
-								<i class="fa fa-check-square-o" aria-hidden="true"></i>
-								<p>Nhiều khuyến mãi vô cùng hấp dẫn</p>
-							</li>
-							<li>
-								<i class="fa fa-check-square-o" aria-hidden="true"></i>
-								<p>Dịch vụ giao hàng miễn phí</p>
-							</li>
-							<li>
-								<i class="fa fa-check-square-o" aria-hidden="true"></i>
-								<p>Chính sách bảo hành hợp lý</p>
-							</li>
-							<li>
-								<i class="fa fa-check-square-o" aria-hidden="true"></i>
-								<p>Dịch vụ hỗ trợ khách hàng 24/7</p>
-							</li>
-						</ol>
-					</div>
-				</div>
+			<div class="box-shadow">
+				<img src="../img/homepage/shadow1.png">
 			</div>
-			<div class="subcirbe-area">
-				<div class="container-fluid">
-					<div class="subcirbe-title">
-						<h3>Mạng Xã Hội Của Chúng Tôi</h3>
-						<p>Khách hàng vui lòng Like và Subcribe các trang xã hội của chúng tôi để cập nhật các thông tin mới và 
-							<span>@GearShop</span> sẽ giải đáp các thắc mắc của các bạn</p>
+			<div class="new-product">
+				<div class="new-product-menu">
+					<div class="row">
+						<div class="new-product-left col-xs-4 col-md-5 ">
+							<p>sản phẩm nổi bật</p>
 						</div>
-						<div class="follow-us-icon">
+						<div class="new-product-right col-xs-8 col-md-7">
 							<ul>
-								<li>
-									<a href="https://www.facebook.com/" class="icon-facebook">
-										<i class="fa fa-facebook-square" aria-hidden="true"></i>
-									</a>
-								</li>
-								<li>
-									<a href="https://twitter.com" class="icon-twitter">
-										<i class="fa fa-twitter" aria-hidden="true"></i>
-									</a>
-								</li>
-								<li>
-									<a href="https://www.twitch.tv/" class="icon-twitch">
-										<i class="fa fa-twitch" aria-hidden="true"></i>
-									</a>
-								</li>
-								<li>
-									<a href="https://www.youtube.com" class="icon-youtube">
-										<i class="fa fa-youtube-play" aria-hidden="true"></i>
-									</a>
-								</li>
-								<li>
-									<a href="https://www.instagram.com/" class="icon-instagram">
-										<i class="fa fa-instagram" aria-hidden="true"></i>
-									</a>
-								</li>
+								<li class="product-active">Bàn Phím</li>
+								<li>Tai Nghe</li>
+								<li>Chuột</li>
+								<li>Sản Phẩm Khác</li>
 							</ul>
 						</div>
 					</div>
 				</div>
-			</section>
-			<footer>
-				<div class="homepage-footer">
-					<div class="container-fluid">
-						<div class="footer-text">
-							<div class="homepage-footer-products homepage-footer-support col-md-9" >
-								<ul>
-									<a href="#">
-										<li>
-											<img src="../img/homepage/vietnam-icon.png">
-											<i class="fa fa-caret-up" aria-hidden="true"></i>
-										</li>
-
-									</a>
-									<a href="#s"><li>Về Chúng Tôi</li></a>
-									<a href="#"><li>Đại Lý</li></a>
-									<a href="#"><li>Blog</li></a>
-									<a href="#"><li>Khuyến Mãi</li></a>
-									<a href="#"><li>Điều Kiện và Chính Sách</li></a>
-									<a href="#"><li>Liên Hệ</li></a>
-								</ul>
+				<div class="new-product-content">
+					<div class="row">
+						<div class="new-item col-xs-4">
+							<div class="product-thubnail">
+								<img src="../img/homepage/keyboard1.png">
+								<div class="product-thubnail-hover">
+									<a href="#" class="">Xem Thêm</a>
+								</div>
 							</div>
-							<div class="footer-copyright col-md-1">
-								<img src="../img/homepage/gear.png">
+							<div class="product-information">
+								<h3>Apex M750 TKL</h3>
+								<p>2.500.000 VNĐ</p>
 							</div>
-							<div class="footer-copyright-text col-md-2">
-								<p>GearShop Gaming Gear</p>
-								<p><i class="fa fa-copyright" aria-hidden="true"></i> Copyright
-								</p>
+						</div>
+						<div class="new-item col-xs-4">
+							<div class="product-thubnail">
+								<img src="../img/homepage/keyboard1.png">
+								<div class="product-thubnail-hover">
+									<a href="#" class="">Xem Thêm</a>
+								</div>
 							</div>
-
+							<div class="product-information">
+								<h3>Apex M750 TKL</h3>
+								<p>2.500.000 VNĐ</p>
+							</div>
+						</div>
+						<div class="new-item col-xs-4">
+							<div class="product-thubnail">
+								<img src="../img/homepage/keyboard1.png">
+								<div class="product-thubnail-hover">
+									<a href="#" class="">Xem Thêm</a>
+								</div>
+							</div>
+							<div class="product-information">
+								<h3>Apex M750 TKL</h3>
+								<p>2.500.000 VNĐ</p>
+							</div>
 						</div>
 					</div>
 				</div>
-			</footer>
-			<script src="../js/jquery-3.2.1.min.js"></script>
-			<script src="../js/bootstrap.min.js"></script>
-			<script src="../js/homepage.js"></script>
-		</body>
-		</html>
+			</div>
+		</div>
+	</div>
+	<div class="background-product-area">
+		<div class="background-product-content">
+			<h2>Arcsitc 3 Bluetooth</h2>
+			<p>Wired for Gaming. Bluetooth for Life.</p>
+			<a href="">Chi Tiết Sản Phẩm</a>
+		</div>
+	</div>
+	<div class="blog-area">
+		<div class="container">
+			<div class="blog-menu">
+				<div class="row">
+					<div class="blog-title col-xs-12 col-md-5">
+						<p>Blog của chúng tôi</p>
+					</div>
+					<div class="blog-information col-xs-12 col-md-7">
+						<p>Cập nhật những tin tức mới nhất</p>
+					</div>
+				</div>
+			</div>
+			<div class="blog-content">
+				<div class="blog-content-letter">
+					<div class="row">
+						<div class="blog-content-thubnail col-sm-6">
+							<img src="../img/homepage/blog2.jpg">
+						</div>
+						<div class="blog-content-information col-sm-6">
+							<h2 class="blog-content-title">Lựa chọn Gaming KeyBoard như nào cho hợp lý </h2>
+							<p class="blog-content-time">
+								14/02/2018
+							</p>
+							<p class="blog-content-description">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+							</p>
+							<a href="">Đọc thêm về bài viết</a>
+						</div>
+					</div>
+				</div>
+				<div class="box-shadow">
+					<img src="../img/homepage/shadow1.png">
+				</div>
+				<div class="follow">
+					<ul>
+						<li>
+							<a class="twitter" href="">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li>
+							<a class="facebook" href="">
+								<i class="fa fa-facebook-official" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li>
+							<a class="twitch" href="">
+								<i class="fa fa-twitch" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li>
+							<a class="instagram" href="">
+								<i class="fa fa-instagram" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li>
+							<a class="youtube" href="">
+								<i class="fa fa-youtube-play" aria-hidden="true"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<footer>
+	<div class="homepage-footer">
+		<div class="homepage-footer-top">
+			<div class="homepage-top-content-left col-md-6 ">
+				<h2>showroom trưng bày & bán lẻ tp.hà nội</h2>
+				<p>địa chỉ : 323 nguyễn văn cừ, tp.hà nội</p>
+				<p>điện thoại : 01689.187.670</p>
+				<h2>showroom trưng bày & bán lẻ tp.hồ chí minh</h2>
+				<p>địa chỉ : số 5 quận 1 , tp.hồ chí minh</p>
+				<p>điện thoại : 01689.670.187</p>
+			</div>
+			<div class="homepage-top-content-right col-md-6 ">
+				<h2>hỗ trợ kĩ thuật và bảo hành</h2>
+				<p>trụ sở : tầng 22 , tòa nhà icon4 , 242a đê la thành , q.đống đa , tp.hà nội</p>
+				<p>điện thoại : 1900.1000</p>
+				<p>email : ghostgaminggear@gmail.com</p>
+			</div>
+		</div>					
+		<div class="homepage-footer-bottom">
+			<div class="homepage-footer-bottom-content">
+				<ul>
+					<li><a href="">về chúng tôi</a></li>
+					<li><a href="">điều khoản và điều kiện</a></li>
+					<li><a href="">chính sách bảo mật</a></li>
+					<li><a href="">blog</a></li>
+					<li><a href="">hỗ trợ</a></li>
+					<li class="copyright">
+						<span>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2018 GhostGamingGear</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/wow.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/index.js"></script>
+<script src="../js/homepage.js"></script>
+</body>
+</html>

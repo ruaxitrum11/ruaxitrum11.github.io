@@ -385,8 +385,11 @@
 		margin: 0 14px;
 	}
 }
-@media(max-width: 320px){
+@media(max-width: 375px){
 	.follow ul>li {
 		margin: 0 8px;
+	}
+	.new-item {
+		width: 100%;
 	}
 }

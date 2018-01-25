@@ -30,30 +30,14 @@ section {
 	color: #fff;
 }
 .category-title {
-	padding-top: 80px;
-	background-repeat: no-repeat;
-	background-position: center;
-	min-height: 100vh;
-	background-size: cover;	
 	text-align: center;
-}
-#new-product-category {
-	background-image: url(../img/product/new-bg.jpg);
+	padding: 50px 0 ;
 }
 .category-title h2{
-	color: #fff;
-	font-size: 6rem;
+	font-size: 3rem;
 	text-transform: capitalize;
 	font-weight: 700;
 	letter-spacing: 2px;
-}
-.category-title p{
-	color: #fff;
-	padding-top: 20px;
-	font-size: 2.6rem;
-	font-style: italic;
-	display: inline-block;
-	width: 50%;
 }
 .product-category-content {
 	display: flex;
@@ -257,9 +241,6 @@ a.next-page {
 	background-color: transparent;
 	color: #fff;
 }
-#saleoff-product-category {
-	background-image: url(../img/product/saleoff-bg.jpg);
-}
 .saleoff-product-category-title p {
 	padding-top: 10px;
 }
@@ -271,9 +252,6 @@ a.next-page {
 }
 .saleoff-product-category-price p.old-price span{
 	font-size: 1rem;
-}
-#combo-product-category{
-	background-image: url(../img/product/bundles-bg.jpg);
 }
 .combo-product-category-item {
 	background-color: #fff;
@@ -331,6 +309,7 @@ a.next-page {
 	flex-wrap: wrap;
 	padding-left: 2.5%;
 	padding-bottom: 20px;
+	padding-top: 80px;
 }
 .other-product-category-item {
 	width: 48%;

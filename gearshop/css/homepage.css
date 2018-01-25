@@ -124,18 +124,16 @@
 	display: inline-block;
 }
 @keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
+	from {
+		opacity: 0;
+		transform: translate3d(-100%, 0, 0);
+	}
 
-  to {
-    opacity: 1;
-    transform: none;
-  }
+	to {
+		opacity: 1;
+		transform: none;
+	}
 }
-
-
 .product-thubnail{
 	height: auto;
 	overflow: hidden;
@@ -152,7 +150,6 @@
 .product-thubnail-hover{
 	position: absolute;
 	left: 0;
-	top: 50%;
 	-webkit-transform: translate(0, -50%);
 	-ms-transform: translate(0, -50%);
 	-o-transform: translate(0, -50%);
@@ -161,6 +158,12 @@
 	text-align: center;
 	display: none;
 	transition: all .6s ease-in-out;
+}
+.product-thubnail-hover-cart{
+	top : 40%;
+}
+.product-thubnail-hover-more {
+	top: 60%;
 }
 .product-thubnail-hover a {
 	margin: 0 auto;
@@ -171,9 +174,9 @@
 	background-color: #000;
 	text-decoration: none;
 	-webkit-animation-duration: 0.6s;
-    animation-duration: 0.6s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+	animation-duration: 0.6s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
 }
 .product-thubnail-hover a:hover {
 	background-color: #FF6602;
@@ -191,10 +194,12 @@
 	display: inline-block;
 }
 
-.product-thubnail:hover .product-thubnail-hover a{
+.product-thubnail:hover .product-thubnail-hover-cart a{
 	animation-name: fadeInLeft;
 }
-
+.product-thubnail:hover .product-thubnail-hover-more a{
+	animation-name: fadeInRight;
+}
 .background-product-area {
 	background-image: url(../img/homepage/bg-homepage.jpg);
 	background-attachment: fixed;
@@ -202,14 +207,14 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
-	height: 100vh;
+	height: 80vh;
 	z-index: -1;
 	opacity: 0.9;
 }
 .background-product-content{
 	text-align: center;
 	color: #fff;
-	padding-top: 150px;
+	padding-top: 80px;
 }
 .background-product-content h2{
 	font-size: 5rem;
@@ -218,7 +223,7 @@
 	font-weight: 900;
 }
 .background-product-content p{
-	padding: 70px 0 100px 0;
+	padding: 30px 0 70px 0;
 	font-size: 2rem;
 	font-style: italic;
 }
@@ -232,83 +237,9 @@
 .background-product-content a:hover {
 	background-color: #000;
 }
-.blog-area {
-	padding: 80px 0 30px 0;
-}
-.blog-menu {
-	padding-bottom: 50px;
-}
-.blog-content-letter {
-	padding-bottom: 50px;
-	border-bottom: 1px solid #e0e0e0;
-}
-.blog-title p{
-	font-size: 3.6rem;
-	text-transform: uppercase;
-	font-weight: 900;
-}
-.blog-information p{
-	font-size: 2rem;
-	padding-top: 10px;
-	font-weight: 100;
-}
-.blog-content-thubnail img{
-	width: 100%;
-	height: 310px;
-}
-.blog-content-information h2 {
-	margin-top: 10px;
-	font-size: 2.2rem;
-	text-transform: uppercase;
-	font-weight: bold;
-}
-.blog-content-time {
-	font-style: italic;
-	padding: 10px 0;
-}
-.blog-content-description {
-	height: 140px;
-}
-.blog-content-information a {
-	color: #FF6602;
-	text-decoration: none;
-	text-transform: capitalize;
-	font-size: 1.6rem;
-}
-.follow ul{
-	text-align: center;
-	padding: 0;
-}
-.follow ul>li {
-	display: inline-block;
-	list-style-type: none;
-	margin : 0 80px;
-}
-.follow ul>li>a {
-	color: #000;
-	font-size: 6rem;
-}
-.follow ul>li>a.twitter:hover {
-	color: #00aced;
-}
-.follow ul>li>a.facebook:hover {
-	color: #3b5998;
-}
-.follow ul>li>a.twitch:hover {
-	color: #6441a5;
-}
-.follow ul>li>a.instagram:hover {
-	color: #dc3370;
-}
-.follow ul>li>a.youtube:hover {
-	color: #bb0000;
-}
 @media (max-width: 1024px){
 	.new-product-right ul>li {
 		margin-left: 30px;
-	}
-	.follow ul>li {
-		margin: 0 60px;
 	}
 }
 @media (max-width: 768px) {
@@ -345,18 +276,6 @@
 	.box-shadow img {
 		top: -7px;
 	}
-	.follow ul>li {
-		margin: 0 40px;
-	}
-	.follow ul>li>a{
-		font-size: 4rem;
-	}
-	.homepage-footer-bottom-content>ul>li>a {
-		font-size: 1.4rem;
-	}
-	.copyright span {
-		font-size: 1.6rem;
-	}
 }
 @media (max-width: 425px){
 	.carousel-indicators li{
@@ -381,15 +300,20 @@
 	.blog-content-description{
 		height: auto;
 	}
-	.follow ul>li{
-		margin: 0 14px;
+	.follow-social{
+		padding : 50px 0;
 	}
 }
 @media(max-width: 375px){
-	.follow ul>li {
-		margin: 0 8px;
-	}
 	.new-item {
 		width: 100%;
+	}
+	.follow-text p {
+		font-size: 2rem;
+	}
+}
+@media(max-width: 320px){
+	.carousel-indicators li {
+		width: 37px;
 	}
 }

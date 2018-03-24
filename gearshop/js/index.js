@@ -1,3 +1,8 @@
+//carousel 
+ $('#mycarousel').carousel({
+    interval: 5000
+});
+
 new WOW().init();
 
 // ----- Header , Footer
@@ -57,34 +62,35 @@ $(document).ready(function(){
 	});
 });
 
-$(".new-keyboard").hide();
-$(".new-mice").hide();
-$(".new-other").hide();
+$(".new-keyboard").fadeOut();
+$(".new-mice").fadeOut();
+$(".new-other").fadeOut();
 
 $("#new-headset").click(function(){
-	$(".new-headset").show(1000);
-	$(".new-keyboard").hide(1000);
-	$(".new-mice").hide(1000);
-	$(".new-other").hide(1000);
+	$(".new-headset").fadeIn(1000);
+	$(".new-keyboard").fadeOut();
+	$(".new-mice").fadeOut();
+	$(".new-other").fadeOut();
 });
 $("#new-mice").click(function(){
-	$(".new-mice").show(1000);
-	$(".new-keyboard").hide(1000);
-	$(".new-headset").hide(1000);
-	$(".new-other").hide(1000);
+	$(".new-mice").fadeIn(1000);
+	$(".new-keyboard").fadeOut();
+	$(".new-headset").fadeOut();
+	$(".new-other").fadeOut();
 });
 $("#new-other").click(function(){
-	$(".new-other").show(1000);
-	$(".new-keyboard").hide(1000);
-	$(".new-mice").hide(1000);
-	$(".new-headset").hide(1000);
+	$(".new-other").fadeIn(1000);
+	$(".new-keyboard").fadeOut();
+	$(".new-mice").fadeOut();
+	$(".new-headset").fadeOut();
 });
 $("#new-keyboard").click(function(){
-	$(".new-keyboard").show(1000);
-	$(".new-headset").hide(1000);
-	$(".new-mice").hide(1000);
-	$(".new-other").hide(1000);
+	$(".new-keyboard").fadeIn(1000);
+	$(".new-headset").fadeOut();
+	$(".new-mice").fadeOut();
+	$(".new-other").fadeOut();
 });
+
 
 
 //review 
@@ -197,3 +203,28 @@ $(document).ready(function(){
 
 });
 
+//Smoothie Scrool 
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+      	scrollTop: $(hash).offset().top
+      }, 1000, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+    });
+    } // End if
+});
+});

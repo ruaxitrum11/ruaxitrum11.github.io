@@ -21,8 +21,6 @@ body{
 }
 .navbar-default .navbar-nav>li>a{
 	color: white;
-	font-weight: medium;
-	font-family: 'Roboto', sans-serif;
 	font-size: 1.6rem;
 	letter-spacing:1px;
 	font-weight: bold;
@@ -68,7 +66,7 @@ body{
 	display: none;
 	position: absolute;
 	background-color: #2b292a;
-	min-width: 270px;
+	min-width: 350px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
 }
@@ -342,6 +340,7 @@ a.icon-close-singin :hover , a.icon-close-singin :focus {
 	font-size: 2.6rem;
 	font-family: 'Roboto', sans-serif;
 	text-transform: capitalize;
+	font-weight: bold;
 }
 .homepage-top-content-left p , .homepage-top-content-right p{
 	font-size: 1.4rem;
@@ -378,10 +377,11 @@ a.icon-close-singin :hover , a.icon-close-singin :focus {
 	color: #a5a7aa;
 }
 .homepage-footer-bottom-content>ul>li>a>img {
-	width: 100%;
+	width: 80%;
 }
 .social-area {
 	position: relative;
+	border-top : 1px solid rgba(216, 212, 212, 0.8);
 }
 .follow-social {
 	text-align: center;
@@ -482,6 +482,53 @@ span.review-content {
 }
 .review-social {
 	background-color: #fff;
+}
+.other-product-category {
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 2.5%;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	background-color: #eaeaea;
+}
+.other-product-category-item {
+	width: 48%;
+	margin-right: 1.5%;
+	overflow: hidden;
+	display: block;
+}
+.other-product-category-keyboard {
+	background-image: url(../img/product/keyboard-button.jpg);
+}
+.other-product-category-mice {
+	background-image: url(../img/product/mice-button.jpg);
+}
+.other-product-category-laptop {
+	background-image: url(../img/product/laptop-button.jpg);
+}
+.other-product-category-headset {
+	background-image: url(../img/product/headset-button.jpg);
+}
+.other-product-category-other {
+	background-image: url(../img/product/other-button.jpg);
+}
+.other-product-category-scale {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 50vh;
+	cursor: pointer;
+	transition: transform 800ms ease-in-out;
+}
+.other-product-category-scale:hover {
+	transform: scale(1.02);
+}
+.other-product-category-scale p{
+	padding-top: 20vh;
+	font-size: 2rem;
+	color: #fff;
+	text-align: center;
+	text-transform: capitalize;
 }
 @media(max-width: 1024px){
 	.navbar-menu-items{
@@ -597,8 +644,14 @@ span.review-content {
 		padding-bottom: 0;
 		padding-left: 10px;
 	}
+	.review-gallery ul>li>img {
+		top: -40px;
+	}
+	.review-user {
+		padding-top: 20px;
+	}
 	.homepage-footer-bottom-content>ul>li {
-		width: 23%;
+		width: 26%;
 	}
 }
 @media(max-width: 425px) {

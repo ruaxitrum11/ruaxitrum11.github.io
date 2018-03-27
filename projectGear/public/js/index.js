@@ -1,6 +1,6 @@
 //carousel 
- $('#mycarousel').carousel({
-    interval: 5000
+$('#mycarousel').carousel({
+	interval: 5000
 });
 
 new WOW().init();
@@ -228,3 +228,68 @@ $(document).ready(function(){
     } // End if
 });
 });
+
+
+//// Register
+
+function registerUser() {
+	var email = $("#register-email").val();
+	var password = $("#register-password").val();
+	var password_confirm = $("#register-password-confirm").val();
+
+	if (email=="") {
+		$.alert({
+			title: '<span class="text-danger">Lỗi !</span>',
+			content: 'Vui lòng điền email của bạn !</span>',
+			type: 'red',
+			typeAnimated: true,
+		});
+	}else{
+		if (email && email !="") {
+			if(!isEmail(email)){
+				$.alert({
+					title: '<span class="text-danger">Lỗi !</span>',
+					content: 'Email không hợp lệ !</span>',
+					type: 'red',
+					typeAnimated: true,
+				});
+			}else{
+				if (password=="") {
+					$.alert({
+						title: '<span class="text-danger">Lỗi !</span>',
+						content: 'Vui lòng điền mật khẩu !</span>',
+						type: 'red',
+						typeAnimated: true,
+					});
+				}else{
+					if (password !=password_confirm) {
+						$.alert({
+							title: '<span class="text-danger">Lỗi !</span>',
+							content: 'Mật khẩu không trùng khớp !</span>',
+							type: 'red',
+							typeAnimated: true,
+						});
+					}else{
+						$.ajax({
+							url: '/user/create',
+							type: 'POST',
+							dataType: 'json',
+							data: {
+								email: email,
+								password : password,
+								password_confirm : password_confirm,
+								_csrf: "<%= _csrf %>"
+							}
+						}).done(function(result){
+						})
+					}
+				}
+			}
+		}
+	}
+}
+
+function isEmail(email) {
+	var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	return regex.test(email);
+}

@@ -1,0 +1,180 @@
+	<div class="all-modal">
+		<!-- modal header -->
+		<div id="login-modal" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-dialog-login">
+				<!-- modal content-->
+				<div class="modal-content modal-content-login">
+					<div class="modal-login-left col-md-6">
+						<div class="modal-form-login">
+							<h5 class="form-login-title">
+								đăng nhập
+							</h5>
+							<form>
+								<div class="form-input-wrapper">
+									<input type="text" name="" placeholder="tài khoản">
+								</div>
+								<div class="form-input-wrapper">
+									<input type="text" name="" placeholder="mật khẩu">
+								</div>
+								<div class="form-button-wrapper">
+									<input type="submit" name="" value="đăng nhập">
+									<a href="">quên mật khẩu?</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-login-right col-md-6">
+						<a href="#" class="icon-close" data-dismiss="modal">
+							<i class="fa fa-times" aria-hidden="true"></i>
+						</a>
+						<div class="modal-form-login">
+							<h5 class="form-login-title flt-right">
+								bạn là thành viên mới?
+							</h5>
+							<p>đăng ký thành viên để có thể :</p>
+							<ul>
+								<li>mua trực tuyến các sản phẩm của gear shop</li>
+								<li>nhập mã khuyến mại khi mua sản phẩm</li>
+								<li>được hỗ trợ các câu hỏi hay các vấn đề kỹ thuật </li>
+							</ul>
+							<div class="form-button-wrap-singin">
+								<a href="#"  data-toggle="modal" data-target="#singin-modal"
+								data-dismiss="modal">đăng ký</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="singin-modal" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-dialog-login">
+				<!-- modal content-->
+				<div class="modal-content modal-content-singin">
+					<div class="modal-singin-left col-md-6">
+						<div class="modal-form-singin">
+							<h5 class="form-singin-title-left">
+								bạn đã có tài khoản?
+							</h5>
+							<p>đăng nhập tài khoản của bạn tại gear shop để có thể mua các sản phẩm trực tuyến , nhận các mã khuyến mãi , quản lý các đơn đặt hàng và tài khoản của bạn </p>
+							<div class="form-button-wrap-login">
+								<a href="#"  data-toggle="modal" data-target="#login-modal"
+								data-dismiss="modal">đăng nhập</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="modal-singin-right col-md-6">
+						<a href="#" class="icon-close-singin" data-dismiss="modal">
+							<i class="fa fa-times" aria-hidden="true"></i>
+						</a>
+						<div class="modal-form-singin">
+							<h5 class="form-singin-title-right">
+								đăng ký
+							</h5>
+							<div role="form" method="get">
+								<div class="form-input-wrapper">
+									<input id="register-email" type="email" name="email" placeholder="email" required>
+								</div>
+								<div class="form-input-wrapper">
+									<input id="register-password" type="password" name="password" placeholder="mật khẩu" required>
+								</div>
+								<div class="form-input-wrapper">
+									<input id="register-password-confirm" type="password" name="password_confirm" placeholder="xác nhận mật khẩu" required>
+								</div>
+								<div class="form-button-wrapper">
+									<input type="submit" value="đăng ký" onclick="registerUser()">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="cart-modal" class="modal right fade" role="dialog">
+			<div class="modal-dialog modal-dialog-cart">
+
+				<!-- modal content-->
+				<div class="modal-content modal-content-cart">
+					<div class="cart-title">
+						<h3 class="form-cart-title">giỏ hàng</h3>
+					</div>
+					<div class="cart-content">
+						<div class="form-cart-content">
+							<div class="container-fluid">
+								<div class="cart-thumb col-xs-3">
+									<img src="../img/product/newproduct1.png">
+								</div>
+								<div class="cart-product col-xs-4">
+									<p>Arctis 3 Bluetooth</p>
+								</div>
+								<div class="cart-quantum col-xs-2">
+									<input type="number" min="1" name="" value="1">
+									<a href="">Xóa</a>
+								</div>
+								<div class="cart-price col-xs-3">
+									<p>1.500.000<span>VNĐ</span></p>
+								</div>
+							</div>
+						</div>
+						<div class="form-cart-content">
+							<div class="container-fluid">
+								<div class="cart-thumb col-xs-3">
+									<img src="../img/homepage/headset1.png">
+								</div>
+								<div class="cart-product col-xs-4">
+									<p>Arctis 5</p>
+								</div>
+								<div class="cart-quantum col-xs-2">
+									<input type="number" min="1" name="" value="1">
+									<a href="">Xóa</a>
+								</div>
+								<div class="cart-price col-xs-3">
+									<p>1.500.000<span>VNĐ</span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cart-totalPayment">
+						<div class="container-fluid">
+							<div class="cart-totalPayment-title col-xs-6">
+								<p>Thành Tiền</p>
+							</div>
+							<div class="cart-totalPayment-price col-xs-6">
+								<p>3.000.000 <span>VNĐ</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="cart-button">
+						<div class="container-fluid">
+							<div class="cart-button-checkout">
+								<a href="">
+									Thanh toán
+								</a>
+							</div>
+							<div class="cart-button-continue">
+								<a href="">
+									Tiếp tục mua hàng
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="search-modal" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-dialog-search" >
+
+				<!-- modal content-->
+				<div class="modal-content modal-content-search">
+					<div class="modal-search-icon col-md-2">
+						<i class="fa fa-search" aria-hidden="true"></i>	
+					</div>	
+					<div class="modal-search-input col-md-10">
+						<form>
+							<input type="" name="" placeholder="tìm kiếm">
+						</form>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,236 @@
+.user-recommend-area {
+	background-image: url(../img/homepage/bg-login.jpg);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 50vh;
+	position: relative;
+}
+.user-recommend {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 90px;
+	left: 200px;
+}
+.user-recommend-thumb{
+	background-image: url(../img/homepage/device.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	z-index: 10;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	float: left;
+	border : 3px solid #eaeaea;
+}
+.user-recommend-content {
+	float: left;
+	margin-left: 30px;
+}
+.user-recommend-content p{
+	color: #fff;
+	font-size: 2.8rem;
+	padding-top: 20px;
+	letter-spacing: 1px;
+}
+.user-recommend-content span{
+	color: #fff;
+	font-size: 1.6rem;
+	font-style: italic;
+}
+.user-info-area {
+	padding: 20px 0;
+}
+.user-info-left ul{
+	padding-left: 50px;
+	padding-top: 30px;
+}
+.user-info-left ul>li{
+	display: inline-block;
+	list-style-type: none;
+	margin-bottom: 40px;
+	font-size: 1.6rem;
+	width: 100%;
+}
+.user-info-left ul>li {
+	text-decoration: none;	
+	padding-bottom: 10px;
+	width: 80%;
+	display: inline-block;
+	color: #0e0a0abd;
+	text-transform: capitalize;
+	cursor: pointer;
+}
+.user-info-left ul>li:hover {
+	color: #000!important;
+	border-bottom: 1px solid #000;
+}
+.user-info-left ul>li>i {
+	margin-right: 15px;
+}
+.user-info-left-active{
+	color: #FF6602!important;
+	border-bottom: 1px solid #FF6602;
+}
+h2.user-info-right-title{
+	font-size: 3rem;
+	font-weight: bold;
+	text-transform: capitalize;
+	padding-bottom: 50px;
+} 
+.user-right-item {
+	margin-bottom: 30px;
+}
+.user-right-item p {
+	font-size: 1.6rem;
+	letter-spacing: 1px;
+	color: #0e0a0abd;
+	text-transform: capitalize;
+}
+.user-right-item input{
+	border : none;
+	width: 50%;
+	font-size: 1.6rem;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #000;
+	font-weight: 700;
+}
+.user-right-item input:focus{
+	outline: none;
+}
+.user-right-item select {
+	border: none;
+	border-bottom: 1px solid;
+	width: 10%;
+	font-size: 1.6rem;
+	font-weight: 700;
+	padding-bottom: 5px;
+}
+.user-right-item select:focus{
+	outline: none;
+}
+.user-right-item-button input {
+	width: 20%;
+	border : 1px solid #eaeaea;
+	padding: 15px 30px;
+	color: #fff;
+	background-color: #FF6602;
+	letter-spacing: 1px;
+	text-transform: capitalize;
+	font-weight: normal;
+	margin-top: 30px;
+}
+.user-right-order-item >ul{
+	list-style-type: none;
+	padding: 0;
+}
+.user-right-order-item ul>li {
+	width: 18.5%;
+	margin-right: 1%;
+	display: inline-block;
+	text-transform: capitalize;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.user-right-order-title ul>li {
+	color: #000;
+	font-size: 2rem;
+}
+
+.order-item-id {
+	cursor: pointer;
+}
+.order-item-id:hover {
+	color: #FF6602;
+}
+.orderDetails {
+	width: 60%;
+}
+.modal-order-content {
+	float: left;
+	padding: 5%;
+	width: 100%;
+}
+.order-details {
+	float: left;
+	width: 100%;
+	margin-bottom: 10px;
+}
+.order-details p {
+	float: left;
+	width: 30%;
+	font-weight: 700;
+	text-transform: capitalize;
+}
+.order-details span {
+	float: left;
+	width: 69%;
+}
+.order-details-toggle {
+	cursor: pointer;
+	color: #FF6602;
+}
+.product-recieved {
+	width: 100%;
+	padding: 30px 0;
+	border-top: 1px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
+}
+.product-recieved ul{
+	padding: 0;
+	display: inline-block;
+	width: 100%;
+	padding : 10px 0;
+}
+.product-recieved ul>li{
+	display: inline-block;
+	list-style-type: none;
+	width: 18%;
+	margin-right: 1%;
+	text-align: center;
+}
+.product-recieved-menu {
+	font-weight: 700;
+}
+.product-recieved-content >li>img{
+	width: 100%;
+}
+.user-info-profile , .user-info-order , .user-info-pass,
+.user-info-trophy , .user-right-content , 
+.user-trophy-content {
+	float: left;
+	width: 100%;
+}
+.user-trophy-content{
+	margin-bottom: 20px;
+}
+.user-trophy-content p{	
+	width: 30%;
+	float : left;
+	font-weight: 700;
+	font-size: 1.6rem;
+	text-transform: capitalize;
+}
+.user-trophy-content span{
+	width: 70%;
+	float: left;
+	font-size: 1.6rem;
+	text-transform: capitalize;
+}
+.trophy-thumb span>img {
+	width: 10%;
+}
+.trophy-info a {
+	color: #FF6602;
+	font-size: 2rem;
+	text-decoration: none;
+	display: inline-block;
+	padding-top: 50px;
+	text-transform: capitalize;
+}
+.user-info-pass {
+	padding-bottom: 100px;
+}

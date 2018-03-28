@@ -1,17 +1,16 @@
 var express = require('express');
 var fs = require('fs');
 var app = express();
- const path = require('path');
- const bodyParser = require('body-parser');
+const path = require('path');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
-
-app.set('view engine','html');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(cookieParser());
 
 /*FRONTEND*/
 var index = require('./routes/frontend/index');
@@ -33,8 +32,8 @@ app.use('/', index);
 app.use('/user', frontend_users);
 
 
-app.listen(5000);
-console.log('listening port 5000');
+app.listen(4000);
+console.log('listening port 4000');
 
 
 module.exports = app;

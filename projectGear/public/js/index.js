@@ -240,7 +240,7 @@ function registerUser() {
 	if (email=="") {
 		$.alert({
 			title: '<span class="text-danger">Lỗi !</span>',
-			content: 'Vui lòng điền email của bạn !</span>',
+			content: 'Vui lòng điền email của bạn !',
 			type: 'red',
 			typeAnimated: true,
 		});
@@ -257,7 +257,7 @@ function registerUser() {
 				if (password=="") {
 					$.alert({
 						title: '<span class="text-danger">Lỗi !</span>',
-						content: 'Vui lòng điền mật khẩu !</span>',
+						content: 'Vui lòng điền mật khẩu !',
 						type: 'red',
 						typeAnimated: true,
 					});
@@ -265,7 +265,7 @@ function registerUser() {
 					if (password !=password_confirm) {
 						$.alert({
 							title: '<span class="text-danger">Lỗi !</span>',
-							content: 'Mật khẩu không trùng khớp !</span>',
+							content: 'Mật khẩu không trùng khớp !',
 							type: 'red',
 							typeAnimated: true,
 						});
@@ -281,6 +281,23 @@ function registerUser() {
 								_csrf: "<%= _csrf %>"
 							}
 						}).done(function(result){
+							if (!result.status) {
+								if (result.errors && result.errors.length) {
+									$.alert({
+										title: '<span class="text-danger">Lỗi !</span>',
+										content: ''+result.errors[0].msg+'',
+										type: 'red',
+										typeAnimated: true,
+									});
+								}
+							}else{
+								$.alert({
+									title: '<span class="text-success">Thành Công !</span>',
+									content: 'Đăng kí thành công',
+									type: 'green',
+									typeAnimated: true,
+								});
+							}
 						})
 					}
 				}

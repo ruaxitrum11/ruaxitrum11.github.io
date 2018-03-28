@@ -3,7 +3,6 @@ const crypto = require('crypto');
 const mongoose = require('mongoose');
 const mconnect = require('../config/connDB');
 const userSchema = new mongoose.Schema({
-  userID: { type: Number, unique: true },
   email: { type: String, unique: true },
   userName : String,
   password: String,

@@ -10,6 +10,6 @@ var path = require('path');
 const userController = require('../../controllers/frontend/userController');
 
 // Route is : /user/
-router.post('/create', userController.create);
+router.post('/create', userController.validatorCreateUser, userController.create);
 
 module.exports = router;

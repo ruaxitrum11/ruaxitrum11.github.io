@@ -1,6 +1,9 @@
 var express = require('express');
+const session = require('express-session');
+ const flash = require('express-flash');
 var fs = require('fs');
 var app = express();
+const passport = require('passport');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -11,6 +14,24 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+var csrf = require('csurf');
+
+var csrfProtection = csrf();
+app.use(csrfProtection);
+
+// Sets up a session store with Mongodb
+
+app.use(session({
+	resave: false,
+	saveUninitialized: false,
+	secret: process.env.SESSION_SECRET,
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(flash());
 
 /*FRONTEND*/
 var index = require('./routes/frontend/index');

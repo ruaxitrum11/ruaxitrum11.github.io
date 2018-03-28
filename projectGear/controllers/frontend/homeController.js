@@ -16,7 +16,7 @@ const User = require('../../models/User');
  * Home page.
  */
  exports.index = (req, res) => {
-  console.log("Index Frontend")
+  // console.log("Index Frontend")
   // const user = new User({
   //   userName: "huyhung",
   //   password: "huyhung",

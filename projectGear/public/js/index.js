@@ -297,6 +297,8 @@ function registerUser() {
 									type: 'green',
 									typeAnimated: true,
 								});
+								$('#singin-modal').modal('hide');
+								$("#login-modal").modal();
 							}
 						})
 					}

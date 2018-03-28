@@ -9,17 +9,18 @@
 							<h5 class="form-login-title">
 								đăng nhập
 							</h5>
-							<form>
+							<form action="/user/login" method="POST">
 								<div class="form-input-wrapper">
-									<input type="text" name="" placeholder="tài khoản">
+									<input type="text" name="username" placeholder="Email">
 								</div>
 								<div class="form-input-wrapper">
-									<input type="text" name="" placeholder="mật khẩu">
+									<input type="text" name="password" placeholder="Mật khẩu">
 								</div>
 								<div class="form-button-wrapper">
 									<input type="submit" name="" value="đăng nhập">
 									<a href="">quên mật khẩu?</a>
 								</div>
+								<input type="hidden" class="ignore" name='_csrf' value="<%=_csrf%>" />
 							</form>
 						</div>
 					</div>

@@ -20,7 +20,7 @@
 									<input type="submit" name="" value="đăng nhập">
 									<a href="">quên mật khẩu?</a>
 								</div>
-								<input type="hidden" class="ignore" name='_csrf' value="<%=_csrf%>" />
+								<input type="hidden" class="ignore" name='_csrf' value="" />
 							</form>
 						</div>
 					</div>
@@ -74,16 +74,19 @@
 							</h5>
 							<div role="form" method="get">
 								<div class="form-input-wrapper">
-									<input id="register-email" type="email" name="email" placeholder="email" required>
+									<input id="register-userName" type="text" name="userName" placeholder="Tài khoản" required>
 								</div>
 								<div class="form-input-wrapper">
-									<input id="register-password" type="password" name="password" placeholder="mật khẩu" required>
+									<input id="register-password" type="password" name="password" placeholder="Mật khẩu" required>
 								</div>
 								<div class="form-input-wrapper">
-									<input id="register-password-confirm" type="password" name="password_confirm" placeholder="xác nhận mật khẩu" required>
+									<input id="register-password-confirm" type="password" name="password_confirm" placeholder="Xác nhận mật khẩu" required>
+								</div>
+								<div class="form-input-wrapper">
+									<input id="register-email" type="email" name="email" placeholder="Email" required>
 								</div>
 								<div class="form-button-wrapper">
-									<input type="submit" value="đăng ký" onclick="registerUser()">
+									<input type="submit" value="Đăng ký" onclick="registerUser()">
 								</div>
 							</div>
 						</div>

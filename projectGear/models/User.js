@@ -9,10 +9,12 @@ const userSchema = new mongoose.Schema({
   phoneNumber : String,
   address: String,
   birthDay : Date,
+  gender : {type : Number , default : 0}, // 0 : Nam , 1 : Nữ
   role : {type: Number, default: 0}, // 0 : Normal, 1 : Admin
   level : {type: Number, default: 1}, // 1: Normal, 2: Silver, 3: Gold, 4: Platinum
   status: {type:Number, default: 1}, // 0: block || 1: active 
   avatar: String
+
 }, { timestamps: true });
 
 /**

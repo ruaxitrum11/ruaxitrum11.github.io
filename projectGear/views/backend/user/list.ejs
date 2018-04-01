@@ -1,0 +1,284 @@
+  <%- include('../include/admin-header-top') %>
+
+  <%- include('../include/admin-header') %>
+
+  <%- include('../include/admin-sidebar') %>
+
+  <style type="">
+  table.table.table-bordered , table.table.table-bordered>thead>tr>th {
+    text-align: center;
+  }
+  .add-newUser {
+    margin : 20px 0;
+    font-size: 3rem;
+  }
+  .add-searchUser {
+    margin : 20px 0;
+  }
+  .add-searchUser input{
+   padding-left: 10px;
+   width: 25%;
+   margin-left: 1%;
+ }
+ .add-searchUser select {
+  width: 13%;
+  margin-left: 1%;
+}
+.add-searchUser span {
+  padding: 10px;
+  font-size: 1.8rem;
+  background-color: #3c8dbc !important;
+  color: #fff;
+  border-radius: 5px;
+}
+</style>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Danh sách người dùng
+    </h1>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+    <div class="container">      
+
+      <div class="add-newUser">
+        <a href="/admin/user/add"><span class="label label-primary">+</span></a>
+      </div>      
+
+      <div class="add-searchUser">
+        <span class="search-icon glyphicon glyphicon-search"></span>
+        <input class="input-text user-search-text" type="text" name="" placeholder="Nhập tên tài khoản hoặc email">
+        <select class="user-status">
+          <option value="">Trạng Thái</option>
+          <option value="1">Active</option>
+          <option value="0">Block</option>
+        </select>
+        <select class="user-level">
+          <option value="">Cấp bậc</option>
+          <option value="1">MemberShip</option>
+          <option value="2">Silver MemberShip</option>
+          <option value="3">Gold MemberShip</option>
+          <option value="4">Platinum MemberShip</option>
+        </select>
+        <select class="user-role">
+          <option value="">Quyền</option>
+          <option value="1">Admin</option>
+          <option value="0">User</option>
+        </select>
+      </div>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Tài Khoản</th>
+            <th>Email</th>
+            <th>Trạng thái</th>
+            <th>Cấp Bậc</th>
+            <th>Quyền</th>
+            <th>Thời Gian Tạo</th>
+            <th>Xử Lý</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+
+      <div class="col-xs-12" style="text-align: center;" id="pagination-list-user">
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<%- include('../include/admin-footer') %>
+
+<%- include('../include/admin-control-sidebar') %>
+
+<%- include('../include/admin-js.ejs') %>
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+    listUser(1);
+  });
+
+  $('select').on('change', function() {
+     listUser(1);
+    // alert( this.value );
+  })
+
+  $('.user-search-text').keyup(function() {
+   listUser(1);
+});
+
+
+  function listUser(page) {
+    var user_status = $('.user-status :selected').val();
+    var user_level = $('.user-level :selected').val();
+    var user_role = $('.user-role :selected').val();
+    var user_search_text = $('.user-search-text').val();
+
+    // alert(user_status)
+    $.ajax({
+      url: '/admin/user/listUser',
+      type: 'GET',
+      data: {
+        page : page,
+        user_status : user_status,
+        user_level : user_level,
+        user_role : user_role,
+        user_search_text:user_search_text
+      },
+      dataType: 'json',
+    }).done(function(results){
+      if (results.status) {
+
+        // console.log(results.status);
+
+        var xhtml = '';
+
+        if (results.listUser && results.listUser.length) {
+          for (var i = 0 ;  i <= results.listUser.length - 1; i++) {
+
+            if(results.listUser[i].createdAt){
+              var date = new Date(results.listUser[i].createdAt);
+              var date_createdAt = date.getFullYear()+ '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2) + ' ' + ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2); 
+            }
+
+            xhtml += '<tr>';
+            xhtml += '<td>'+results.listUser[i].userName+'</td>';
+
+            xhtml += '<td>'+results.listUser[i].email+'</td>';
+
+            if (results.listUser[i].status == 1) {
+              xhtml += '<td><span class="label label-success">Active</span></td>';
+            }else{
+              xhtml += '<td><span class="label label-danger">Block</span></td>';
+            }
+
+            if (results.listUser[i].level == 1) {
+              xhtml += '<td><span class="label label-info">MemberShip</span></td>';
+            }
+            else if (results.listUser[i].level == 2){
+              xhtml += '<td><span class="label label-info">Silver MemberShip</span></td>';
+            }
+            else if (results.listUser[i].level == 3){
+              xhtml += '<td><span class="label label-info">Gold MemberShip</span></td>';
+            }
+            else if (results.listUser[i].level == 4){
+              xhtml += '<td><span class="label label-info">Platinum MemberShip</span></td>';
+            }
+            else {
+              xhtml += '<td><span="label"></td>';
+            }
+
+            if (results.listUser[i].role == 1 ){
+              xhtml += '<td><span class="label label-primary">Admin</td>';
+            }else{
+              xhtml += '<td><span class="label label-default">User</td>';
+            }
+
+            xhtml += '<td>'+date_createdAt+'</td>';
+
+            xhtml += '<td><a href="/admin/user/edit/'+results.listUser[i]._id+'"><span class="label label-default"><span class="glyphicon glyphicon-check"></span> Xem</span></a> <a href="/admin/user/edit/'+results.listUser[i]._id+'"><span class="label label-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</span></a> <a href="javascript:void(0)" onclick="removeUser(\''+results.listUser[i]._id+'\')"><span class="label label-danger"><span class="glyphicon glyphicon-remove"></span> Xóa</span></a></td>';
+
+
+            xhtml += '</tr>';
+
+          }
+          $("table tbody").html(xhtml)
+        }else{
+           $("table tbody").html('Không tìm thấy!');
+        }
+
+
+        if(results.totalPage > 1) {
+          var pagiHtml = '';
+          pagiHtml ='<ul class="pagination">';
+          if (results.page != 1){ 
+            var pagePriv = parseInt(results.page) - 1; 
+            pagiHtml += '<li class="" ><a href="javascript:void(0)" onclick="listUser(1)""><i class="fa fa-step-backward" aria-hidden="true"></i></a></li>  ';                  
+            pagiHtml += '<li class="" ><a href="javascript:void(0)" onclick="listUser('+ pagePriv +')"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>';
+          }
+
+          var _begin =  results.page - 8; 
+          var _end = results.page + 8;
+          if (_begin < 1){ 
+            _begin = 1;
+          }
+          if (_end > results.totalPage ) {
+            _end = results.totalPage;
+          } 
+          for (var i = _begin; i <= _end; i++) {
+            if(results.page == i) { 
+              pagiHtml += '<li class="active" ><a href="javascript:void(0)">'+ i +'</a></li>';
+            } else { 
+              pagiHtml += '<li><a href="javascript:void(0)" onclick="listUser('+ i +')">'+i+'</a></li>';
+            }
+          } 
+          if (results.page < results.totalPage ) {
+            var pageNext = parseInt(results.page) + 1; 
+            pagiHtml += '<li class="" ><a href="javascript:void(0)" onclick="listUser('+ pageNext +')"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>';
+            pagiHtml += '<li class="" ><a href="javascript:void(0)" onclick="listUser('+ results.totalPage +')"><i class="fa fa-step-forward" aria-hidden="true"></i></a></li>';
+          } 
+          pagiHtml += '</ul>';
+
+          $('#pagination-list-user').html(pagiHtml);
+        } else {
+          $('#pagination-list-user').html('');
+        }
+
+      }
+    })
+}
+</script>
+
+<script type="text/javascript">
+  function removeUser(id){
+    $.confirm({
+      title: 'Xác nhận!',
+      content: 'Bạn có chắc chắn xóa người dùng này ?',
+      buttons: {
+        confirm: function () {
+          $.ajax({
+            url: '/admin/user/delete',
+            type: 'post',
+            data: {
+              id : id
+            },
+            dataType: 'json',
+          }).done(function(results){
+            if (results.status) {
+              $.alert({
+                title: 'Thông Báo!',
+                content: '<span class="text-success"><strong class="fa fa-check"></strong>Xóa thành công</span>'
+              })
+              location.reload();
+            }else{
+              $.alert({
+                title: 'Thông Báo!',
+                content: '<span class="text-danger"><strong class="fa fa-close"></strong>Xóa thất bại </span>'
+              })
+            }
+          })
+        },
+        cancel: function () {
+        },
+      }
+    });
+  }
+</script>
+
+<script>
+
+</script>

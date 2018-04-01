@@ -122,7 +122,6 @@ body{
 	padding-bottom: 10px;
 	width: 100%;
 	font-family: 'Roboto', sans-serif;
-	text-transform: capitalize;
 }
 .form-input-wrapper input:focus{
 	outline: none;
@@ -138,7 +137,6 @@ body{
 	border: none;
 	padding: 15px 30px;
 	font-family: 'Roboto', sans-serif;
-	text-transform: capitalize;
 }
 .form-button-wrapper input:hover {
 	background-color: #fff;

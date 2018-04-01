@@ -233,10 +233,12 @@ $(document).ready(function(){
 //// Register
 
 function registerUser() {
-	var email = $("#register-email").val();
-	var password = $("#register-password").val();
-	var password_confirm = $("#register-password-confirm").val();
+	var userName = $('#register-username').val().trim();
+	var email = $("#register-email").val().trim();
+	var password = $("#register-password").val().trim();
+	var password_confirm = $("#register-password-confirm").val().trim();
 
+	
 	if (email=="") {
 		$.alert({
 			title: '<span class="text-danger">Lỗi !</span>',
@@ -275,6 +277,7 @@ function registerUser() {
 							type: 'POST',
 							dataType: 'json',
 							data: {
+								userName : userName,
 								email: email,
 								password : password,
 								password_confirm : password_confirm,
@@ -298,7 +301,6 @@ function registerUser() {
 									typeAnimated: true,
 								});
 								$('#singin-modal').modal('hide');
-								$("#login-modal").modal();
 							}
 						})
 					}

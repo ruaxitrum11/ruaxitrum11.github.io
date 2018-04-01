@@ -15,23 +15,23 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-var csrf = require('csurf');
+// var csrf = require('csurf');
 
-var csrfProtection = csrf();
-app.use(csrfProtection);
+// var csrfProtection = csrf();
+// app.use(csrfProtection);
 
 // Sets up a session store with Mongodb
 
-app.use(session({
-	resave: false,
-	saveUninitialized: false,
-	secret: process.env.SESSION_SECRET,
-}));
+// app.use(session({
+// 	resave: false,
+// 	saveUninitialized: false,
+// 	secret: process.env.SESSION_SECRET,
+// }));
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(flash());
+// app.use(flash());
 
 /*FRONTEND*/
 var index = require('./routes/frontend/index');
@@ -45,12 +45,19 @@ var frontend_users = require('./routes/frontend/user');
 // var frontend_sysmessage = require('./routes/frontend/sysmessage')
 
 /*BACKEND*/
-// var dashboard = require('./routes/backend/dashboard');
-// var backend_users = require('./routes/backend/users');
+var admin = require('./routes/backend/admin');
+var backend_users = require('./routes/backend/user');
 
+
+/*FRONTEND Appuse*/
 
 app.use('/', index);
 app.use('/user', frontend_users);
+
+/*BACKEND Appuse*/
+
+app.use('/admin', admin);
+app.use('/admin/user',backend_users);
 
 
 app.listen(4000);

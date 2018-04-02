@@ -47,6 +47,7 @@ var frontend_users = require('./routes/frontend/user');
 /*BACKEND*/
 var admin = require('./routes/backend/admin');
 var backend_users = require('./routes/backend/user');
+var backend_products = require('./routes/backend/product');
 
 
 /*FRONTEND Appuse*/
@@ -58,6 +59,7 @@ app.use('/user', frontend_users);
 
 app.use('/admin', admin);
 app.use('/admin/user',backend_users);
+app.use('/admin/product',backend_products);
 
 
 app.listen(4000);

@@ -1,0 +1,215 @@
+  <%- include('../include/admin-header-top') %>
+
+
+  <%- include('../include/admin-header') %>
+
+  <%- include('../include/admin-sidebar') %>
+
+  <style>
+  .content-edit>ul {
+    list-style-type: none;
+    width: 100%;
+    float: left;
+  }
+  .content-edit>ul>li {
+    margin-top: 30px;
+    width: 100%;
+    float: left;
+  }
+  .content-edit>ul>li>span {
+    font-size: 1.6rem;
+    width: 15%;
+    float: left;
+  }
+  .content-edit>ul>li>input  , .content-edit>ul>li>textarea{
+    border-radius: 5px;
+    border : none;
+    padding: 5px 0;
+    width: 40%;
+    padding-left: 20px;
+    float: left;
+  }
+  .content-edit>ul>li>textarea {
+    height: 150px;
+  }
+  .content-edit>ul>li>input:focus , .content-edit>ul>li>textarea:focus{
+    outline: none;
+  }
+  .active {
+    display: inline-block; 
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .active-block {
+    margin-left: 15.1%;
+  }
+  input.status-active {
+    width: 5%!important;
+  }
+  span.label {
+    width: 5%!important;
+    font-size: 90%!important;
+  }
+  li.button-active a {
+    display: inline-block;
+    font-size: 2rem;
+    padding: 10px 30px;
+    background-color: #dd4b39;
+    color: #fff;
+  }
+
+
+</style>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Thêm tài khoản người dùng
+    </h1>
+  </section>
+
+  <!-- Main content -->
+  <section class="content ">
+
+    <div class="container content-edit">     
+
+      <ul>
+        <li>
+          <span>Tên sản phẩm</span>
+          <input id="new-productName" type="text" name="productName" value="">
+        </li>
+        <li>
+          <span>Hình ảnh</span>
+          <input id = "new-thumb" type="file" name="thumb" value="">
+        </li>
+        <li>
+          <span>Màu sắc</span>
+          <div class="active">
+            <input class="status-active" type="radio" name="level" value="1">
+            <span class="label label-info">Đen</span>
+          </div>
+          <div class="active active-block">
+            <input class="status-active" type="radio" name="level" value="2">
+            <span class="label label-info">Trắng</span>
+          </div>
+          <div class="active active-block">
+            <input class="status-active" type="radio" name="level" value="3">
+            <span class="label label-info">Đỏ</span>
+          </div>
+          <div class="active active-block">
+            <input class="status-active" type="radio" name="level" value="4">
+            <span class="label label-info">Xanh da trời</span>
+          </div>
+          <div class="active active-block">
+            <input class="status-active" type="radio" name="level" value="4">
+            <span class="label label-info">Da Cam</span>
+          </div>
+        </li>
+        <li>
+          <span>Giá tiền</span>
+          <input id="new-price" type="text" name="price" value="">
+        </li>
+        <li>
+          <span>Số lượng</span>
+          <input type="text" name="quantity" value="">
+        </li>
+        <li>
+          <span>Nhãn hiệu</span>
+          <div class="active">
+            <input class="status-active" type="radio" name="brand" value="1">
+            <span class="label label-info">SteelSeries</span>
+          </div>
+          <div class="active active-block">
+            <input class="status-active" type="radio" name="level" value="2">
+            <span class="label label-info">Razer</span>
+          </div>
+          <div class="active active-block">
+            <input class="status-active" type="radio" name="level" value="3">
+            <span class="label label-info">Ozone Gaming</span>
+          </div>
+          <div class="active active-block">
+            <input class="status-active" type="radio" name="level" value="4">
+            <span class="label label-info">MSI Gaming</span>
+          </div>
+        </li>
+        <li>
+          <span>Mô tả</span>
+          <textarea id="new-description"  name="description" ></textarea>
+        </li>
+        <li class="button-active">
+          <a href="javascript:void(0)" onclick="postProductAdd()">Tạo sản phẩm</a>
+        </li>
+      </ul>
+
+
+    </div>
+
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<%- include('../include/admin-footer') %>
+
+<%- include('../include/admin-control-sidebar') %>
+
+<%- include('../include/admin-js.ejs') %>
+
+<script>
+
+  function postProductAdd() {
+
+    var productName = $("input[name=productName]").val();
+    // var thumb = $("input[name=thumb]").val();
+    var color = $("input[name=color]:checked").val();
+    var price = $("input[name=price]").val();
+    var quantity = $("input[name=quantity]").val();
+    var brand = $("input[name=brand]:checked").val();
+    var description = $("textarea[name=description]").val();
+
+ 
+
+    $.ajax({
+      url: '/admin/product/addProduct',
+      type: 'post',
+      data: {
+        productName : productName.trim(),
+        // thumb : thumb,
+        color : color,
+        price : price,
+        quantity : quantity ,
+        brand : brand ,
+        description : description
+      },
+      dataType: 'json',
+    }).done(function(results){
+      console.log(results);
+      if (results.status == true) {
+        $.confirm({
+          title: 'Thông Báo!',
+          content: 'Tạo sản phẩm thành công',
+          buttons: {
+            Ok: function () {
+              // $.alert('Ok');
+              window.location.replace("/admin/product/list");
+            },
+          }
+        });
+      }else{
+        $.alert({
+          title: 'Thông Báo !',
+          content: '<span class="text-danger"><strong class="fa fa-close"></strong>'+results.errors[0].msg+'</span>'
+        })
+
+      }
+
+    })
+
+  }
+
+
+
+</script>

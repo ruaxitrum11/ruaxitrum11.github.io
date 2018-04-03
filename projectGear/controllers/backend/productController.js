@@ -91,31 +91,34 @@ exports.postProductAdd = async (req,res) => {
 
 	if (req.body) {
 
-		console.log(req.body);
+		console.log(req.file);
 
-		const errors = validationResult(req);
+		// const errors = validationResult(req);
 
 
-		if (!errors.isEmpty()) {
-			return res.send({status:false, errors : errors.array()});
-		}
+		// if (!errors.isEmpty()) {
+		// 	return res.send({status:false, errors : errors.array()});
+		// }
 
 		try{
 
-			let storage = multer.diskStorage ({
+			var storage = multer.diskStorage ({
 				description : function(req , file , cb) {
 					cb(null , '/upload/thumbProduct')
 				},
 				filename : function(req , file , cb ){
-					cb(null , file.originalname)
+					cb(null , file.originalname);
+					
 				}
-			})
 
-			let upload  = multer ({storage : storage}).single("thumb");
+			})
+			console.log(storage);
+			
+			var upload  = multer ({storage : storage}).single('thumb');
 
 			const product = new Product({
 				productName : req.body.productName,
-				thumb : req.body.thumb,
+				// thumb : req.body.thumb,
 				color : req.body.color,
 				price : req.body.price,
 				quantity : req.body.quantity ,
@@ -123,18 +126,18 @@ exports.postProductAdd = async (req,res) => {
 				description : req.body.description
 
 			});
-			console.log(product)
+			// console.log(product)
 
-			let existingProduct = await Product.findOne({ productName : req.body.productName});
-			if (existingProduct) {
-				let errors = [{msg:"Sản phẩm này đã tồn tại"}];
-				return res.send({status:false, errors : errors});
-			}else{
-				let saveProduct = await product.save();
-				if (saveProduct) {
-					return res.send({status:true});
-				}
-			}
+			// let existingProduct = await Product.findOne({ productName : req.body.productName});
+			// if (existingProduct) {
+			// 	let errors = [{msg:"Sản phẩm này đã tồn tại"}];
+			// 	return res.send({status:false, errors : errors});
+			// }else{
+			// 	let saveProduct = await product.save();
+			// 	if (saveProduct) {
+			// 		return res.send({status:true});
+			// 	}
+			// }
 		}catch(errors){
 			console.log(errors);
 			res.send({status:false, errors : errors});

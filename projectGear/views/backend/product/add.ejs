@@ -90,7 +90,10 @@
         </li>
         <li>
           <span>Hình ảnh</span>
-          <input  type="file" id = "new-thumb" name="thumb" value="">
+          <form action="/admin/product/addProduct" method = "post" enctype ="multipart/form-data" >
+            <input type="file" id = "new-thumb" name="thumb" value="">
+            <input type="submit" name="" value="Upload">
+          </form>
         </li>
         <li>
           <span>Màu sắc</span>
@@ -147,7 +150,8 @@
           <textarea id="new-description"  name="description" ></textarea>
         </li>
         <li class="button-active">
-          <a href="javascript:void(0)" onclick="postProductAdd()">Tạo sản phẩm</a>
+          <!-- <a href="javascript:void(0)" onclick="postProductAdd()">Tạo sản phẩm</a> -->
+
         </li>
       </ul>
 
@@ -165,25 +169,26 @@
 
 <%- include('../include/admin-js.ejs') %>
 
-<script>
+<!-- <script>
 
   function postProductAdd() {
 
     var productName = $("input[name=productName]").val();
-    var thumb = new FormData();
-    thumb.append('thumb' , $('#new-thumb')[0].files[0]);
+    // var thumb = new FormData();
+    // thumb.append('thumb', $('#new-thumb').files[0]);
     var color = $("input[name=color]:checked").val();
     var price = $("input[name=price]").val();
     var quantity = $("input[name=quantity]").val();
     var brand = $("input[name=brand]:checked").val(); 
     var description = $("textarea[name=description]").val();
 
+
     $.ajax({
       url: '/admin/product/addProduct',
       type: 'post',
       data: {
         productName : productName.trim(),
-        thumb : thumb.append('thumb' , $('#new-thumb')[0].files[0]),
+        // thumb : thumb,
         color : color,
         price : price,
         quantity : quantity ,
@@ -219,4 +224,4 @@
 
 
 
-</script>
+</script> -->

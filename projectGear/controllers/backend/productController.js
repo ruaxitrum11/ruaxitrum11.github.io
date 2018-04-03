@@ -5,6 +5,8 @@ const fs = require('fs');
 const download = require('download');
 const async = require('async');
 const bcrypt = require('bcrypt-nodejs');
+const multer = require('multer');
+
 
 const { check, validationResult } = require('express-validator/check');
 
@@ -50,8 +52,8 @@ const { check, validationResult } = require('express-validator/check');
 
  	try{
  		let [count, data] = await Promise.all([
- 			User.count(query),
- 			User.find(query).sort({createdAt : -1}).skip(skip).limit(limit)
+ 			Product.count(query),
+ 			Product.find(query).sort({createdAt : -1}).skip(skip).limit(limit)
  			])
 
  		let listProduct = [];
@@ -82,12 +84,14 @@ exports.getProductAdd = async (req,res) =>{
 
 exports.validatorProductAdd = [
 check('productName', 'Tên sản phẩm không được để trống').isLength({ min: 1 }),
-
 ]
 
 exports.postProductAdd = async (req,res) => {
+
+
 	if (req.body) {
 
+		console.log(req.body);
 
 		const errors = validationResult(req);
 
@@ -97,9 +101,21 @@ exports.postProductAdd = async (req,res) => {
 		}
 
 		try{
+
+			let storage = multer.diskStorage ({
+				description : function(req , file , cb) {
+					cb(null , '/upload/thumbProduct')
+				},
+				filename : function(req , file , cb ){
+					cb(null , file.originalname)
+				}
+			})
+
+			let upload  = multer ({storage : storage}).single("thumb");
+
 			const product = new Product({
 				productName : req.body.productName,
-				// thumb : thumb,
+				thumb : req.body.thumb,
 				color : req.body.color,
 				price : req.body.price,
 				quantity : req.body.quantity ,
@@ -111,7 +127,7 @@ exports.postProductAdd = async (req,res) => {
 
 			let existingProduct = await Product.findOne({ productName : req.body.productName});
 			if (existingProduct) {
-				let errors = [{msg:"Sản phẩm này đã tồn tại"}]
+				let errors = [{msg:"Sản phẩm này đã tồn tại"}];
 				return res.send({status:false, errors : errors});
 			}else{
 				let saveProduct = await product.save();
@@ -120,8 +136,25 @@ exports.postProductAdd = async (req,res) => {
 				}
 			}
 		}catch(errors){
+			console.log(errors);
 			res.send({status:false, errors : errors});
 		}
 		console.log("Done")
+	}
+}
+
+
+exports.deleteProduct = async (req,res) =>{
+	if (req.body.id) {
+		try{
+			let deleteProduct = await Product.remove({_id : req.body.id});
+			if (deleteProduct.result) {
+				res.send({status:true});
+			}else{
+				res.send({status:false});
+			}
+		}catch(err){
+			res.send({status:false})
+		}
 	}
 }

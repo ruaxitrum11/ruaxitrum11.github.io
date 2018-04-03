@@ -59,6 +59,13 @@
     color: #fff;
   }
 
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+  }
 
 </style>
 
@@ -67,7 +74,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Thêm tài khoản người dùng
+      Thêm sản phẩm
     </h1>
   </section>
 
@@ -83,38 +90,38 @@
         </li>
         <li>
           <span>Hình ảnh</span>
-          <input id = "new-thumb" type="file" name="thumb" value="">
+          <input  type="file" id = "new-thumb" name="thumb" value="">
         </li>
         <li>
           <span>Màu sắc</span>
           <div class="active">
-            <input class="status-active" type="radio" name="level" value="1">
+            <input class="status-active" type="radio" name="color" value="1">
             <span class="label label-info">Đen</span>
           </div>
           <div class="active active-block">
-            <input class="status-active" type="radio" name="level" value="2">
+            <input class="status-active" type="radio" name="color" value="2">
             <span class="label label-info">Trắng</span>
           </div>
           <div class="active active-block">
-            <input class="status-active" type="radio" name="level" value="3">
+            <input class="status-active" type="radio" name="color" value="3">
             <span class="label label-info">Đỏ</span>
           </div>
           <div class="active active-block">
-            <input class="status-active" type="radio" name="level" value="4">
+            <input class="status-active" type="radio" name="color" value="4">
             <span class="label label-info">Xanh da trời</span>
           </div>
           <div class="active active-block">
-            <input class="status-active" type="radio" name="level" value="4">
+            <input class="status-active" type="radio" name="color" value="4">
             <span class="label label-info">Da Cam</span>
           </div>
         </li>
         <li>
           <span>Giá tiền</span>
-          <input id="new-price" type="text" name="price" value="">
+          <input id="new-price" type="number" name="price" value="">
         </li>
         <li>
           <span>Số lượng</span>
-          <input type="text" name="quantity" value="">
+          <input type="number" name="quantity" value="">
         </li>
         <li>
           <span>Nhãn hiệu</span>
@@ -123,15 +130,15 @@
             <span class="label label-info">SteelSeries</span>
           </div>
           <div class="active active-block">
-            <input class="status-active" type="radio" name="level" value="2">
+            <input class="status-active" type="radio" name="brand" value="2">
             <span class="label label-info">Razer</span>
           </div>
           <div class="active active-block">
-            <input class="status-active" type="radio" name="level" value="3">
+            <input class="status-active" type="radio" name="brand" value="3">
             <span class="label label-info">Ozone Gaming</span>
           </div>
           <div class="active active-block">
-            <input class="status-active" type="radio" name="level" value="4">
+            <input class="status-active" type="radio" name="brand" value="4">
             <span class="label label-info">MSI Gaming</span>
           </div>
         </li>
@@ -163,29 +170,28 @@
   function postProductAdd() {
 
     var productName = $("input[name=productName]").val();
-    // var thumb = $("input[name=thumb]").val();
+    var thumb = new FormData();
+    thumb.append('thumb' , $('#new-thumb')[0].files[0]);
     var color = $("input[name=color]:checked").val();
     var price = $("input[name=price]").val();
     var quantity = $("input[name=quantity]").val();
-    var brand = $("input[name=brand]:checked").val();
+    var brand = $("input[name=brand]:checked").val(); 
     var description = $("textarea[name=description]").val();
-
- 
 
     $.ajax({
       url: '/admin/product/addProduct',
       type: 'post',
       data: {
         productName : productName.trim(),
-        // thumb : thumb,
+        thumb : thumb.append('thumb' , $('#new-thumb')[0].files[0]),
         color : color,
         price : price,
         quantity : quantity ,
         brand : brand ,
         description : description
-      },
-      dataType: 'json',
+      },dataType: 'json',
     }).done(function(results){
+
       console.log(results);
       if (results.status == true) {
         $.confirm({
@@ -199,6 +205,7 @@
           }
         });
       }else{
+        console.log(results.errors[0].msg)
         $.alert({
           title: 'Thông Báo !',
           content: '<span class="text-danger"><strong class="fa fa-close"></strong>'+results.errors[0].msg+'</span>'

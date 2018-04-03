@@ -249,7 +249,7 @@
       title: 'Xác nhận!',
       content: 'Bạn có chắc chắn xóa người dùng này ?',
       buttons: {
-        confirm: function () {
+        'Đồng Ý': function () {
           $.ajax({
             url: '/admin/user/delete',
             type: 'post',
@@ -272,7 +272,7 @@
             }
           })
         },
-        cancel: function () {
+        'Hủy Bỏ': function () {
         },
       }
     });

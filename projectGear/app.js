@@ -1,13 +1,13 @@
 var express = require('express');
 const session = require('express-session');
- const flash = require('express-flash');
+const flash = require('express-flash');
 var fs = require('fs');
 var app = express();
+var multer = require('multer');
 const passport = require('passport');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));

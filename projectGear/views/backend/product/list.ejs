@@ -63,7 +63,8 @@
             <th>Giá tiền</th>
             <th>Số lượng</th>
             <th>Nhãn hiệu</th>
-            <th>Mô tả</th>
+            <th>Thời gian tạo</th>
+         <!--    <th>Mô tả</th> -->
             <th>Xử Lý</th>
           </tr>
         </thead>
@@ -143,16 +144,19 @@ function listProduct(page) {
 
 
             if (results.listProduct[i].color == 1) {
-              xhtml += '<td><span class="label label-info">Màu 1</span></td>';
+              xhtml += '<td><span class="label label-info">Đen</span></td>';
             }
             else if (results.listProduct[i].color == 2){
-              xhtml += '<td><span class="label label-info">Màu 2</span></td>';
+              xhtml += '<td><span class="label label-info">Trắng</span></td>';
             }
             else if (results.listProduct[i].color == 3){
-              xhtml += '<td><span class="label label-info">Màu 3</span></td>';
+              xhtml += '<td><span class="label label-info">Đỏ</span></td>';
             }
             else if (results.listProduct[i].color == 4){
-              xhtml += '<td><span class="label label-info">Màu 4</span></td>';
+              xhtml += '<td><span class="label label-info">Xanh Da Trời</span></td>';
+            }
+            else if (results.listProduct[i].color == 5){
+              xhtml += '<td><span class="label label-info">Da Cam</span></td>';
             }
             else {
               xhtml += '<td><span="label"></td>';
@@ -162,7 +166,25 @@ function listProduct(page) {
 
             xhtml += '<td>'+results.listProduct[i].quantity+'</td>';
 
+             if (results.listProduct[i].brand == 1) {
+              xhtml += '<td><span class="label label-info">SteelSeries</span></td>';
+            }
+            else if (results.listProduct[i].brand == 2){
+              xhtml += '<td><span class="label label-info">Razer</span></td>';
+            }
+            else if (results.listProduct[i].brand == 3){
+              xhtml += '<td><span class="label label-info">Ozone Gaming</span></td>';
+            }
+            else if (results.listProduct[i].brand == 4){
+              xhtml += '<td><span class="label label-info">MSI Gaming</span></td>';
+            }
+            else {
+              xhtml += '<td><span="label"></td>';
+            }
+
             xhtml += '<td>'+date_createdAt+'</td>';
+
+            // xhtml += '<td>'+results.listProduct[i].description+'</td>';
 
             xhtml += '<td><a href="/admin/product/edit/'+results.listProduct[i]._id+'"><span class="label label-default"><span class="glyphicon glyphicon-check"></span> Xem</span></a> <a href="/admin/product/edit/'+results.listProduct[i]._id+'"><span class="label label-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</span></a> <a href="javascript:void(0)" onclick="removeProduct(\''+results.listProduct[i]._id+'\')"><span class="label label-danger"><span class="glyphicon glyphicon-remove"></span> Xóa</span></a></td>';
 
@@ -216,4 +238,40 @@ function listProduct(page) {
   })
 }
 
+</script>
+
+<script>
+  function removeProduct(id){
+    $.confirm({
+      title : 'Xác nhận !',
+      content : 'Bạn có chắc chắn muốn xóa sản phẩm này',
+      buttons: {
+        'Đồng Ý': function () {
+          $.ajax({
+            url: '/admin/product/delete',
+            type: 'post',
+            data: {
+              id : id
+            },
+            dataType: 'json',
+          }).done(function(results){
+            if (results.status) {
+              $.alert({
+                title: 'Thông Báo!',
+                content: '<span class="text-success"><strong class="fa fa-check"></strong>Xóa thành công</span>'
+              })
+              location.reload();
+            }else{
+              $.alert({
+                title: 'Thông Báo!',
+                content: '<span class="text-danger"><strong class="fa fa-close"></strong>Xóa thất bại </span>'
+              })
+            }
+          })
+        },
+        'Hủy Bỏ': function () {
+        },
+      }
+    })
+  }
 </script>

@@ -11,11 +11,27 @@
  const download = require('download');
  const async = require('async');
  const bcrypt = require('bcrypt-nodejs');
+ const multer = require("multer");
 
  const { check, validationResult } = require('express-validator/check');
 
 
- 
+ //Setup multer upload
+ let storage = multer.diskStorage({
+    // Configuring multer to upload folder
+    destination: function(req, file, cb) {
+      cb(null, './public/upload/avatar')
+    },
+    // Rename file to save in the database.
+    filename: function(req, file, cb) {
+      var ext = file.originalname.split('.')
+      cb(null, ext[0]+ '_' + Date.now() + '.' + ext[ext.length - 1]);
+    }
+  });
+
+ let upload = multer({
+  storage: storage,
+}).single('file');
 
  function isEmail(email) {
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -104,7 +120,7 @@ exports.getUserEdit = async (req,res) =>{
   if (req.params && req.params.id) {
     try{
       let user = await User.find({_id : req.params.id});
-      res.render('backend/user/edit', {user:user[0]})
+      res.render('backend/user/edit', {user:user[0]}, {csrfToken: req.csrfToken()})
     }catch(err){
     }
   }
@@ -125,7 +141,11 @@ exports.getUserAdd = async (req,res) =>{
  ]
 
  exports.postUserEdit = async (req,res) =>{
+  console.log("Vao day=====")
+      console.log(req);
   if (req.body) {
+
+
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -134,6 +154,29 @@ exports.getUserAdd = async (req,res) =>{
 
 
     try{
+      upload(req,res,function(err) {
+    // console.log(req)
+    if(err) {
+      console.log(err);
+      return res.send({status:false, msg:'Error uploading file!'});
+    }
+    // console.log("upload done")
+
+    if(req.body.id && req.body.id != ''){
+      if (req.file) {
+        User.update({_id : req.body.id}, {avatar: req.file.filename}, (err,results)=>{
+          if(err){
+            return res.send({status:false, msg:'Upload fail!'});
+          }
+          return res.send({status:true, msg:'Upload successful!'});
+        })
+      }else{
+        return res.send({status:false, msg:'Error uploading file!'});
+      }
+    }else{
+      return res.send({status:false, msg:'User not found!'});
+    }
+  })
       // console.log(req.body)
       let existingEmail = await User.findOne({_id : {$ne: req.body.id}, email: req.body.new_email});
       if (existingEmail) {   
@@ -154,9 +197,9 @@ exports.getUserAdd = async (req,res) =>{
         role : req.body.new_role
       }
 
-      console.log(req.body.new_birthDay);
+      // console.log(req.body.new_birthDay);
 
-      let updateUser = await User.update({ _id: req.body.id}, { $set: dataUpdate});
+      // let updateUser = await User.update({ _id: req.body.id}, { $set: dataUpdate});  
 
 
       if (updateUser) {
@@ -189,9 +232,12 @@ exports.postUserAdd = async (req,res) =>{
     return res.send({status:false, errors : errors.array()});
   }
 
-  console.log(errors.array())
+  // console.log(errors.array());
+
+
 
   try{
+
     const user = new User({
       userName: req.body.userName,
       email: req.body.email,
@@ -240,4 +286,29 @@ exports.postUserAdd = async (req,res) =>{
 }
 }
 
+// exports.uploadAvatar = (req,res) =>{
+//   // console.log(req)
+//   upload(req,res,function(err) {
+//     // console.log(req)
+//     if(err) {
+//       console.log(err);
+//       return res.send({status:false, msg:'Error uploading file!'});
+//     }
+//     // console.log("upload done")
 
+//     if(req.body.id && req.body.id != ''){
+//       if (req.file) {
+//         User.update({_id : req.body.id}, {avatar: req.file.filename}, (err,results)=>{
+//           if(err){
+//             return res.send({status:false, msg:'Upload fail!'});
+//           }
+//           return res.send({status:true, msg:'Upload successful!'});
+//         })
+//       }else{
+//         return res.send({status:false, msg:'Error uploading file!'});
+//       }
+//     }else{
+//       return res.send({status:false, msg:'User not found!'});
+//     }
+//   })
+// }

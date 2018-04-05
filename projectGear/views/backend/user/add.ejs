@@ -6,26 +6,30 @@
   <%- include('../include/admin-sidebar') %>
 
   <style>
-  .content-edit>ul {
+  .content-edit form>ul {
     list-style-type: none;
     width: 100%;
+    float: left;
   }
-  .content-edit>ul>li {
+  .content-edit form>ul>li {
     margin-top: 30px;
+    float: left;
+    width: 100%;
   }
-  .content-edit>ul>li>span {
+  .content-edit form>ul>li>span {
     font-size: 1.6rem;
     width: 15%;
-    display: inline-block;
+    float: left;
   }
-  .content-edit>ul>li>input {
+  .content-edit form>ul>li>input {
     border-radius: 5px;
     border : none;
     padding: 5px 0;
     width: 40%;
     padding-left: 20px;
+    float: left;
   }
-  .content-edit>ul>li>input:focus{
+  .content-edit form>ul>li>input:focus{
     outline: none;
   }
   .active {
@@ -109,131 +113,164 @@
             <span class="label label-info">Nữ</span>
           </div>
         </li>
-        <li>    
-          <li>
-            <span>Trạng thái</span>
-            <div class="active">
-              <input class="status-active" type="radio" name="status" value="1" >
-              <span class="label label-success">Active</span>
-            </div>
-            <div class="active active-block">
-              <input class="status-active" type="radio" name="status" value="0">
-              <span class="label label-danger">Block</span>
-            </div>
-          </li>
-          <li>
-            <span>Cấp Bậc</span>
-            <div class="active">
-              <input class="status-active" type="radio" name="level" value="1">
-              <span class="label label-info">MemberShip</span>
-            </div>
-            <div class="active active-block">
-              <input class="status-active" type="radio" name="level" value="2">
-              <span class="label label-info">Silver MemberShip</span>
-            </div>
-            <div class="active active-block">
-              <input class="status-active" type="radio" name="level" value="3">
-              <span class="label label-info">Gold MemberShip</span>
-            </div>
-            <div class="active active-block">
-              <input class="status-active" type="radio" name="level" value="4">
-              <span class="label label-info">Platinum MemberShip</span>
-            </div>
-          </li>
-          <li>
-            <span>Quyền</span>
-            <div class="active">
-              <input class="status-active" type="radio" name="role" value="1">
-              <span class="label label-primary">Admin</span>
-            </div>
-            <div class="active active-block">
-              <input class="status-active" type="radio" name="role" value="0">
-              <span class="label label-default">User</span>
-            </div>
-          </li>
-          <li class="button-active">
-            <a href="javascript:void(0)" onclick="postUserAdd()">Cập Nhật</a>
-          </li>
-        </ul>
+        <li>
+          <span>Tải ảnh lên</span>
+          <input type="file" name="avatar" value="">
+        </li>   
+        <li>
+          <span>Trạng thái</span>
+          <div class="active">
+            <input class="status-active" type="radio" name="status" value="1" >
+            <span class="label label-success">Active</span>
+          </div>
+          <div class="active active-block">
+            <input class="status-active" type="radio" name="status" value="0">
+            <span class="label label-danger">Block</span>
+          </div>
+        </li>
+        <li>
+          <span>Cấp Bậc</span>
+          <div class="active">
+            <input class="status-active" type="radio" name="level" value="1">
+            <span class="label label-info">MemberShip</span>
+          </div>
+          <div class="active active-block">
+            <input class="status-active" type="radio" name="level" value="2">
+            <span class="label label-info">Silver MemberShip</span>
+          </div>
+          <div class="active active-block">
+            <input class="status-active" type="radio" name="level" value="3">
+            <span class="label label-info">Gold MemberShip</span>
+          </div>
+          <div class="active active-block">
+            <input class="status-active" type="radio" name="level" value="4">
+            <span class="label label-info">Platinum MemberShip</span>
+          </div>
+        </li>
+        <li>
+          <span>Quyền</span>
+          <div class="active">
+            <input class="status-active" type="radio" name="role" value="1">
+            <span class="label label-primary">Admin</span>
+          </div>
+          <div class="active active-block">
+            <input class="status-active" type="radio" name="role" value="0">
+            <span class="label label-default">User</span>
+          </div>
+        </li>
+        <li class="button-active">
+          <a href="javascript:void(0)" onclick="postUserAdd()">Cập Nhật</a>
+        </li>
+      </ul>
 
 
-      </div>
+    </div>
 
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 
-  <%- include('../include/admin-footer') %>
+<%- include('../include/admin-footer') %>
 
-  <%- include('../include/admin-control-sidebar') %>
+<%- include('../include/admin-control-sidebar') %>
 
-  <%- include('../include/admin-js.ejs') %>
+<%- include('../include/admin-js.ejs') %>
 
-  <script>
+<script>
 
-    function postUserAdd() {
+  function postUserAdd() {
 
-      var userName = $("input[name=userName]").val();
-      var email = $("input[name=email]").val();
-      var password = $("input[name=password]").val();
-      var password_confirm = $("input[name=password_confirm]").val();
-      var phoneNumber = $("input[name=phoneNumber]").val();
-      var address = $("input[name=address]").val();
-      var birthDay = $("input[name=birthDay]").val().split('/');
-      var year = birthDay[2];
-      var month = birthDay[1];
-      var day = birthDay[0];
-      var gender = $("input[name=gender]:checked").val();
-      var status =  $("input[name=status]:checked").val();
-      var level = $("input[name=level]:checked").val();
-      var role = $("input[name=role]:checked").val();
+    var userName = $("input[name=userName]").val();
+    var email = $("input[name=email]").val();
+    var password = $("input[name=password]").val();
+    var password_confirm = $("input[name=password_confirm]").val();
+    var phoneNumber = $("input[name=phoneNumber]").val();
+    var address = $("input[name=address]").val();
+    var birthDay = $("input[name=birthDay]").val().split('/');
+    var year = birthDay[2];
+    var month = birthDay[1];
+    var day = birthDay[0];
+    var gender = $("input[name=gender]:checked").val();
+    var status =  $("input[name=status]:checked").val();
+    var level = $("input[name=level]:checked").val();
+    var role = $("input[name=role]:checked").val();
 
-      $.ajax({
-        url: '/admin/user/addUser',
-        type: 'post',
-        data: {
-          userName : userName.trim(),
-          email : email.trim(),
-          password : password,
-          password_confirm : password_confirm,
-          phoneNumber : phoneNumber,
-          address : address,
-          birthDay : birthDay,
-          year : year,
-          month : month,
-          day : day,
-          gender : gender,
-          status : status,
-          level : level,
-          role : role
-        },
-        dataType: 'json',
-      }).done(function(results){
-        console.log(results);
-        if (results.status == true) {
-          $.confirm({
-            title: 'Thông Báo!',
-            content: 'Tạo tài khoản thành công',
-            buttons: {
-              Ok: function () {
+    $.ajax({
+      url: '/admin/user/addUser',
+      type: 'post',
+      data: {
+        userName : userName.trim(),
+        email : email.trim(),
+        password : password,
+        password_confirm : password_confirm,
+        phoneNumber : phoneNumber,
+        address : address,
+        birthDay : birthDay,
+        year : year,
+        month : month,
+        day : day,
+        gender : gender,
+        status : status,
+        level : level,
+        role : role
+      },
+      dataType: 'json',
+    }).done(function(results){
+      console.log(results);
+      if (results.status == true) {
+        $.confirm({
+          title: 'Thông Báo!',
+          content: 'Tạo tài khoản thành công',
+          buttons: {
+            Ok: function () {
               // $.alert('Ok');
               window.location.replace("/admin/user/list");
             },
           }
         });
-        }else{
-          $.alert({
-            title: 'Thông Báo !',
-            content: '<span class="text-danger"><strong class="fa fa-close"></strong>'+results.errors[0].msg+'</span>'
-          })
+      }else{
+        $.alert({
+          title: 'Thông Báo !',
+          content: '<span class="text-danger"><strong class="fa fa-close"></strong>'+results.errors[0].msg+'</span>'
+        })
 
-        }
+      }
 
-      })
+    })
 
+  }
+
+</script>
+
+<script>
+// Upload avatar
+
+
+// Upload avatar
+function uploadAvatar(id){
+  var form = $('#form-'+id);
+  var formData = new FormData(form[0]);
+
+  // console.log(formData);
+
+  $.ajax({
+    url: '/admin/user/uploadAvatar',
+    method: 'POST',
+    data: formData,
+    dataType:'json',
+    processData: false,
+    contentType: false
+  }).done(function(results){
+    if(results.status){
+      form.find('.alert').addClass('alert-success').text(results.msg);
+
+      setTimeout(function(){
+       window.location.reload();
+     }, 600);
+    }else{
+      form.find('.alert').addClass('alert-danger').text(results.msg);
     }
-
-
-
-  </script>
+  })
+}
+</script>

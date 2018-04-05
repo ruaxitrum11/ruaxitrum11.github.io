@@ -15,18 +15,29 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// var csrf = require('csurf');
+var csrf = require('csurf');
 
-// var csrfProtection = csrf();
-// app.use(csrfProtection);
+var csrfProtection = csrf();
+app.use(csrfProtection);
 
 // Sets up a session store with Mongodb
 
-// app.use(session({
-// 	resave: false,
-// 	saveUninitialized: false,
-// 	secret: process.env.SESSION_SECRET,
-// }));
+app.use(session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {secure: true,
+        httpOnly: true,
+        maxAge: 1000 * 60 * 60 * 24
+    }
+}));
+
+app.use(express.csrf())
+app.use(function (req, res, next) {
+  res.cookie('XSRF-TOKEN', req.csrfToken());
+  res.locals.csrftoken = req.csrfToken();
+  next();
+})
 
 app.use(passport.initialize());
 app.use(passport.session());

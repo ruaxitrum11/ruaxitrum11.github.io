@@ -78,6 +78,7 @@
           <tr>
             <th>Tài Khoản</th>
             <th>Email</th>
+            <th>Avatar</th>
             <th>Trạng thái</th>
             <th>Cấp Bậc</th>
             <th>Quyền</th>
@@ -113,13 +114,13 @@
   });
 
   $('select').on('change', function() {
-     listUser(1);
+   listUser(1);
     // alert( this.value );
   })
 
   $('.user-search-text').keyup(function() {
    listUser(1);
-});
+ });
 
 
   function listUser(page) {
@@ -160,6 +161,12 @@
 
             xhtml += '<td>'+results.listUser[i].email+'</td>';
 
+            if (results.listUser[i].avatar && results.listUser[i].avatar !="") {
+              xhtml += '<td><img src="/upload/avatar/'+results.listUser[i].avatar+'" style="height:65px; width:65px;border-radius:50%"/></td>';
+            }else{
+              xhtml += '<td><img src="/upload/avatar/noimage.jpg" style="height:65px; width:65px;border-radius:50%"/></td>';
+            }
+
             if (results.listUser[i].status == 1) {
               xhtml += '<td><span class="label label-success">Active</span></td>';
             }else{
@@ -190,56 +197,54 @@
 
             xhtml += '<td>'+date_createdAt+'</td>';
 
-            xhtml += '<td><a href="/admin/user/edit/'+results.listUser[i]._id+'"><span class="label label-default"><span class="glyphicon glyphicon-check"></span> Xem</span></a> <a href="/admin/user/edit/'+results.listUser[i]._id+'"><span class="label label-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</span></a> <a href="javascript:void(0)" onclick="removeUser(\''+results.listUser[i]._id+'\')"><span class="label label-danger"><span class="glyphicon glyphicon-remove"></span> Xóa</span></a></td>';
-
-
-            xhtml += '</tr>';
-
+            xhtml += '<td><a href="/admin/user/edit/'+results.listUser[i]._id+'"><span class="label label-default"><span class="glyphicon glyphicon-check"></span> Xem</span></a>  <a href="/admin/user/edit/'+results.listUser[i]._id+'"><span class="label label-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</span></a> <a href="javascript:void(0)" onclick="removeUser(\''+results.listUser[i]._id+'\')"><span class="label label-danger"><span class="glyphicon glyphicon-remove"></span> Xóa</span></a>'           
           }
+
+          // console.log(xhtml)
           $("table tbody").html(xhtml)
         }else{
-           $("table tbody").html('Không tìm thấy!');
+         $("table tbody").html('Không tìm thấy!');
+       }
+
+
+       if(results.totalPage > 1) {
+        var pagiHtml = '';
+        pagiHtml ='<ul class="pagination">';
+        if (results.page != 1){ 
+          var pagePriv = parseInt(results.page) - 1; 
+          pagiHtml += '<li class="" ><a href="javascript:void(0)" onclick="listUser(1)""><i class="fa fa-step-backward" aria-hidden="true"></i></a></li>  ';                  
+          pagiHtml += '<li class="" ><a href="javascript:void(0)" onclick="listUser('+ pagePriv +')"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>';
         }
 
-
-        if(results.totalPage > 1) {
-          var pagiHtml = '';
-          pagiHtml ='<ul class="pagination">';
-          if (results.page != 1){ 
-            var pagePriv = parseInt(results.page) - 1; 
-            pagiHtml += '<li class="" ><a href="javascript:void(0)" onclick="listUser(1)""><i class="fa fa-step-backward" aria-hidden="true"></i></a></li>  ';                  
-            pagiHtml += '<li class="" ><a href="javascript:void(0)" onclick="listUser('+ pagePriv +')"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>';
-          }
-
-          var _begin =  results.page - 8; 
-          var _end = results.page + 8;
-          if (_begin < 1){ 
-            _begin = 1;
-          }
-          if (_end > results.totalPage ) {
-            _end = results.totalPage;
-          } 
-          for (var i = _begin; i <= _end; i++) {
-            if(results.page == i) { 
-              pagiHtml += '<li class="active" ><a href="javascript:void(0)">'+ i +'</a></li>';
-            } else { 
-              pagiHtml += '<li><a href="javascript:void(0)" onclick="listUser('+ i +')">'+i+'</a></li>';
-            }
-          } 
-          if (results.page < results.totalPage ) {
-            var pageNext = parseInt(results.page) + 1; 
-            pagiHtml += '<li class="" ><a href="javascript:void(0)" onclick="listUser('+ pageNext +')"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>';
-            pagiHtml += '<li class="" ><a href="javascript:void(0)" onclick="listUser('+ results.totalPage +')"><i class="fa fa-step-forward" aria-hidden="true"></i></a></li>';
-          } 
-          pagiHtml += '</ul>';
-
-          $('#pagination-list-user').html(pagiHtml);
-        } else {
-          $('#pagination-list-user').html('');
+        var _begin =  results.page - 8; 
+        var _end = results.page + 8;
+        if (_begin < 1){ 
+          _begin = 1;
         }
+        if (_end > results.totalPage ) {
+          _end = results.totalPage;
+        } 
+        for (var i = _begin; i <= _end; i++) {
+          if(results.page == i) { 
+            pagiHtml += '<li class="active" ><a href="javascript:void(0)">'+ i +'</a></li>';
+          } else { 
+            pagiHtml += '<li><a href="javascript:void(0)" onclick="listUser('+ i +')">'+i+'</a></li>';
+          }
+        } 
+        if (results.page < results.totalPage ) {
+          var pageNext = parseInt(results.page) + 1; 
+          pagiHtml += '<li class="" ><a href="javascript:void(0)" onclick="listUser('+ pageNext +')"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>';
+          pagiHtml += '<li class="" ><a href="javascript:void(0)" onclick="listUser('+ results.totalPage +')"><i class="fa fa-step-forward" aria-hidden="true"></i></a></li>';
+        } 
+        pagiHtml += '</ul>';
 
+        $('#pagination-list-user').html(pagiHtml);
+      } else {
+        $('#pagination-list-user').html('');
       }
-    })
+
+    }
+  })
 }
 </script>
 
@@ -280,5 +285,43 @@
 </script>
 
 <script>
+// Upload avatar
 
+// Img preview
+// function readURL(input,id) {
+//   if (input.files && input.files[0]) {
+//     var reader = new FileReader();
+//     reader.onload = function (e) {
+//       $('.img-preview-'+id).attr('src', e.target.result);
+//     }
+//     reader.readAsDataURL(input.files[0]);
+//   }
+// }
+
+// Upload avatar
+function uploadAvatar(id){
+  var form = $('#form-'+id);
+  var formData = new FormData(form[0]);
+
+  // console.log(formData);
+
+  $.ajax({
+    url: '/admin/user/uploadAvatar',
+    method: 'POST',
+    data: formData,
+    dataType:'json',
+    processData: false,
+    contentType: false
+  }).done(function(results){
+    if(results.status){
+      form.find('.alert').addClass('alert-success').text(results.msg);
+
+      setTimeout(function(){
+       window.location.reload();
+     }, 600);
+    }else{
+      form.find('.alert').addClass('alert-danger').text(results.msg);
+    }
+  })
+}
 </script>

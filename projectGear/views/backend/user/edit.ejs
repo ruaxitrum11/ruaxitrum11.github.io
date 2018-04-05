@@ -6,27 +6,25 @@
   <%- include('../include/admin-sidebar') %>
 
   <style>
-  .content-edit>ul {
-    list-style-type: none;
+  .form-edit-user {
     width: 100%;
+    float: left;
+    margin-bottom: 20px;
+    padding: 0 10%;
   }
-  .content-edit>ul>li {
-    margin-top: 30px;
-  }
-  .content-edit>ul>li>span {
-    font-size: 1.6rem;
+  .form-edit-user span {
+    float: left;
     width: 15%;
+    font-size: 1.6rem;
     display: inline-block;
+    padding-top: 10px;
   }
-  .content-edit>ul>li>input {
+  .form-edit-user input {
+    width: 40%;
+    float: left;
+    padding : 10px 0 10px 10px;
     border-radius: 5px;
     border : none;
-    padding: 5px 0;
-    width: 40%;
-    padding-left: 20px;
-  }
-  .content-edit>ul>li>input:focus{
-    outline: none;
   }
   .active {
     display: inline-block; 
@@ -41,10 +39,10 @@
     width: 5%!important;
   }
   span.label {
-    width: 5%!important;
-    font-size: 90%!important;
+    width: 20%!important;
+    font-size: 94%!important;
   }
-  li.button-active a {
+  div.button-active a {
     display: inline-block;
     font-size: 2rem;
     padding: 10px 30px;
@@ -68,33 +66,36 @@
   <section class="content ">
 
     <div class="container content-edit">     
-
-      <ul>
-        <li>
+      <form action="/admin/user/edit" id="form-edit" method="post" enctype="multipart/form-data">
+        <div class = "form-edit-user">
           <span>Tài khoản</span>
           <input disabled="Block" type="text" name="userName" value="<%=user.userName%>" >
-        </li>
-        <li>
+        </div>
+        <div class = "form-edit-user">
           <span>Mật khẩu</span>
           <input disabled="Block" type="password" name="password" value="<%=user.password%>" >
-        </li>
-        <li>
+        </div>
+        <div class = "form-edit-user">
           <span>Email</span>
           <input type="text" name="email" value="<%=user.email%>">
-        </li>
-        <li>
+        </div>
+        <div class = "form-edit-user">
           <span>Số điện thoại</span>
           <input type="number" name="phoneNumber" value="<%=user.phoneNumber%>">
-        </li>
-        <li>
+        </div>
+        <div class = "form-edit-user">
           <span>Địa chỉ</span>
           <input type="text" name="address" value="<%=user.address%>">
-        </li>
-        <li>
-          <span>Ngày Sinh</span>
+        </div>
+        <div class = "form-edit-user">
+          <span>Ngày sinh</span>
           <input type="date" name="birthDay" value="<%=user.birthDay%>">
-        </li>
-        <li>
+        </div>
+        <div class = "form-edit-user">
+          <span>Ảnh đại diện</span>
+          <input type="file" name="file">
+        </div>
+        <div class = "form-edit-user">
           <span>Giới tính</span>
           <div class="active">
             <input class="status-active" type="radio" name="gender" value="0" <%if(user.gender == 0){%>checked<%}%>>
@@ -104,8 +105,8 @@
             <input class="status-active" type="radio" name="gender" value="1" <%if(user.gender == 1){%>checked<%}%>>
             <span class="label label-info">Nữ</span>
           </div>
-        </li>
-        <li>
+        </div>
+        <div class = "form-edit-user">
           <span>Trạng thái</span>
           <div class="active">
             <input class="status-active" type="radio" name="status" value="1" <%if(user.status == 1){%>checked<%}%>>
@@ -115,8 +116,8 @@
             <input class="status-active" type="radio" name="status" value="0" <%if(user.status == 0){%>checked<%}%>>
             <span class="label label-danger">Block</span>
           </div>
-        </li>
-        <li>
+        </div>
+        <div class = "form-edit-user">
           <span>Cấp Bậc</span>
           <div class="active">
             <input class="status-active" type="radio" name="level" value="1" <%if(user.level == 1){%>checked<%}%>>
@@ -134,8 +135,8 @@
             <input class="status-active" type="radio" name="level" value="4" <%if(user.level == 4){%>checked<%}%>>
             <span class="label label-info">Platinum MemberShip</span>
           </div>
-        </li>
-        <li>
+        </div>
+        <div class = "form-edit-user">
           <span>Quyền</span>
           <div class="active">
             <input class="status-active" type="radio" name="role" value="1" <%if(user.role == 1){%>checked<%}%>>
@@ -145,12 +146,13 @@
             <input class="status-active" type="radio" name="role" value="0" <%if(user.role == 0){%>checked<%}%>>
             <span class="label label-default">User</span>
           </div>
-        </li>
-        <li class="button-active">
-          <a href="javascript:void(0)" onclick="updateUser('<%=user._id%>')">Cập Nhật</a>
-        </li>
-      </ul>
-
+        </div>
+        <input type="hidden" name="id" value="<%=user._id%>">
+        <input type="hidden" name="_csrf" value="<%=token%>">
+        <div class="form-edit-user button-active">
+          <button type="submit">Cập Nhật</button>
+        </div>
+      </form>
 
     </div>
 
@@ -165,7 +167,7 @@
 
 <%- include('../include/admin-js.ejs') %>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
 
   function updateUser(id) {
@@ -181,10 +183,18 @@
     var new_status =  $("input[name=status]:checked").val();
     var new_level = $("input[name=level]:checked").val();
     var new_role = $("input[name=role]:checked").val();
+    var form = $('#form-edit')[0];
+    var formData = new FormData(form);
+
+    console.log(form);
+
+    console.log(formData)
+    console.log(FormData(form[]));
 
     $.ajax({
       url: '/admin/user/edit',
       type: 'post',
+      id:id,
       data: {
         id : id,
         new_email : new_email.trim(),
@@ -198,9 +208,12 @@
         new_status : new_status,
         new_level : new_level,
         new_role : new_role 
-        
+
       },
+      data : formData,
       dataType: 'json',
+      processData: false,
+      contentType: false
     }).done(function(results){
       console.log(results);
       if (results.status == true) {
@@ -224,4 +237,4 @@
 
 
 
-</script>
+</script> -->

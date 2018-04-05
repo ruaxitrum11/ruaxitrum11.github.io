@@ -16,8 +16,9 @@ router.get('/list', userController.list);
 router.get('/listUser', userController.listUser);
 router.post('/delete', userController.deleteUser);
 router.get('/edit/:id', userController.getUserEdit);
-router.post('/edit', userController.validatorUserEdit, userController.postUserEdit);
+router.post('/edit', userController.postUserEdit);
 router.get('/add',userController.getUserAdd);
 router.post('/addUser', userController.validatorUserAdd, userController.postUserAdd);
+
 
 module.exports = router;

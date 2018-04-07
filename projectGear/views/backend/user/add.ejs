@@ -6,30 +6,26 @@
   <%- include('../include/admin-sidebar') %>
 
   <style>
-  .content-edit form>ul {
-    list-style-type: none;
-    width: 100%;
-    float: left;
-  }
-  .content-edit form>ul>li {
+  
+  .form-user-add {
     margin-top: 30px;
     float: left;
     width: 100%;
+    padding: 0 10%;
   }
-  .content-edit form>ul>li>span {
+.form-user-add>span {
     font-size: 1.6rem;
     width: 15%;
-    float: left;
+    display: inline-block;
   }
-  .content-edit form>ul>li>input {
+ .form-user-add>input {
     border-radius: 5px;
     border : none;
     padding: 5px 0;
     width: 40%;
     padding-left: 20px;
-    float: left;
   }
-  .content-edit form>ul>li>input:focus{
+  .form-user-add>input:focus{
     outline: none;
   }
   .active {
@@ -48,14 +44,19 @@
     width: 5%!important;
     font-size: 90%!important;
   }
-  li.button-active a {
+  .button-active a {
     display: inline-block;
     font-size: 2rem;
     padding: 10px 30px;
     background-color: #dd4b39;
     color: #fff;
   }
-
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
 
 </style>
 
@@ -73,96 +74,93 @@
 
     <div class="container content-edit">     
 
-      <ul>
-        <li>
-          <span>Tài khoản</span>
-          <input id="register-username" type="text" name="userName" value="">
-        </li>
-        <li>
-          <span>Mật khẩu</span>
-          <input id = "register-password" type="password" name="password" value="">
-        </li>
-        <li>
-          <span>Xác nhận mật khẩu</span>
-          <input id = "register-password-confirm" type="password" name="password_confirm" value="">
-        </li>
-        <li>
-          <span>Email</span>
-          <input id="register-email" type="text" name="email" value="">
-        </li>
-        <li>
-          <span>Số điện thoại</span>
-          <input type="text" name="phoneNumber" value="">
-        </li>
-        <li>
-          <span>Địa chỉ</span>
-          <input type="text" name="address" value="">
-        </li>
-        <li>
-          <span>Ngày Sinh</span>
-          <input type="date" name="birthDay" value="">
-        </li>
-        <li>
-          <span>Giới tính</span>
-          <div class="active">
-            <input class="status-active" type="radio" name="gender" value="0">
-            <span class="label label-info">Nam</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="gender" value="1">
-            <span class="label label-info">Nữ</span>
-          </div>
-        </li>
-        <li>
-          <span>Tải ảnh lên</span>
-          <input type="file" name="avatar" value="">
-        </li>   
-        <li>
-          <span>Trạng thái</span>
-          <div class="active">
-            <input class="status-active" type="radio" name="status" value="1" >
-            <span class="label label-success">Active</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="status" value="0">
-            <span class="label label-danger">Block</span>
-          </div>
-        </li>
-        <li>
-          <span>Cấp Bậc</span>
-          <div class="active">
-            <input class="status-active" type="radio" name="level" value="1">
-            <span class="label label-info">MemberShip</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="level" value="2">
-            <span class="label label-info">Silver MemberShip</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="level" value="3">
-            <span class="label label-info">Gold MemberShip</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="level" value="4">
-            <span class="label label-info">Platinum MemberShip</span>
-          </div>
-        </li>
-        <li>
-          <span>Quyền</span>
-          <div class="active">
-            <input class="status-active" type="radio" name="role" value="1">
-            <span class="label label-primary">Admin</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="role" value="0">
-            <span class="label label-default">User</span>
-          </div>
-        </li>
-        <li class="button-active">
-          <a href="javascript:void(0)" onclick="postUserAdd()">Cập Nhật</a>
-        </li>
-      </ul>
-
+      <div class="form-user-add">
+        <span>Tài khoản</span>
+        <input id="register-username" type="text" name="userName" value="">
+      </div>
+      <div class="form-user-add">
+        <span>Mật khẩu</span>
+        <input id = "register-password" type="password" name="password" value="">
+      </div>
+      <div class="form-user-add">
+        <span>Xác nhận mật khẩu</span>
+        <input id = "register-password-confirm" type="password" name="password_confirm" value="">
+      </div>
+      <div class="form-user-add">
+        <span>Email</span>
+        <input id="register-email" type="text" name="email" value="">
+      </div>
+      <div class="form-user-add">
+        <span>Họ tên</span>
+        <input type="text" name="nameUser" value="">
+      </div>
+      <div class="form-user-add">
+        <span>Số điện thoại</span>
+        <input type="number" name="phoneNumber" value="">
+      </div>
+      <div class="form-user-add">
+        <span>Địa chỉ</span>
+        <input type="text" name="address" value="">
+      </div>
+      <div class="form-user-add">
+        <span>Ngày Sinh</span>
+        <input type="date" name="birthDay" value="">
+      </div>
+      <div class="form-user-add">
+        <span>Giới tính</span>
+        <div class="active">
+          <input class="status-active" type="radio" name="gender" value="0">
+          <span class="label label-info">Nam</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="gender" value="1">
+          <span class="label label-info">Nữ</span>
+        </div>
+      </div>   
+      <div class="form-user-add">
+        <span>Trạng thái</span>
+        <div class="active">
+          <input class="status-active" type="radio" name="status" value="1" >
+          <span class="label label-success">Active</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="status" value="0">
+          <span class="label label-danger">Block</span>
+        </div>
+      </div>
+      <div class="form-user-add">
+        <span>Cấp Bậc</span>
+        <div class="active">
+          <input class="status-active" type="radio" name="level" value="1">
+          <span class="label label-info">MemberShip</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="level" value="2">
+          <span class="label label-info">Silver MemberShip</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="level" value="3">
+          <span class="label label-info">Gold MemberShip</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="level" value="4">
+          <span class="label label-info">Platinum MemberShip</span>
+        </div>
+      </div>
+      <div class="form-user-add">
+        <span>Quyền</span>
+        <div class="active">
+          <input class="status-active" type="radio" name="role" value="1">
+          <span class="label label-primary">Admin</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="role" value="0">
+          <span class="label label-default">User</span>
+        </div>
+      </div>
+      <div class="form-user-add button-active">
+        <a href="javascript:void(0)" onclick="postUserAdd()">Cập Nhật</a>
+      </div>
 
     </div>
 
@@ -185,12 +183,10 @@
     var email = $("input[name=email]").val();
     var password = $("input[name=password]").val();
     var password_confirm = $("input[name=password_confirm]").val();
+    var nameUser = $("input[name=nameUser]").val();
     var phoneNumber = $("input[name=phoneNumber]").val();
     var address = $("input[name=address]").val();
-    var birthDay = $("input[name=birthDay]").val().split('/');
-    var year = birthDay[2];
-    var month = birthDay[1];
-    var day = birthDay[0];
+    var birthDay = $("input[name=birthDay]").val();
     var gender = $("input[name=gender]:checked").val();
     var status =  $("input[name=status]:checked").val();
     var level = $("input[name=level]:checked").val();
@@ -204,12 +200,10 @@
         email : email.trim(),
         password : password,
         password_confirm : password_confirm,
+        nameUser : nameUser,
         phoneNumber : phoneNumber,
         address : address,
         birthDay : birthDay,
-        year : year,
-        month : month,
-        day : day,
         gender : gender,
         status : status,
         level : level,
@@ -221,7 +215,7 @@
       if (results.status == true) {
         $.confirm({
           title: 'Thông Báo!',
-          content: 'Tạo tài khoản thành công',
+          content: '<span class="text-success"><strong class="fa fa-check"></strong>Tạo tài khoản thành công</span>',
           buttons: {
             Ok: function () {
               // $.alert('Ok');
@@ -241,36 +235,6 @@
 
   }
 
-</script>
-
-<script>
-// Upload avatar
 
 
-// Upload avatar
-function uploadAvatar(id){
-  var form = $('#form-'+id);
-  var formData = new FormData(form[0]);
-
-  // console.log(formData);
-
-  $.ajax({
-    url: '/admin/user/uploadAvatar',
-    method: 'POST',
-    data: formData,
-    dataType:'json',
-    processData: false,
-    contentType: false
-  }).done(function(results){
-    if(results.status){
-      form.find('.alert').addClass('alert-success').text(results.msg);
-
-      setTimeout(function(){
-       window.location.reload();
-     }, 600);
-    }else{
-      form.find('.alert').addClass('alert-danger').text(results.msg);
-    }
-  })
-}
 </script>

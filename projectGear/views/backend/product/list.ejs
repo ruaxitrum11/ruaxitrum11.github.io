@@ -12,6 +12,30 @@
     margin : 20px 0;
     font-size: 3rem;
   }
+  .form-productInfo {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  span.form-productInfo-tilte{
+    float: left;
+    width: 30%;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: left;
+    padding-left: 30px;
+  }
+  span.form-productInfo-icon {
+    width: 1%;
+    float: left;
+  }
+  span.form-productInfo-content  {
+    float: left;
+    width: 69%;
+    font-size: 1.6rem;
+    text-align: left;
+    padding-left: 30px;
+  }
 </style>
 
 <!-- Content Wrapper. Contains page content -->
@@ -59,12 +83,12 @@
           <tr>
             <th>Tên sản phẩm</th>
             <th>Hình ảnh</th>
-            <th>Màu sắc</th>
-            <th>Giá tiền</th>
-            <th>Số lượng</th>
+            <th>Loại sản phẩm</th>
             <th>Nhãn hiệu</th>
+            <th>Trạng thái</th>
             <th>Thời gian tạo</th>
-         <!--    <th>Mô tả</th> -->
+            
+            <!--    <th>Mô tả</th> -->
             <th>Xử Lý</th>
           </tr>
         </thead>
@@ -134,61 +158,185 @@ function listProduct(page) {
 
             if(results.listProduct[i].createdAt){
               var date = new Date(results.listProduct[i].createdAt);
-              var date_createdAt = date.getFullYear()+ '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2) + ' ' + ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2); 
+              var date_createdAt = moment(date).format('HH:MM | DD-MM-YYYY');
             }
 
             xhtml += '<tr>';
             xhtml += '<td>'+results.listProduct[i].productName+'</td>';
 
-            xhtml += '<td>'+results.listProduct[i].thumb+'</td>';
+            if(results.listProduct[i] && results.listProduct[i].productThumb){
+              xhtml += '<td><span class="form-productInfo-content"><img src="/upload/thumbProduct/'+results.listProduct[i].productThumb+'" style="height:60px; width:60px;"/></span></td>';
+            }else{
+              xhtml += '<td><span class="form-productInfo-content"></span></td>';
+            }
 
-
-            if (results.listProduct[i].color == 1) {
-              xhtml += '<td><span class="label label-info">Đen</span></td>';
+            if (results.listProduct[i].productSpecies == 1) {
+              xhtml += '<td><span class="label label-info">Tai nghe</span></td>';
             }
-            else if (results.listProduct[i].color == 2){
-              xhtml += '<td><span class="label label-info">Trắng</span></td>';
+            else if (results.listProduct[i].productSpecies == 2){
+              xhtml += '<td><span class="label label-info">Bàn phím</span></td>';
             }
-            else if (results.listProduct[i].color == 3){
-              xhtml += '<td><span class="label label-info">Đỏ</span></td>';
+            else if (results.listProduct[i].productSpecies == 3){
+              xhtml += '<td><span class="label label-info">Chuột</span></td>';
             }
-            else if (results.listProduct[i].color == 4){
-              xhtml += '<td><span class="label label-info">Xanh Da Trời</span></td>';
+            else if (results.listProduct[i].productSpecies == 4){
+              xhtml += '<td><span class="label label-info">Laptop</span></td>';
             }
-            else if (results.listProduct[i].color == 5){
-              xhtml += '<td><span class="label label-info">Da Cam</span></td>';
+            else if (results.listProduct[i].productSpecies == 5){
+              xhtml += '<td><span class="label label-info">Phụ kiện khác</span></td>';
             }
             else {
-              xhtml += '<td><span="label"></td>';
+              xhtml += '<td><span="label"></span></td>';
             }
 
-            xhtml += '<td>'+results.listProduct[i].price+'</td>';
-
-            xhtml += '<td>'+results.listProduct[i].quantity+'</td>';
-
-             if (results.listProduct[i].brand == 1) {
-              xhtml += '<td><span class="label label-info">SteelSeries</span></td>';
+            if (results.listProduct[i].brand == 1) {
+              xhtml += '<td><span class="label label-primary">SteelSeries</span></td>';
             }
             else if (results.listProduct[i].brand == 2){
-              xhtml += '<td><span class="label label-info">Razer</span></td>';
+              xhtml += '<td><span class="label label-success">Razer</span></td>';
             }
             else if (results.listProduct[i].brand == 3){
-              xhtml += '<td><span class="label label-info">Ozone Gaming</span></td>';
+              xhtml += '<td><span class="label label-Danger">Ozone Gaming</span></td>';
             }
             else if (results.listProduct[i].brand == 4){
-              xhtml += '<td><span class="label label-info">MSI Gaming</span></td>';
+              xhtml += '<td><span class="label label-warning">MSI Gaming</span></td>';
             }
             else {
               xhtml += '<td><span="label"></td>';
             }
+
+            if (results.listProduct[i].status == 1) {
+              xhtml += '<td><span class="label label-success">Còn hàng</span></td>';
+            }else {
+              xhtml += '<td><span="label label-danger">Hết hàng</span></td>';
+            }
+
 
             xhtml += '<td>'+date_createdAt+'</td>';
 
             // xhtml += '<td>'+results.listProduct[i].description+'</td>';
 
-            xhtml += '<td><a href="/admin/product/edit/'+results.listProduct[i]._id+'"><span class="label label-default"><span class="glyphicon glyphicon-check"></span> Xem</span></a> <a href="/admin/product/edit/'+results.listProduct[i]._id+'"><span class="label label-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</span></a> <a href="javascript:void(0)" onclick="removeProduct(\''+results.listProduct[i]._id+'\')"><span class="label label-danger"><span class="glyphicon glyphicon-remove"></span> Xóa</span></a></td>';
+            xhtml += '<td><a style="cursor:pointer" data-toggle="modal" data-target="#modal-'+results.listProduct[i]._id+'-productInfo"><span class="label label-default"><span class="glyphicon glyphicon-check"></span> Xem</span></a> <a href="/admin/product/edit/'+results.listProduct[i]._id+'"><span class="label label-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</span></a> <a href="javascript:void(0)" onclick="removeProduct(\''+results.listProduct[i]._id+'\')"><span class="label label-danger"><span class="glyphicon glyphicon-remove"></span> Xóa</span></a>';
+
+            //Modal productInfo
+
+            xhtml += '<div class="modal fade" id="modal-'+results.listProduct[i]._id+'-productInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">';
+            xhtml += '<div class="modal-dialog" role="document">';
+            xhtml += '<div class="modal-content modal-productInfo">';
+            xhtml += '<div class="modal-header">';
+            xhtml += '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+            xhtml += '<h4 class="modal-title">Thông tin sản phẩm : <strong>'+results.listProduct[i].productName+'</strong></h4>';
+            xhtml += '</div>';
+
+            xhtml += '<div class="modal-body">';
+            xhtml += '<div class="box-body">';
+            
+
+            xhtml += '<div class="form-productInfo">';
+            xhtml += '<span class="form-productInfo-tilte">Hình ảnh</span>';
+            xhtml += '<span class="form-productInfo-icon">:</span>';
+            if(results.listProduct[i] && results.listProduct[i].productThumb){
+              xhtml += '<span class="form-productInfo-content"><img src="/upload/thumbProduct/'+results.listProduct[i].productThumb+'" style="height:60px; width:60px;"/></span>';
+            }
+            xhtml += '</div>';
+            xhtml += '<div class="form-productInfo">';
+            xhtml += '<span class="form-productInfo-tilte">Loại sản phẩm</span>';
+            xhtml += '<span class="form-productInfo-icon">:</span>';
+            if (results.listProduct[i].productSpecies == 1) {
+              xhtml += '<span class="form-productInfo-content">Tai nghe</span>';
+            } else if (results.listProduct[i].productSpecies == 2) {
+              xhtml += '<span class="form-productInfo-content">Bàn phím</span>';
+            } 
+            else if (results.listProduct[i].productSpecies == 3) {
+              xhtml += '<span class="form-productInfo-content">Chuột</span>';
+            } 
+            else if (results.listProduct[i].productSpecies == 4) {
+              xhtml += '<span class="form-productInfo-content">Laptop</span>';
+            } 
+            else if (results.listProduct[i].productSpecies == 5) {
+              xhtml += '<span class="form-productInfo-content">Phụ kiện khác</span>';
+            } 
+            else {
+              xhtml += '<span class="form-productInfo-content"></span>';
+            }
+            xhtml += '</div>';
+
+            xhtml += '<div class="form-productInfo">';
+            xhtml += '<span class="form-productInfo-tilte">Nhãn hiệu</span>';
+            xhtml += '<span class="form-productInfo-icon">:</span>';
+            if (results.listProduct[i].brand == 1) {
+              xhtml += '<span class="form-productInfo-content">SteelSeries</span>';
+            }else if (results.listProduct[i].brand == 2){
+              xhtml += '<span class="form-productInfo-content">Razer</span>';
+            }else if (results.listProduct[i].brand == 3){
+              xhtml += '<span class="form-productInfo-content">Ozone Gaming</span>';
+            }else if (results.listProduct[i].brand == 4){
+              xhtml += '<span class="form-productInfo-content">MSI Gaming</span>';
+            }
+            xhtml += '</div>';
 
 
+            xhtml += '<div class="form-productInfo">';
+            xhtml += '<span class="form-productInfo-tilte">Màu sắc</span>';
+            xhtml += '<span class="form-productInfo-icon">:</span>';
+            if (results.listProduct[i].color == 1) {
+              xhtml += '<span class="form-productInfo-content">Đen</span>';
+            } else if (results.listProduct[i].color == 2) {
+              xhtml += '<span class="form-productInfo-content">Trắng</span>';
+            } 
+            else if (results.listProduct[i].color == 3) {
+              xhtml += '<span class="form-productInfo-content">Đổ</span>';
+            } 
+            else if (results.listProduct[i].color == 4) {
+              xhtml += '<span class="form-productInfo-content">Xanh da trời</span>';
+            } 
+            else if (results.listProduct[i].color == 5) {
+              xhtml += '<span class="form-productInfo-content">Da cam</span>';
+            } 
+            xhtml += '</div>';
+
+            xhtml += '<div class="form-productInfo">';
+            xhtml += '<span class="form-productInfo-tilte">Giá tiền</span>';
+            xhtml += '<span class="form-productInfo-icon">:</span>';
+            xhtml += '<span class="form-productInfo-content">'+results.listProduct[i].price+'</span>';
+            xhtml += '</div>';
+
+            xhtml += '<div class="form-productInfo">';
+            xhtml += '<span class="form-productInfo-tilte">Số lượng</span>';
+            xhtml += '<span class="form-productInfo-icon">:</span>';
+            xhtml += '<span class="form-productInfo-content">'+results.listProduct[i].quantity+'</span>';
+            xhtml += '</div>';
+
+            xhtml += '<div class="form-productInfo">';
+            xhtml += '<span class="form-productInfo-tilte">Mô tả</span>';
+            xhtml += '<span class="form-productInfo-icon">:</span>';
+            xhtml += '<span class="form-productInfo-content">'+results.listProduct[i].description+'</span>';
+            xhtml += '</div>';
+
+            
+
+            xhtml += '<div class="form-productInfo">';
+            xhtml += '<span class="form-productInfo-tilte">Trạng Thái</span>';
+            xhtml += '<span class="form-productInfo-icon">:</span>';
+            if (results.listProduct[i].status == 1) {
+              xhtml += '<span class="form-productInfo-content">Còn hàng</span>';
+            }
+            else{
+              xhtml += '<span class="form-productInfo-content">Hết hàng</span>';
+            }
+            xhtml += '</div>';
+
+
+
+            xhtml += '</div>';
+            xhtml += '</div>';
+
+            xhtml += '</div>';
+            xhtml += '</div>';
+            xhtml += '</div>';
+
+
+            xhtml += '</td>'
             xhtml += '</tr>';
 
           }

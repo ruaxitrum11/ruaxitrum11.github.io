@@ -11,7 +11,6 @@ const mongoose = require('mongoose');
 // var dir = path.join(__dirname, '..', 'config');
 // const passportConfig = require('../../config/passport');
 const productController = require('../../controllers/backend/productController');
-var upload = multer({ dest: path.join(__dirname, 'public/upload/temp')});
 
 // Route is : /admin/product/
 router.get('/list', productController.list);
@@ -20,7 +19,8 @@ router.post('/delete', productController.deleteProduct);
 // router.get('/edit/:id', userController.getUserEdit);
 // router.post('/edit', userController.validatorUserEdit, userController.postUserEdit);
 router.get('/add',productController.getProductAdd);
-router.post('/addProduct', productController.validatorProductAdd, upload.single('thumb'),productController.postProductAdd);
+router.post('/addProduct', productController.validatorProductAdd, productController.postProductAdd);
+router.post('/uploadThumb', productController.uploadThumb);
 
 
 module.exports = router;

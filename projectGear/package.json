@@ -34,6 +34,7 @@
     "html-entities": "^1.2.1",
     "lodash": "^4.17.5",
     "method-override": "^2.3.10",
+    "moment": "^2.22.0",
     "mongo-oplog": "^2.1.0",
     "mongodb": "^2.2.35",
     "mongoose": "^4.13.12",

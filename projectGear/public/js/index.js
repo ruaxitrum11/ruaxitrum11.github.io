@@ -233,10 +233,10 @@ $(document).ready(function(){
 //// Register
 
 function registerUser() {
-	var userName = $('#register-username').val();
+	var userName = $('#register-username').val().trim();
 	var email = $("#register-email").val().trim();
-	var password = $("#register-password").val();
-	var password_confirm = $("#register-password-confirm").val();
+	var password = $("#register-password").val().trim();
+	var password_confirm = $("#register-password-confirm").val().trim();
 
 	
 	if (email=="") {

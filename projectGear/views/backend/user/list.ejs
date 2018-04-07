@@ -31,6 +31,44 @@
   color: #fff;
   border-radius: 5px;
 }
+.upload-avatar {
+  font-size: 2rem; 
+  margin-left: 20px;
+}
+.form-group input {
+  width: 100%;
+}
+.modal-userInfo {
+  background-image: url(/img/homepage/bg-login.jpg);
+  background-position: center ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+.form-userInfo {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+span.form-userInfo-tilte{
+  float: left;
+  width: 30%;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 30px;
+}
+span.form-userInfo-icon {
+  width: 1%;
+  float: left;
+}
+span.form-userInfo-content  {
+  float: left;
+  width: 69%;
+  font-size: 1.6rem;
+  text-align: left;
+  padding-left: 30px;
+}
 </style>
 
 <!-- Content Wrapper. Contains page content -->
@@ -79,9 +117,9 @@
             <th>Tài Khoản</th>
             <th>Email</th>
             <th>Avatar</th>
-            <th>Trạng thái</th>
             <th>Cấp Bậc</th>
             <th>Quyền</th>
+            <th>Trạng thái</th>
             <th>Thời Gian Tạo</th>
             <th>Xử Lý</th>
           </tr>
@@ -153,7 +191,7 @@
 
             if(results.listUser[i].createdAt){
               var date = new Date(results.listUser[i].createdAt);
-              var date_createdAt = date.getFullYear()+ '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2) + ' ' + ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2); 
+              var date_createdAt = moment(date).format('HH:MM | DD-MM-YYYY');
             }
 
             xhtml += '<tr>';
@@ -162,16 +200,11 @@
             xhtml += '<td>'+results.listUser[i].email+'</td>';
 
             if (results.listUser[i].avatar && results.listUser[i].avatar !="") {
-              xhtml += '<td><img src="/upload/avatar/'+results.listUser[i].avatar+'" style="height:65px; width:65px;border-radius:50%"/></td>';
+              xhtml += '<td><img src="/upload/avatar/'+results.listUser[i].avatar+'" style="height:60px; width:60px;border-radius:50%"/><button class="upload-avatar btn btn-xs btn-default" data-toggle="modal" data-target="#modal-'+results.listUser[i]._id+'-upload"><i class="fa fa-upload"></i></button></td>';
             }else{
-              xhtml += '<td><img src="/upload/avatar/noimage.jpg" style="height:65px; width:65px;border-radius:50%"/></td>';
+              xhtml += '<td><img src="/upload/avatar/noimage.jpg" style="height:60px; width:60px;border-radius:50%"/><button class="upload-avatar btn btn-xs btn-default" data-toggle="modal" data-target="#modal-'+results.listUser[i]._id+'-upload"><i class="fa fa-upload"></i></button></td>';
             }
 
-            if (results.listUser[i].status == 1) {
-              xhtml += '<td><span class="label label-success">Active</span></td>';
-            }else{
-              xhtml += '<td><span class="label label-danger">Block</span></td>';
-            }
 
             if (results.listUser[i].level == 1) {
               xhtml += '<td><span class="label label-info">MemberShip</span></td>';
@@ -195,9 +228,159 @@
               xhtml += '<td><span class="label label-default">User</td>';
             }
 
+
+            if (results.listUser[i].status == 1) {
+              xhtml += '<td><span class="label label-success">Active</span></td>';
+            }else{
+              xhtml += '<td><span class="label label-danger">Block</span></td>';
+            }
+
             xhtml += '<td>'+date_createdAt+'</td>';
 
-            xhtml += '<td><a href="/admin/user/edit/'+results.listUser[i]._id+'"><span class="label label-default"><span class="glyphicon glyphicon-check"></span> Xem</span></a>  <a href="/admin/user/edit/'+results.listUser[i]._id+'"><span class="label label-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</span></a> <a href="javascript:void(0)" onclick="removeUser(\''+results.listUser[i]._id+'\')"><span class="label label-danger"><span class="glyphicon glyphicon-remove"></span> Xóa</span></a>'           
+            xhtml += '<td><a style="cursor:pointer" data-toggle="modal" data-target="#modal-'+results.listUser[i]._id+'-userInfo"><span class="label label-default"><span class="glyphicon glyphicon-check"></span>Xem</span></a><a href="/admin/user/edit/'+results.listUser[i]._id+'"><span class="label label-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</span></a> <a href="javascript:void(0)" onclick="removeUser(\''+results.listUser[i]._id+'\')"><span class="label label-danger"><span class="glyphicon glyphicon-remove"></span> Xóa</span></a>';
+
+            //Modal upload : 
+
+            xhtml += '<div class="modal fade" id="modal-'+results.listUser[i]._id+'-upload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">';
+            xhtml += '<div class="modal-dialog" role="document">';
+            xhtml += '<div class="modal-content">';
+            xhtml += '<form role="form" id="form-'+results.listUser[i]._id+'" method="post" enctype="multipart/form-data">';
+            xhtml += '<div class="modal-header">';
+            xhtml += '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+            xhtml += '<h4 class="modal-title">Tải ảnh đại diện cho : <strong>'+results.listUser[i].userName+'</strong></h4>';
+            xhtml += '</div>';
+
+            xhtml += '<div class="modal-body">';
+            xhtml += '<div class="box-body">';
+            xhtml += '<div class="form-group">';
+            xhtml += '<div class="alert" role="alert"></div>';
+            xhtml += '<img src="" class="img-preview-'+results.listUser[i]._id+'" style="max-width:50%;">';
+            xhtml += '</div>';
+            xhtml += '<div class="form-group">';
+            xhtml += '<input type="file" name="file" onchange="readURL(this,\''+results.listUser[i]._id+'\');">';
+            xhtml += '</div>';
+            xhtml += '</div>';
+            xhtml += '</div>';
+
+            xhtml += '<div class="modal-footer">';
+            xhtml += '<input type="hidden" name="id" value="'+results.listUser[i]._id+'">';
+            xhtml += '<button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>';
+            xhtml += '<button type="button" class="btn btn-primary" onclick="uploadAvatar(\''+results.listUser[i]._id+'\')">Tải lên</button>';
+            xhtml += '</div>';
+            xhtml += '</form>';
+            xhtml += '</div>';
+            xhtml += '</div>';
+            xhtml += '</div>';
+
+            //Modal userInfo : 
+
+            xhtml += '<div class="modal fade" id="modal-'+results.listUser[i]._id+'-userInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">';
+            xhtml += '<div class="modal-dialog" role="document">';
+            xhtml += '<div class="modal-content modal-userInfo">';
+            xhtml += '<div class="modal-header">';
+            xhtml += '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+            xhtml += '<h4 class="modal-title">Thông tin tài khoản : <strong>'+results.listUser[i].userName+'</strong></h4>';
+            xhtml += '</div>';
+
+            xhtml += '<div class="modal-body">';
+            xhtml += '<div class="box-body">';
+            
+            xhtml += '<div class="form-userInfo">';
+            xhtml += '<span class="form-userInfo-tilte">Họ tên</span>';
+            xhtml += '<span class="form-userInfo-icon">:</span>';
+            xhtml += '<span class="form-userInfo-content">'+results.listUser[i].nameUser+'</span>';
+            xhtml += '</div>';
+
+            xhtml += '<div class="form-userInfo">';
+            xhtml += '<span class="form-userInfo-tilte">Ảnh đại diện</span>';
+            xhtml += '<span class="form-userInfo-icon">:</span>';
+            if (results.listUser[i].avatar && results.listUser[i].avatar !="") {
+              xhtml += '<span class="form-userInfo-content"><img src="/upload/avatar/'+results.listUser[i].avatar+'" style="height:60px; width:60px;border-radius:50%"/></span>';
+            }else{
+              xhtml += '<span class="form-userInfo-content"><img src="/upload/avatar/noimage.jpg" style="height:60px; width:60px;border-radius:50%"/></span>';
+            }
+            xhtml += '</div>';
+
+            xhtml += '<div class="form-userInfo">';
+            xhtml += '<span class="form-userInfo-tilte">Email</span>';
+            xhtml += '<span class="form-userInfo-icon">:</span>';
+            xhtml += '<span class="form-userInfo-content">'+results.listUser[i].email+'</span>';
+            xhtml += '</div>';
+
+            xhtml += '<div class="form-userInfo">';
+            xhtml += '<span class="form-userInfo-tilte">Số điện thoại</span>';
+            xhtml += '<span class="form-userInfo-icon">:</span>';
+            xhtml += '<span class="form-userInfo-content">'+results.listUser[i].phoneNumber+'</span>';
+            xhtml += '</div>';
+
+            xhtml += '<div class="form-userInfo">';
+            xhtml += '<span class="form-userInfo-tilte">Địa chỉ</span>';
+            xhtml += '<span class="form-userInfo-icon">:</span>';
+            xhtml += '<span class="form-userInfo-content">'+results.listUser[i].address+'</span>';
+            xhtml += '</div>';
+
+            xhtml += '<div class="form-userInfo">';
+            xhtml += '<span class="form-userInfo-tilte">Ngày sinh</span>';
+            xhtml += '<span class="form-userInfo-icon">:</span>';
+            xhtml += '<span class="form-userInfo-content">'+moment(results.listUser[i].birthDay).format('DD-MM-YYYY')+'</span>';
+            xhtml += '</div>';
+
+            xhtml += '<div class="form-userInfo">';
+            xhtml += '<span class="form-userInfo-tilte">Giới tính</span>';
+            xhtml += '<span class="form-userInfo-icon">:</span>';
+            if (results.listUser[i].gender == 0) {
+              xhtml += '<span class="form-userInfo-content">Nam</span>';
+            }
+            else{
+              xhtml += '<span class="form-userInfo-content">Nữ</span>';
+            }
+            xhtml += '</div>';
+
+            xhtml += '<div class="form-userInfo">';
+            xhtml += '<span class="form-userInfo-tilte">Trạng Thái</span>';
+            xhtml += '<span class="form-userInfo-icon">:</span>';
+            if (results.listUser[i].status == 1) {
+              xhtml += '<span class="form-userInfo-content">Active</span>';
+            }
+            else{
+              xhtml += '<span class="form-userInfo-content">Block</span>';
+            }
+            xhtml += '</div>';
+
+            xhtml += '<div class="form-userInfo">';
+            xhtml += '<span class="form-userInfo-tilte">Cấp bậc</span>';
+            xhtml += '<span class="form-userInfo-icon">:</span>';
+            if (results.listUser[i].level == 1) {
+              xhtml += '<span class="form-userInfo-content">MemberShip</span>';
+            }else if (results.listUser[i].level == 2){
+              xhtml += '<span class="form-userInfo-content">Silver MemberShip</span>';
+            }else if (results.listUser[i].level == 3){
+              xhtml += '<span class="form-userInfo-content">Gold MemberShip</span>';
+            }else if (results.listUser[i].level == 4){
+              xhtml += '<span class="form-userInfo-content">Platinum MemberShip</span>';
+            }
+            xhtml += '</div>';
+
+            xhtml += '<div class="form-userInfo">';
+            xhtml += '<span class="form-userInfo-tilte">Quyền</span>';
+            xhtml += '<span class="form-userInfo-icon">:</span>';
+            if (results.listUser[i].status == 0) {
+              xhtml += '<span class="form-userInfo-content">User</span>';
+            }else{
+              xhtml += '<span class="form-userInfo-content">Admin</span>';
+            }
+            xhtml += '</div>';
+
+            xhtml += '</div>';
+            xhtml += '</div>';
+
+            xhtml += '</div>';
+            xhtml += '</div>';
+            xhtml += '</div>';
+
+
+            xhtml += '</td>';
+            xhtml += '</tr>';
           }
 
           // console.log(xhtml)
@@ -288,15 +471,15 @@
 // Upload avatar
 
 // Img preview
-// function readURL(input,id) {
-//   if (input.files && input.files[0]) {
-//     var reader = new FileReader();
-//     reader.onload = function (e) {
-//       $('.img-preview-'+id).attr('src', e.target.result);
-//     }
-//     reader.readAsDataURL(input.files[0]);
-//   }
-// }
+function readURL(input,id) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('.img-preview-'+id).attr('src', e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
 
 // Upload avatar
 function uploadAvatar(id){

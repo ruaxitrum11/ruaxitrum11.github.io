@@ -6,41 +6,42 @@
   <%- include('../include/admin-sidebar') %>
 
   <style>
-  .form-edit-user {
-    width: 100%;
-    float: left;
-    margin-bottom: 20px;
-    padding: 0 10%;
-  }
-  .form-edit-user span {
-    float: left;
-    width: 15%;
+
+  .content-edit span {
     font-size: 1.6rem;
+    width: 15%;
     display: inline-block;
-    padding-top: 10px;
   }
-  .form-edit-user input {
-    width: 40%;
-    float: left;
-    padding : 10px 0 10px 10px;
+  .content-edit input {
     border-radius: 5px;
     border : none;
+    padding: 5px 0;
+    width: 40%;
+    padding-left: 20px;
+  }
+  .content-edit input:focus{
+    outline: none;
+  }
+  .form-edit-user {
+    margin-bottom: 30px;
+    padding: 0 15%;
   }
   .active {
-    display: inline-block; 
+    display: inline-block;
     width: 80%;
     margin-bottom: 20px;
   }
 
   .active-block {
-    margin-left: 15.1%;
+    margin-left: 15.4%;
   }
   input.status-active {
     width: 5%!important;
   }
   span.label {
-    width: 20%!important;
-    font-size: 94%!important;
+    width: 25%!important;
+    font-size: 90%!important;
+    padding: 5px 0;
   }
   div.button-active a {
     display: inline-block;
@@ -48,6 +49,13 @@
     padding: 10px 30px;
     background-color: #dd4b39;
     color: #fff;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
   }
 
 
@@ -66,93 +74,91 @@
   <section class="content ">
 
     <div class="container content-edit">     
-      <form action="/admin/user/edit" id="form-edit" method="post" enctype="multipart/form-data">
-        <div class = "form-edit-user">
-          <span>Tài khoản</span>
-          <input disabled="Block" type="text" name="userName" value="<%=user.userName%>" >
+      <div class = "form-edit-user">
+        <span>Tài khoản</span>
+        <input  type="text" name="userName" value="<%=user.userName%>" >
+      </div>
+      <div class = "form-edit-user">
+        <span>Mật khẩu</span>
+        <input  type="password" name="password" value="<%=user.password%>" >
+      </div>
+      <div class = "form-edit-user">
+        <span>Email</span>
+        <input type="text" name="email" value="<%=user.email%>">
+      </div>
+      <div class = "form-edit-user">
+        <span>Họ tên</span>
+        <input type="text" name="nameUser" value="<%=user.nameUser%>">
+      </div>
+      <div class = "form-edit-user">
+        <span>Số điện thoại</span>
+        <input type="number" name="phoneNumber" value="<%=user.phoneNumber%>">
+      </div>
+      <div class = "form-edit-user">
+        <span>Địa chỉ</span>
+        <input type="text" name="address" value="<%=user.address%>">
+      </div>
+
+      <div class = "form-edit-user">
+        <span>Ngày Sinh</span>
+        <input type="date" name="birthDay" value="<%= moment(user.birthDay).format('YYYY-MM-DD') %>">
+      </div>
+      <div class = "form-edit-user">
+        <span>Giới tính</span>
+        <div class="active">
+          <input class="status-active" type="radio" name="gender" value="0" <%if(user.gender == 0){%>checked<%}%>>
+          <span class="label label-info">Nam</span>
         </div>
-        <div class = "form-edit-user">
-          <span>Mật khẩu</span>
-          <input disabled="Block" type="password" name="password" value="<%=user.password%>" >
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="gender" value="1" <%if(user.gender == 1){%>checked<%}%>>
+          <span class="label label-info">Nữ</span>
         </div>
-        <div class = "form-edit-user">
-          <span>Email</span>
-          <input type="text" name="email" value="<%=user.email%>">
+      </div>
+      <div class = "form-edit-user">
+        <span>Trạng thái</span>
+        <div class="active">
+          <input class="status-active" type="radio" name="status" value="1" <%if(user.status == 1){%>checked<%}%>>
+          <span class="label label-success">Active</span>
         </div>
-        <div class = "form-edit-user">
-          <span>Số điện thoại</span>
-          <input type="number" name="phoneNumber" value="<%=user.phoneNumber%>">
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="status" value="0" <%if(user.status == 0){%>checked<%}%>>
+          <span class="label label-danger">Block</span>
         </div>
-        <div class = "form-edit-user">
-          <span>Địa chỉ</span>
-          <input type="text" name="address" value="<%=user.address%>">
+      </div>
+      <div class = "form-edit-user">
+        <span>Cấp Bậc</span>
+        <div class="active">
+          <input class="status-active" type="radio" name="level" value="1" <%if(user.level == 1){%>checked<%}%>>
+          <span class="label label-info">MemberShip</span>
         </div>
-        <div class = "form-edit-user">
-          <span>Ngày sinh</span>
-          <input type="date" name="birthDay" value="<%=user.birthDay%>">
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="level" value="2" <%if(user.level == 2){%>checked<%}%>>
+          <span class="label label-info">Silver MemberShip</span>
         </div>
-        <div class = "form-edit-user">
-          <span>Ảnh đại diện</span>
-          <input type="file" name="file">
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="level" value="3" <%if(user.level == 3){%>checked<%}%>>
+          <span class="label label-info">Gold MemberShip</span>
         </div>
-        <div class = "form-edit-user">
-          <span>Giới tính</span>
-          <div class="active">
-            <input class="status-active" type="radio" name="gender" value="0" <%if(user.gender == 0){%>checked<%}%>>
-            <span class="label label-info">Nam</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="gender" value="1" <%if(user.gender == 1){%>checked<%}%>>
-            <span class="label label-info">Nữ</span>
-          </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="level" value="4" <%if(user.level == 4){%>checked<%}%>>
+          <span class="label label-info">Platinum MemberShip</span>
         </div>
-        <div class = "form-edit-user">
-          <span>Trạng thái</span>
-          <div class="active">
-            <input class="status-active" type="radio" name="status" value="1" <%if(user.status == 1){%>checked<%}%>>
-            <span class="label label-success">Active</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="status" value="0" <%if(user.status == 0){%>checked<%}%>>
-            <span class="label label-danger">Block</span>
-          </div>
+      </div>
+      <div class = "form-edit-user">
+        <span>Quyền</span>
+        <div class="active">
+          <input class="status-active" type="radio" name="role" value="1" <%if(user.role == 1){%>checked<%}%>>
+          <span class="label label-primary">Admin</span>
         </div>
-        <div class = "form-edit-user">
-          <span>Cấp Bậc</span>
-          <div class="active">
-            <input class="status-active" type="radio" name="level" value="1" <%if(user.level == 1){%>checked<%}%>>
-            <span class="label label-info">MemberShip</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="level" value="2" <%if(user.level == 2){%>checked<%}%>>
-            <span class="label label-info">Silver MemberShip</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="level" value="3" <%if(user.level == 3){%>checked<%}%>>
-            <span class="label label-info">Gold MemberShip</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="level" value="4" <%if(user.level == 4){%>checked<%}%>>
-            <span class="label label-info">Platinum MemberShip</span>
-          </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="role" value="0" <%if(user.role == 0){%>checked<%}%>>
+          <span class="label label-default">User</span>
         </div>
-        <div class = "form-edit-user">
-          <span>Quyền</span>
-          <div class="active">
-            <input class="status-active" type="radio" name="role" value="1" <%if(user.role == 1){%>checked<%}%>>
-            <span class="label label-primary">Admin</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="role" value="0" <%if(user.role == 0){%>checked<%}%>>
-            <span class="label label-default">User</span>
-          </div>
-        </div>
-        <input type="hidden" name="id" value="<%=user._id%>">
-        <input type="hidden" name="_csrf" value="<%=token%>">
-        <div class="form-edit-user button-active">
-          <button type="submit">Cập Nhật</button>
-        </div>
-      </form>
+      </div>
+      <div class="form-edit-user button-active">
+        <a href="javascript:void(0)" onclick="updateUser('<%=user._id%>')">Cập Nhật</a>
+      </div>
+
 
     </div>
 
@@ -167,60 +173,57 @@
 
 <%- include('../include/admin-js.ejs') %>
 
-<!-- <script type="text/javascript">
+
+
+<script type="text/javascript">
 
 
   function updateUser(id) {
 
     var new_email = $("input[name=email]").val();
+    var new_userName = $("input[name=userName]").val();
+    var new_password = $("input[name=password]").val();
+    var new_nameUser = $("input[name=nameUser]").val();
     var new_phoneNumber = $("input[name=phoneNumber]").val();
     var new_address = $("input[name=address]").val();
-    var new_birthDay = $("input[name=birthDay]").val().split('/');
-    var new_year = new_birthDay[2];
-    var new_month = new_birthDay[1];
-    var new_day = new_birthDay[0];
+    var new_birthDay = $("input[name=birthDay]").val();
     var new_gender = $("input[name=gender]:checked").val();
     var new_status =  $("input[name=status]:checked").val();
     var new_level = $("input[name=level]:checked").val();
     var new_role = $("input[name=role]:checked").val();
-    var form = $('#form-edit')[0];
-    var formData = new FormData(form);
-
-    console.log(form);
-
-    console.log(formData)
-    console.log(FormData(form[]));
 
     $.ajax({
       url: '/admin/user/edit',
       type: 'post',
-      id:id,
       data: {
         id : id,
-        new_email : new_email.trim(),
+        new_email : new_email,
+        new_userName : new_userName,
+        new_password : new_password,
+        new_nameUser : new_nameUser,
         new_phoneNumber : new_phoneNumber,
         new_address : new_address,
         new_birthDay : new_birthDay,
-        new_year : new_year,
-        new_month : new_month,
-        new_day : new_day,
         new_gender : new_gender,
         new_status : new_status,
         new_level : new_level,
         new_role : new_role 
-
       },
-      data : formData,
       dataType: 'json',
-      processData: false,
-      contentType: false
     }).done(function(results){
       console.log(results);
       if (results.status == true) {
-        $.alert({
-          title: 'Thông Báo !',
-          content: '<span class="text-success"><strong class="fa fa-check"></strong>Cập nhật thành công</span>'
-        })
+        $.confirm({
+          title: 'Thông báo!',
+          content:'<span class="text-success"><strong class="fa fa-check"></strong> Cập nhật thành công !</span>',
+          buttons: {
+            'Ok': function () {
+              $.alert('Thay đổi tài khoản thành công!');
+              window.location.reload();
+            }
+          }
+
+        });
 
       }else{
         console.log(results)
@@ -237,4 +240,10 @@
 
 
 
+</script>
+
+<!-- <script>
+  $('.jconfirm-buttons').(function(){
+    window.location.href = "http://www.google.com";
+  })
 </script> -->

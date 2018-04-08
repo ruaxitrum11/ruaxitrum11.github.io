@@ -124,6 +124,28 @@ exports.postProductAdd = async (req,res) => {
 
 	if (req.body) {
 
+		upload (req,res,function(err) {
+		// console.log(req)
+		if(err) {
+			console.log('aaaaaaaaaaaaaaaaaaaaaaaa')
+			console.log(err);
+			return res.send({status:false, msg:'Chỉ cho phép tải ảnh lên !'});
+
+		}
+		console.log("upload done")
+		if (req.file) {
+			Product.update( {productThumb: req.file.filename}, (err,results)=>{
+				if(err){
+					return res.send({status:false, msg:'Tải ảnh thất bại'});
+				}
+				return res.send({status:true, msg:'Tải ảnh thành công !'});
+			})
+		}else{
+			return res.send({status:false, msg:'Vui lòng chọn ảnh tải lên !'});
+		}
+
+
+
 		console.log(req.body);
 
 		console.log(req.file);
@@ -150,12 +172,12 @@ exports.postProductAdd = async (req,res) => {
 			});
 			console.log(product)
 
-			let existingProduct = await Product.findOne({ productName : req.body.productName});
+			let existingProduct =  Product.findOne({ productName : req.body.productName});
 			if (existingProduct) {
 				let errors = [{msg:"Sản phẩm này đã tồn tại"}];
 				return res.send({status:false, errors : errors});
 			}else{
-				let saveProduct = await product.save();
+				let saveProduct =  product.save();
 				if (saveProduct) {
 					return res.send({status:true});
 				}
@@ -165,32 +187,11 @@ exports.postProductAdd = async (req,res) => {
 			res.send({status:false, errors : errors});
 		}
 		console.log("Done")
+	})
 	}
 }
 
-// exports.postProductAdd = (req,res) =>{
-// 	// console.log(req)
-// 	upload(req,res,function(err) {
-// 		// console.log(req)
-// 		if(err) {
-// 			console.log('aaaaaaaaaaaaaaaaaaaaaaaa')
-// 			console.log(err);
-// 			return res.send({status:false, msg:'Chỉ cho phép tải ảnh lên !'});
-// 		}
-// 		console.log("upload done")
-// 		if (req.file) {
-// 			Product.update( {productThumb: req.file.filename}, (err,results)=>{
-// 				if(err){
-// 					return res.send({status:false, msg:'Tải ảnh thất bại'});
-// 				}
-// 				return res.send({status:true, msg:'Tải ảnh thành công !'});
-// 			})
-// 		}else{
-// 			return res.send({status:false, msg:'Không tìm thấy ảnh !'});
-// 		}
 
-// 	})
-// }
 
 
 

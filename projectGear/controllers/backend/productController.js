@@ -124,6 +124,8 @@ exports.postProductAdd = async (req,res) => {
 
 	if (req.body) {
 
+		console.log(req.body);
+
 		console.log(req.file);
 
 		const errors = validationResult(req);
@@ -166,29 +168,29 @@ exports.postProductAdd = async (req,res) => {
 	}
 }
 
-exports.uploadThumb = (req,res) =>{
-	// console.log(req)
-	upload(req,res,function(err) {
-		// console.log(req)
-		if(err) {
-			console.log('aaaaaaaaaaaaaaaaaaaaaaaa')
-			console.log(err);
-			return res.send({status:false, msg:'Chỉ cho phép tải ảnh lên !'});
-		}
-		console.log("upload done")
-		if (req.file) {
-			Product.update( {productThumb: req.file.filename}, (err,results)=>{
-				if(err){
-					return res.send({status:false, msg:'Tải ảnh thất bại'});
-				}
-				return res.send({status:true, msg:'Tải ảnh thành công !'});
-			})
-		}else{
-			return res.send({status:false, msg:'Không tìm thấy ảnh !'});
-		}
+// exports.postProductAdd = (req,res) =>{
+// 	// console.log(req)
+// 	upload(req,res,function(err) {
+// 		// console.log(req)
+// 		if(err) {
+// 			console.log('aaaaaaaaaaaaaaaaaaaaaaaa')
+// 			console.log(err);
+// 			return res.send({status:false, msg:'Chỉ cho phép tải ảnh lên !'});
+// 		}
+// 		console.log("upload done")
+// 		if (req.file) {
+// 			Product.update( {productThumb: req.file.filename}, (err,results)=>{
+// 				if(err){
+// 					return res.send({status:false, msg:'Tải ảnh thất bại'});
+// 				}
+// 				return res.send({status:true, msg:'Tải ảnh thành công !'});
+// 			})
+// 		}else{
+// 			return res.send({status:false, msg:'Không tìm thấy ảnh !'});
+// 		}
 
-	})
-}
+// 	})
+// }
 
 
 

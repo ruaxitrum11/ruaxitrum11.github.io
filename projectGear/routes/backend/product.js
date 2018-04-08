@@ -20,7 +20,7 @@ router.post('/delete', productController.deleteProduct);
 // router.post('/edit', userController.validatorUserEdit, userController.postUserEdit);
 router.get('/add',productController.getProductAdd);
 router.post('/addProduct', productController.validatorProductAdd, productController.postProductAdd);
-router.post('/uploadThumb', productController.uploadThumb);
+// router.post('/uploadThumb', productController.uploadThumb);
 
 
 module.exports = router;

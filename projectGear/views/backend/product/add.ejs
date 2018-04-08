@@ -109,12 +109,8 @@
       </div>
       <div class="form-product-add">
         <span>Hình ảnh</span>
-        <form role="form" id="form-uploadThumb" method = "post" enctype ="multipart/form-data" >
-          <input type="file" id = "file" name="thumb" value="" style="width: 40%;">
-          
-          <button type="button" class="active-block" onclick="uploadThumb()" style = "margin-top: 20px; width: 10%;" >Tải lên</button>
-          <img src="" class="productImage-upload" >
-        </form>
+        <input type="file" id = "file" name="thumb" value="" style="width: 40%;">
+        <img src="" class="productImage-upload" >
       </div>
       <div class="form-product-add">
         <span>Màu sắc</span>
@@ -267,20 +263,5 @@
     readURL(this);
   });
 
-  // Upload product
-  function uploadThumb(){
-    var form = $('#form-uploadThumb');
-    var formData = new FormData(form[0]);
 
-  // console.log(formData);
-
-  $.ajax({
-    url: '/admin/product/uploadThumb',
-    method: 'POST',
-    data: formData,
-    dataType:'json',
-    processData: false,
-    contentType: false
-  })
-}
 </script>

@@ -19,7 +19,7 @@ router.post('/delete', productController.deleteProduct);
 // router.get('/edit/:id', userController.getUserEdit);
 // router.post('/edit', userController.validatorUserEdit, userController.postUserEdit);
 router.get('/add',productController.getProductAdd);
-router.post('/addProduct', productController.validatorProductAdd, productController.postProductAdd);
+router.post('/addProduct',  productController.postProductAdd);
 
 
 

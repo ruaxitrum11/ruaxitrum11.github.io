@@ -112,12 +112,7 @@ exports.getProductAdd = async (req,res) =>{
 	res.render('backend/product/add');
 }
 
-exports.validatorProductAdd = [
-check('productName', 'Tên sản phẩm không được để trống').isLength({ min: 1 }),
-check('price', 'Giá tiền sản phẩm không được để trống').isLength({ min: 1 }),
-check('quantity', 'Số lượng sản phẩm không được để trống').isLength({ min: 1 }),
 
-]
 
 exports.postProductAdd = async (req,res) => {
 
@@ -129,33 +124,19 @@ exports.postProductAdd = async (req,res) => {
 		if(err) {
 			console.log('aaaaaaaaaaaaaaaaaaaaaaaa')
 			console.log(err);
-			return res.send({status:false, msg:'Chỉ cho phép tải ảnh lên !'});
+			return res.render('backend/product/add');
 
 		}
 		console.log("upload done")
 		if (req.file) {
-			Product.update( {productThumb: req.file.filename}, (err,results)=>{
-				if(err){
-					return res.send({status:false, msg:'Tải ảnh thất bại'});
-				}
-				return res.send({status:true, msg:'Tải ảnh thành công !'});
-			})
+			Product.save()
 		}else{
-			return res.send({status:false, msg:'Vui lòng chọn ảnh tải lên !'});
+			return res.render('backend/product/add');
 		}
-
 
 
 		console.log(req.body);
-
-		console.log(req.file);
-
-		const errors = validationResult(req);
-
-
-		if (!errors.isEmpty()) {
-			return res.send({status:false, errors : errors.array()});
-		}
+		
 
 		try{
 
@@ -174,12 +155,17 @@ exports.postProductAdd = async (req,res) => {
 
 			let existingProduct =  Product.findOne({ productName : req.body.productName});
 			if (existingProduct) {
-				let errors = [{msg:"Sản phẩm này đã tồn tại"}];
-				return res.send({status:false, errors : errors});
+				return res.render('backend/product/add');
+			} else if (req.body.productName == "") {
+				return res.render('backend/product/add');
+			} else if (req.body.price == "" ) {
+				return res.render('backend/product/add');
+			}else if (req.body.quantity == ""  ) {
+				return res.render('backend/product/add');
 			}else{
 				let saveProduct =  product.save();
 				if (saveProduct) {
-					return res.send({status:true});
+					return res.render('backend/product/add');
 				}
 			}
 		}catch(errors){

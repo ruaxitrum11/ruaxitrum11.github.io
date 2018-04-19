@@ -114,66 +114,129 @@ exports.getProductAdd = async (req,res) =>{
 
 
 
+// exports.postProductAdd = async (req,res) => {
+
+
+// 	if (req.body) {
+
+// 		upload (req,res,function(err) {
+// 		// console.log(req)
+// 		if(err) {
+// 			console.log('aaaaaaaaaaaaaaaaaaaaaaaa')
+// 			console.log(err);
+// 			return res.render('backend/product/add');
+
+// 		}
+// 		console.log("upload done")
+// 		if (req.file) {
+// 			Product.save()
+// 		}else{
+// 			return res.render('backend/product/add');
+// 		}
+
+
+// 		console.log(req.body);
+
+
+// 		try{
+
+// 			const product = new Product({
+// 				productName : req.body.productName,
+// 				productSpecies : req.body.productSpecies,
+// 				// thumb : req.body.thumb,
+// 				color : req.body.color,
+// 				price : req.body.price,
+// 				quantity : req.body.quantity ,
+// 				brand : req.body.brand ,
+// 				description : req.body.description
+
+// 			});
+// 			console.log(product)
+
+// 			let existingProduct =  Product.findOne({ productName : req.body.productName});
+// 			if (existingProduct) {
+// 				return res.render('backend/product/add');
+// 			} else if (req.body.productName == "") {
+// 				return res.render('backend/product/add');
+// 			} else if (req.body.price == "" ) {
+// 				return res.render('backend/product/add');
+// 			}else if (req.body.quantity == ""  ) {
+// 				return res.render('backend/product/add');
+// 			}else{
+// 				let saveProduct =  product.save();
+// 				if (saveProduct) {
+// 					return res.render('backend/product/add');
+// 				}
+// 			}
+// 		}catch(errors){
+// 			console.log(errors);
+// 			res.send({status:false, errors : errors});
+// 		}
+// 		console.log("Done")
+// 	})
+// 	}
+// }
+
 exports.postProductAdd = async (req,res) => {
-
-
-	if (req.body) {
-
-		upload (req,res,function(err) {
-		// console.log(req)
-		if(err) {
-			console.log('aaaaaaaaaaaaaaaaaaaaaaaa')
-			console.log(err);
-			return res.render('backend/product/add');
-
-		}
-		console.log("upload done")
-		if (req.file) {
-			Product.save()
-		}else{
-			return res.render('backend/product/add');
-		}
-
-
-		console.log(req.body);
-		
-
-		try{
-
-			const product = new Product({
-				productName : req.body.productName,
-				productSpecies : req.body.productSpecies,
-				// thumb : req.body.thumb,
-				color : req.body.color,
-				price : req.body.price,
-				quantity : req.body.quantity ,
-				brand : req.body.brand ,
-				description : req.body.description
-
-			});
-			console.log(product)
-
-			let existingProduct =  Product.findOne({ productName : req.body.productName});
-			if (existingProduct) {
+	if(req.file) {
+		console.log(req.file)
+		upload (req,res,async function(err) {
+			if(err) {
+				console.log('aaaaaaaaaaaaaaaaaaaaaaaa')
+				console.log('Khong co anh san pham')
+				console.log(err);
 				return res.render('backend/product/add');
-			} else if (req.body.productName == "") {
-				return res.render('backend/product/add');
-			} else if (req.body.price == "" ) {
-				return res.render('backend/product/add');
-			}else if (req.body.quantity == ""  ) {
-				return res.render('backend/product/add');
-			}else{
-				let saveProduct =  product.save();
-				if (saveProduct) {
-					return res.render('backend/product/add');
+			}
+			try{
+
+				console.log("upload done")
+
+				if (req.body) {
+					if (req.body.productName == "") {
+						return res.render('backend/product/add');
+					} else if (req.body.price == "" ) {
+						return res.render('backend/product/add');
+					}else if (req.body.quantity == ""  ) {
+						return res.render('backend/product/add');
+					}else{
+						let existingProduct =  Product.findOne({ productName : req.body.productName});
+
+						if (existingProduct && existingProduct != "") {
+							console.log(existingProduct)
+							console.log("Trung ten")
+							return res.render('backend/product/add');
+						}
+
+						const product = new Product({
+							productName : req.body.productName,
+							productSpecies : req.body.productSpecies,
+							color : req.body.color,
+							price : req.body.price,
+							quantity : req.body.quantity ,
+							brand : req.body.brand ,
+							description : req.body.description
+						});
+
+						if (req.file) {
+							product.productThumb = req.file.filename;
+						}
+
+						let saveProduct = await product.save();
+						if (!saveProduct) {
+							console("Add loi")
+						}
+
+						console.log("Done")
+
+					}
 				}
 			}
-		}catch(errors){
-			console.log(errors);
-			res.send({status:false, errors : errors});
-		}
-		console.log("Done")
-	})
+
+			catch(errors){
+				console.log(errors);
+			}
+
+		})
 	}
 }
 

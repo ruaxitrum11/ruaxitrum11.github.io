@@ -215,11 +215,10 @@
       if (results.status == true) {
         $.confirm({
           title: 'Thông báo!',
-          content:'<span class="text-success"><strong class="fa fa-check"></strong> Cập nhật thành công !</span>',
+          content:'<span class="text-success"><strong class="fa fa-check"></strong> Cập nhật tài khoản thành công !</span>',
           buttons: {
             'Ok': function () {
-              $.alert('Thay đổi tài khoản thành công!');
-              window.location.reload();
+              window.location.replace('/admin/user/list');
             }
           }
 

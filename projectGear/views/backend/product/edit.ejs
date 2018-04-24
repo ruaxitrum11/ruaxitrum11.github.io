@@ -1,0 +1,287 @@
+  <%- include('../include/admin-header-top') %>
+
+
+  <%- include('../include/admin-header') %>
+
+  <%- include('../include/admin-sidebar') %>
+
+  <style>
+
+  .form-product-edit {
+    margin-top: 30px;
+    width: 100%;
+    float: left;
+    padding: 0 10%;
+  }
+  .form-product-edit>span {
+    font-size: 1.6rem;
+    width: 15%;
+    float: left;
+  }
+  .form-product-edit>input  , .form-product-edit>textarea{
+    border-radius: 5px;
+    border : none;
+    padding: 5px 0;
+    width: 40%;
+    padding-left: 20px;
+    float: left;
+  }
+  .form-product-edit>textarea {
+    height: 150px;
+  }
+  .form-product-edit>input:focus , .form-product-edit>textarea:focus{
+    outline: none;
+  }
+  .active {
+    display: inline-block; 
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .active-block {
+    margin-left: 15.1%;
+  }
+  input.status-active {
+    width: 5%!important;
+  }
+  span.label {
+    width: 5%!important;
+    font-size: 90%!important;
+  }
+  .button-active {
+    float: left;
+    margin-left: 10%;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  .button-active a {
+    display: inline-block;
+    font-size: 2rem;
+    padding: 10px 30px;
+    background-color: #dd4b39;
+    color: #fff;
+  }
+
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+  }
+
+
+</style>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Cập nhật tài khoản người dùng
+    </h1>
+  </section>
+
+  <!-- Main content -->
+  <section class="content ">
+
+    <div class="container content-edit">     
+      <div class="form-product-edit">
+        <span>Tên sản phẩm</span>
+        <input id="new-productName" type="text" name="productName" value="<%=product.productName%>">
+      </div>
+      <div class="form-product-edit">
+        <span>Loại sản phẩm</span>
+        <div class="active">
+          <input class="status-active" type="radio" name="productSpecies" value="1" <%if(product.productSpecies == 1){%>checked<%}%> >
+          <span class="label label-info">Tai nghe</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="productSpecies" value="2" <%if(product.productSpecies == 2){%>checked<%}%>>
+          <span class="label label-info">Bàn phím</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="productSpecies" value="3" <%if(product.productSpecies == 3){%>checked<%}%>>
+          <span class="label label-info">Chuột</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="productSpecies" value="4" <%if(product.productSpecies == 4){%>checked<%}%>>
+          <span class="label label-info">Laptop</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="productSpecies" value="5" <%if(product.productSpecies == 5){%>checked<%}%>>
+          <span class="label label-info">Phụ kiện khác</span>
+        </div>
+      </div>
+      <div class="form-product-edit">
+        <span>Hình ảnh</span>
+        <input type="file" id = "file" name="file" value="" style="width: 85%;">
+        <img src="/upload/thumbProduct/<%=product.productThumb%>" class="productImage-upload" >
+      </div>
+      <div class="form-product-edit">
+        <span>Màu sắc</span>
+        <div class="active">
+          <input class="status-active" type="radio" name="color" value="1" <%if(product.color == 1){%>checked<%}%>>
+          <span class="label label-info">Đen</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="color" value="2" <%if(product.color == 2){%>checked<%}%>>
+          <span class="label label-info">Trắng</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="color" value="3" <%if(product.color == 3){%>checked<%}%>>
+          <span class="label label-info">Đỏ</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="color" value="4" <%if(product.color == 4){%>checked<%}%>>
+          <span class="label label-info">Xanh da trời</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="color" value="5" <%if(product.color == 5){%>checked<%}%>>
+          <span class="label label-info">Da Cam</span>
+        </div>
+      </div>
+      <div class="form-product-edit">
+        <span>Giá tiền</span>
+        <input id="new-price" type="number" name="price" value="<%=product.price%>">
+      </div>
+      <div class="form-product-edit">
+        <span>Số lượng</span>
+        <input type="number" name="quantity" value="<%=product.quantity%>">
+      </div>
+      <div class="form-product-edit">
+        <span>Nhãn hiệu</span>
+        <div class="active">
+          <input class="status-active" type="radio" name="brand" value="1"<%if(product.brand == 1){%>checked<%}%>>
+          <span class="label label-info">SteelSeries</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="brand" value="2"<%if(product.brand == 2){%>checked<%}%>>
+          <span class="label label-info">Razer</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="brand" value="3"<%if(product.brand == 3){%>checked<%}%>>
+          <span class="label label-info">Ozone Gaming</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="brand" value="4"<%if(product.brand == 4){%>checked<%}%>>
+          <span class="label label-info">MSI Gaming</span>
+        </div>
+      </div>
+      <div class="form-product-edit">
+        <span>Mô tả</span>
+        <textarea id="new-description" name="description" value="<%product.description%>" ></textarea>
+      </div>
+
+      <div class="form-user-add button-active">
+        <a href="javascript:void(0)" onclick="updateProduct('<%=product._id%>')">Cập Nhật</a>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<%- include('../include/admin-footer') %>
+
+<%- include('../include/admin-control-sidebar') %>
+
+<%- include('../include/admin-js.ejs') %>
+
+
+<script type="text/javascript">
+
+
+  function updateProduct(id) {
+
+    var productName = $("input[name=productName]").val();
+    var productSpecies = $("input[name=productSpecies]:checked").val(); 
+    var color = $("input[name=color]:checked").val();
+    var price = $("input[name=price]").val();
+    var quantity = $("input[name=quantity]").val();
+    var brand = $("input[name=brand]:checked").val(); 
+    var description = $("textarea[name=description]").val();
+    var thumb =  $('input[type=file]')[0].files[0]
+    var formData = new FormData();
+    var id = id;
+    formData.append('id',id)
+    formData.append('file',thumb)
+    formData.append('productName', productName)
+    formData.append('productSpecies', productSpecies)
+    formData.append('color', color)
+    formData.append('price', price)
+    formData.append('quantity', quantity)
+    formData.append('brand', brand)
+    formData.append('description', description)
+
+
+    console.log(formData)
+
+    $.ajax({
+      url: '/admin/product/edit',
+      type: 'post',
+      data: formData,
+      contentType:false,
+      processData:false
+      // dataType: 'json',
+    }).done(function(results){
+      console.log(results);
+      if (results.status == true) {
+        $.confirm({
+          title: 'Thông báo!',
+          content:'<span class="text-success"><strong class="fa fa-check"></strong> Cập nhật thành công !</span>',
+          buttons: {
+            'Ok': function () {
+              window.location.replace('/admin/product/list');
+            }
+          }
+        });
+      }else{
+        console.log(results)
+        $.confirm({
+          title: 'Thông Báo !',
+          content: '<span class="text-danger"><strong class="fa fa-close"></strong>'+results.errors+'</span>',
+          buttons: {
+            'Ok': function () {
+              // window.location.reload();
+            }
+          }
+        })
+      }
+    })
+  }
+
+
+
+</script>
+
+<script type="text/javascript">
+
+ function readURL(input) {
+
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('.productImage-upload').attr('src', e.target.result);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$("#file").change(function() {
+  readURL(this);
+});
+
+
+
+</script>
+
+<!-- <script>
+  $('.jconfirm-buttons').(function(){
+    window.location.href = "http://www.google.com";
+  })
+</script> -->

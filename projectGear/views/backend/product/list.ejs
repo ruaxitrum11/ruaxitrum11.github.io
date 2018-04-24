@@ -12,30 +12,49 @@
     margin : 20px 0;
     font-size: 3rem;
   }
-  .form-productInfo {
-    float: left;
-    width: 100%;
-    margin-bottom: 20px;
+  .add-searchProduct {
+    margin : 20px 0;
   }
-  span.form-productInfo-tilte{
-    float: left;
-    width: 30%;
-    font-size: 1.6rem;
-    font-weight: 600;
-    text-align: left;
-    padding-left: 30px;
-  }
-  span.form-productInfo-icon {
-    width: 1%;
-    float: left;
-  }
-  span.form-productInfo-content  {
-    float: left;
-    width: 69%;
-    font-size: 1.6rem;
-    text-align: left;
-    padding-left: 30px;
-  }
+  .add-searchProduct input{
+   padding-left: 10px;
+   width: 25%;
+   margin-left: 1%;
+ }
+ .add-searchProduct select {
+  width: 13%;
+  margin-left: 1%;
+}
+.add-searchProduct span {
+  padding: 10px;
+  font-size: 1.8rem;
+  background-color: #3c8dbc !important;
+  color: #fff;
+  border-radius: 5px;
+}
+.form-productInfo {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+span.form-productInfo-tilte{
+  float: left;
+  width: 30%;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 30px;
+}
+span.form-productInfo-icon {
+  width: 1%;
+  float: left;
+}
+span.form-productInfo-content  {
+  float: left;
+  width: 69%;
+  font-size: 1.6rem;
+  text-align: left;
+  padding-left: 30px;
+}
 </style>
 
 <!-- Content Wrapper. Contains page content -->
@@ -56,39 +75,39 @@
         <a href="/admin/product/add"><span class="label label-primary">+</span></a>
       </div>      
 
-     <!--  <div class="add-searchUser">
+      <div class="add-searchProduct">
         <span class="search-icon glyphicon glyphicon-search"></span>
-        <input class="input-text user-search-text" type="text" name="" placeholder="Nhập tên tài khoản hoặc email">
-        <select class="user-status">
+        <input class="input-text product-search-text" type="text" name="" placeholder="Nhập tên sản phẩm">
+        <select class="product-species">
+          <option value="">Loại Sản Phẩm</option>
+          <option value="1">Tai Nghe</option>
+          <option value="2">Bàn Phím</option>
+          <option value="3">Chuột</option>
+          <option value="4">Laptop</option>
+          <option value="5">Phụ Kiện Khác</option>
+        </select>
+        <select class="product-brand">
+          <option value="">Nhãn Hiệu</option>
+          <option value="1">SteelSeries</option>
+          <option value="2">Razer</option>
+          <option value="3">Ozone Gaming</option>
+          <option value="4">MSI Gaming</option>
+        </select>
+        <select class="product-status">
           <option value="">Trạng Thái</option>
-          <option value="1">Active</option>
-          <option value="0">Block</option>
+          <option value="1">Còn Hàng</option>
+          <option value="0">Hết Hàng</option>
         </select>
-        <select class="user-level">
-          <option value="">Cấp bậc</option>
-          <option value="1">MemberShip</option>
-          <option value="2">Silver MemberShip</option>
-          <option value="3">Gold MemberShip</option>
-          <option value="4">Platinum MemberShip</option>
-        </select>
-        <select class="user-role">
-          <option value="">Quyền</option>
-          <option value="1">Admin</option>
-          <option value="0">User</option>
-        </select>
-      </div> -->
+      </div>
 
       <table class="table table-bordered">
         <thead>
           <tr>
             <th>Tên sản phẩm</th>
-            <th>Hình ảnh</th>
             <th>Loại sản phẩm</th>
             <th>Nhãn hiệu</th>
             <th>Trạng thái</th>
             <th>Thời gian tạo</th>
-            
-            <!--    <th>Mô tả</th> -->
             <th>Xử Lý</th>
           </tr>
         </thead>
@@ -119,31 +138,30 @@
     listProduct(1);
   });
 
-//   $('select').on('change', function() {
-//      listProduct(1);
-//     // alert( this.value );
-//   })
+  $('select').on('change', function() {
+     listProduct(1);
+    // alert( this.value );
+  })
 
-//   $('.user-search-text').keyup(function() {
-//    listProduct(1);
-// });
+  $('.product-search-text').keyup(function() {
+   listProduct(1);
+});
 
 function listProduct(page) {
-  // var user_status = $('.user-status :selected').val();
-  // var user_level = $('.user-level :selected').val();
-  // var user_role = $('.user-role :selected').val();
-  // var user_search_text = $('.user-search-text').val();
+  var product_species = $('.product-species :selected').val();
+  var product_brand = $('.product-brand :selected').val();
+  var product_status = $('.product-status :selected').val();
+  var product_search_text = $('.product-search-text').val();
 
-    // alert(user_status)
     $.ajax({
       url: '/admin/product/listProduct',
       type: 'GET',
       data: {
         page : page,
-        // user_status : user_status,
-        // user_level : user_level,
-        // user_role : user_role,
-        // user_search_text:user_search_text
+        product_species : product_species,
+        product_brand : product_brand,
+        product_status : product_status,
+        product_search_text:product_search_text
       },
       dataType: 'json',
     }).done(function(results){
@@ -158,17 +176,12 @@ function listProduct(page) {
 
             if(results.listProduct[i].createdAt){
               var date = new Date(results.listProduct[i].createdAt);
-              var date_createdAt = moment(date).format('HH:MM | DD-MM-YYYY');
+              var date_createdAt = moment(date).format('HH:mm | DD-MM-YYYY');
             }
 
             xhtml += '<tr>';
             xhtml += '<td>'+results.listProduct[i].productName+'</td>';
 
-            if(results.listProduct[i] && results.listProduct[i].productThumb){
-              xhtml += '<td><span class="form-productInfo-content"><img src="/upload/thumbProduct/'+results.listProduct[i].productThumb+'" style="height:60px; width:60px;"/></span></td>';
-            }else{
-              xhtml += '<td><span class="form-productInfo-content"></span></td>';
-            }
 
             if (results.listProduct[i].productSpecies == 1) {
               xhtml += '<td><span class="label label-info">Tai nghe</span></td>';
@@ -196,7 +209,7 @@ function listProduct(page) {
               xhtml += '<td><span class="label label-success">Razer</span></td>';
             }
             else if (results.listProduct[i].brand == 3){
-              xhtml += '<td><span class="label label-Danger">Ozone Gaming</span></td>';
+              xhtml += '<td><span class="label label-danger">Ozone Gaming</span></td>';
             }
             else if (results.listProduct[i].brand == 4){
               xhtml += '<td><span class="label label-warning">MSI Gaming</span></td>';
@@ -236,7 +249,7 @@ function listProduct(page) {
             xhtml += '<span class="form-productInfo-tilte">Hình ảnh</span>';
             xhtml += '<span class="form-productInfo-icon">:</span>';
             if(results.listProduct[i] && results.listProduct[i].productThumb){
-              xhtml += '<span class="form-productInfo-content"><img src="/upload/thumbProduct/'+results.listProduct[i].productThumb+'" style="height:60px; width:60px;"/></span>';
+              xhtml += '<span class="form-productInfo-content"><img src="/upload/thumbProduct/'+results.listProduct[i].productThumb+'" style="height:auto; width:100%;"/></span>';
             }
             xhtml += '</div>';
             xhtml += '<div class="form-productInfo">';
@@ -377,9 +390,9 @@ function listProduct(page) {
         } 
         pagiHtml += '</ul>';
 
-        $('#pagination-list-user').html(pagiHtml);
+        $('#pagination-list-product').html(pagiHtml);
       } else {
-        $('#pagination-list-user').html('');
+        $('#pagination-list-product').html('');
       }
 
     }

@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema({
   	description : String,
   	brand : Number, // 1 : Steelseries, 2 : Razer , 3: Ozone , 4: MSI
   	productSpecies : Number, //1 : Tai nghe , 2 : Bàn phím , 3 : Chuột , 4 : Laptop , //5 : Phụ kiện khác
-  	status : {type : Number , default : 1} , //1 : còn hàng , 2: hết hàng  
+  	status : {type : Number , default : 1} , //1 : còn hàng , 0: hết hàng  
 
   }, { timestamps: true });
 

@@ -190,8 +190,6 @@ exports.getUserAdd = async (req,res) =>{
 
       let updateUser = await User.update({ _id: req.body.id}, { $set: dataUpdate});
 
-
-
       if (updateUser) {
        res.send({status:true});
      }

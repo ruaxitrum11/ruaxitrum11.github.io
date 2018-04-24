@@ -16,8 +16,8 @@ const productController = require('../../controllers/backend/productController')
 router.get('/list', productController.list);
 router.get('/listProduct', productController.listProduct);
 router.post('/delete', productController.deleteProduct);
-// router.get('/edit/:id', userController.getUserEdit);
-// router.post('/edit', userController.validatorUserEdit, userController.postUserEdit);
+router.get('/edit/:id', productController.getProductEdit);
+router.post('/edit', productController.postProductEdit);
 router.get('/add',productController.getProductAdd);
 router.post('/addProduct',  productController.postProductAdd);
 

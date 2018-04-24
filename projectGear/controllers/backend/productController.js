@@ -23,22 +23,27 @@ let storage = multer.diskStorage({
     filename: function(req, file, cb) {
     	var ext = file.originalname.split('.')
     	cb(null, ext[0]+ '_' + Date.now() + '.' + ext[ext.length - 1]);
-    	console.log(ext);
     }
 });
 
-let upload = multer({
+let upload = multer({ 
 	storage: storage,
-	fileFilter: function (req, file, callback) {
-		var ext = path.extname(file.originalname)
+	fileFilter: function (req, file, cb) {
+		var ext = file.originalname.split('.')
+		var arrImg = ['jpg', 'jepg', 'png'];
 
-		if (ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
-			return callback(new Error('Chỉ cho phép tải ảnh lên'))
+		if (ext && ext[1]) {
+			if (!arrImg.indexOf(ext[ext.length -1])<0) {
+				return cb(new Error('Vui lòng upload tệp hình ảnh!'));
+			}
 		}
 
-		callback(null, true)
-	},
-}).single('thumb');
+		// if (!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
+		// 	return cb(new Error('Vui lòng upload ảnh!'));
+		// }
+		cb(null, true);
+	}
+}).single('file');
 
  // Models
  const Product = require('../../models/Product');
@@ -63,20 +68,20 @@ let upload = multer({
  		page = parseInt(req.query.page);
  	}
 
- 	// if(req.query.user_search_text && req.query.user_search_text !=""){
- 	// 	let regex = new RegExp(req.query.user_search_text.trim(), 'i')
- 	// 	query = {$or : [{email: {$regex : regex}},{userName: {$regex : regex}}]}
- 	// } 
+ 	if(req.query.product_search_text && req.query.product_search_text !=""){
+ 		let regex = new RegExp(req.query.product_search_text.trim(), 'i')
+ 		query = {productName: {$regex : regex}}
+ 	} 
 
- 	// if (req.query.user_status && req.query.user_status !="") {
- 	// 	query['status'] = req.query.user_status;
- 	// }
- 	// if(req.query.user_level && req.query.user_level !=""){
- 	// 	query['level'] = req.query.user_level;
- 	// }
- 	// if(req.query.user_role && req.query.user_role !=""){
- 	// 	query['role'] = req.query.user_role;
- 	// } 
+ 	if (req.query.product_status && req.query.product_status !="") {
+ 		query['status'] = req.query.product_status;
+ 	}
+ 	if(req.query.product_brand && req.query.product_brand !=""){
+ 		query['brand'] = req.query.product_brand;
+ 	}
+ 	if(req.query.product_species && req.query.product_species !=""){
+ 		query['productSpecies'] = req.query.product_species;
+ 	} 
 
  	let skip = (page - 1)*limit;
 
@@ -109,138 +114,151 @@ let upload = multer({
 }
 
 exports.getProductAdd = async (req,res) =>{
+	// req.flash('success', { msg: ' successed.' });
+	// req.flash('errors', { msg: 'Error uploading file.' });
 	res.render('backend/product/add');
 }
 
 
 
-// exports.postProductAdd = async (req,res) => {
 
-
-// 	if (req.body) {
-
-// 		upload (req,res,function(err) {
-// 		// console.log(req)
-// 		if(err) {
-// 			console.log('aaaaaaaaaaaaaaaaaaaaaaaa')
-// 			console.log(err);
-// 			return res.render('backend/product/add');
-
-// 		}
-// 		console.log("upload done")
-// 		if (req.file) {
-// 			Product.save()
-// 		}else{
-// 			return res.render('backend/product/add');
-// 		}
-
-
-// 		console.log(req.body);
-
-
-// 		try{
-
-// 			const product = new Product({
-// 				productName : req.body.productName,
-// 				productSpecies : req.body.productSpecies,
-// 				// thumb : req.body.thumb,
-// 				color : req.body.color,
-// 				price : req.body.price,
-// 				quantity : req.body.quantity ,
-// 				brand : req.body.brand ,
-// 				description : req.body.description
-
-// 			});
-// 			console.log(product)
-
-// 			let existingProduct =  Product.findOne({ productName : req.body.productName});
-// 			if (existingProduct) {
-// 				return res.render('backend/product/add');
-// 			} else if (req.body.productName == "") {
-// 				return res.render('backend/product/add');
-// 			} else if (req.body.price == "" ) {
-// 				return res.render('backend/product/add');
-// 			}else if (req.body.quantity == ""  ) {
-// 				return res.render('backend/product/add');
-// 			}else{
-// 				let saveProduct =  product.save();
-// 				if (saveProduct) {
-// 					return res.render('backend/product/add');
-// 				}
-// 			}
-// 		}catch(errors){
-// 			console.log(errors);
-// 			res.send({status:false, errors : errors});
-// 		}
-// 		console.log("Done")
-// 	})
-// 	}
-// }
 
 exports.postProductAdd = async (req,res) => {
-	if(req.file) {
+	upload (req,res,async function(err) {
+		if(err) {
+			console.log(err);
+			return res.send({status:false, err : err});
+		}
 		console.log(req.file)
-		upload (req,res,async function(err) {
-			if(err) {
-				console.log('aaaaaaaaaaaaaaaaaaaaaaaa')
-				console.log('Khong co anh san pham')
-				console.log(err);
-				return res.render('backend/product/add');
-			}
-			try{
 
-				console.log("upload done")
+		try{
+			if (req.body) {
+				console.log(req.body)
+				if (req.body.productName == "") {
+					let errors = [{msg:"Tên sản phẩm không được để trống"}]
+					return res.send({status:false, errors : errors});
+				} else if (req.body.price == "" ) {
+					let errors = [{msg:"Giá sản phẩm không được để trống"}]
+					return res.send({status:false, errors : errors});
+				}else if (req.body.quantity == ""  ) {
+					let errors = [{msg:"Số lượng sản phẩm không được để trống"}]
+					return res.send({status:false, errors : errors});
+				}else if (!req.file) {
+					let errors = [{msg:"Vui lòng tải ảnh sản phẩm"}]
+					return res.send({status:false, errors : errors});
+				}else{
+					let existingProduct = await Product.findOne({ productName : req.body.productName});
 
-				if (req.body) {
-					if (req.body.productName == "") {
-						return res.render('backend/product/add');
-					} else if (req.body.price == "" ) {
-						return res.render('backend/product/add');
-					}else if (req.body.quantity == ""  ) {
-						return res.render('backend/product/add');
-					}else{
-						let existingProduct =  Product.findOne({ productName : req.body.productName});
-
-						if (existingProduct && existingProduct != "") {
-							console.log(existingProduct)
-							console.log("Trung ten")
-							return res.render('backend/product/add');
-						}
-
-						const product = new Product({
-							productName : req.body.productName,
-							productSpecies : req.body.productSpecies,
-							color : req.body.color,
-							price : req.body.price,
-							quantity : req.body.quantity ,
-							brand : req.body.brand ,
-							description : req.body.description
-						});
-
-						if (req.file) {
-							product.productThumb = req.file.filename;
-						}
-
-						let saveProduct = await product.save();
-						if (!saveProduct) {
-							console("Add loi")
-						}
-
-						console.log("Done")
-
+					if (existingProduct && existingProduct != "") {
+						let errors = [{msg:"Tên sản phẩm đã tồn tại"}]
+						return res.send({status:false, errors : errors});
 					}
+
+					const product = new Product({
+						productName : req.body.productName,
+						productSpecies : req.body.productSpecies,
+						color : req.body.color,
+						price : req.body.price,
+						quantity : req.body.quantity ,
+						brand : req.body.brand ,
+						description : req.body.description
+					});
+
+					if (req.file) {
+						product.productThumb = req.file.filename;
+					}
+
+					let saveProduct = await product.save();
+					if (!saveProduct) {
+						let errors = [{msg:"Thêm sản phẩm thất bại"}]
+						return res.send({status:false, errors : errors});
+					}
+					return res.send({status:true});
+
 				}
 			}
+		}
 
-			catch(errors){
-				console.log(errors);
-			}
+		catch(errors){
+			console.log(errors);
+			return res.send({status:false, errors : errors});
+		}
 
-		})
+	})
+}
+
+
+exports.getProductEdit = async (req,res) =>{
+	if (req.params && req.params.id) {
+		try{
+			let product = await Product.find({_id : req.params.id});
+			res.render('backend/product/edit',{product:product[0],moment:moment})
+		}catch(err){
+		}
 	}
 }
 
 
+exports.postProductEdit = async (req,res) => {
+	upload (req,res,async function(err) {
+		if(err) {
+			console.log(err);
+			return res.send({status:false, err : err});
+		}
+
+		try{
+			if (req.body) {
+				console.log(req.body)
+				if (req.body.productName == "") {
+					let errors = [{msg:"Tên sản phẩm không được để trống"}]
+					return res.send({status:false, errors : errors});
+				} else if (req.body.price == "" ) {
+					let errors = [{msg:"Giá sản phẩm không được để trống"}]
+					return res.send({status:false, errors : errors});
+				}else if (req.body.quantity == ""  ) {
+					let errors = [{msg:"Số lượng sản phẩm không được để trống"}]
+					return res.send({status:false, errors : errors});
+				}else{
+					let existingProduct = await Product.findOne({_id : {$ne: req.body.id}, productName: req.body.productName});
+
+					if (existingProduct && existingProduct != "") {
+						let errors = [{msg:"Tên sản phẩm đã tồn tại"}]
+						return res.send({status:false, errors : errors});
+					}
+					
+
+					const productDataUpdate = {
+						productName : req.body.productName,
+						productSpecies : req.body.productSpecies,
+						color : req.body.color,
+						price : req.body.price,
+						quantity : req.body.quantity ,
+						brand : req.body.brand ,
+						description : req.body.description
+					};
+
+					if (req.file) {
+						productDataUpdate.productThumb = req.file.filename;
+					}
+
+					// console.log(productDataUpdate)
+
+					let updateProduct = await Product.update({ _id: req.body.id}, { $set: productDataUpdate});
+
+					if (updateProduct) {
+						return res.send({status:true});
+					}
+				}
+			}
+		}
+
+		catch(errors){
+			console.log(errors);
+			return res.send({status:false, errors : errors});
+		}
+
+	})
+}
 
 
 
@@ -258,4 +276,3 @@ exports.deleteProduct = async (req,res) =>{
 		}
 	}
 }
-

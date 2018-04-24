@@ -48,6 +48,12 @@
     width: 5%!important;
     font-size: 90%!important;
   }
+  .button-active {
+    float: left;
+    margin-left: 10%;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
   .button-active a {
     display: inline-block;
     font-size: 2rem;
@@ -79,142 +85,143 @@
   <section class="content ">
 
     <div class="container content-edit">     
-      <form class="form-productAdd" role = "form" action="/admin/product/addProduct" method="post" enctype="multipart/form-data">
-        <div class="form-product-add">
-          <span>Tên sản phẩm</span>
-          <input id="new-productName" type="text" name="productName" value="">
+     <!--  <form class="form-productAdd" role = "form" action="/admin/product/addProduct" method="post" enctype="multipart/form-data"> -->
+      <div class="form-product-add">
+        <span>Tên sản phẩm</span>
+        <input id="new-productName" type="text" name="productName" value="">
+      </div>
+      <div class="form-product-add">
+        <span>Loại sản phẩm</span>
+        <div class="active">
+          <input class="status-active" type="radio" name="productSpecies" value="1">
+          <span class="label label-info">Tai nghe</span>
         </div>
-        <div class="form-product-add">
-          <span>Loại sản phẩm</span>
-          <div class="active">
-            <input class="status-active" type="radio" name="productSpecies" value="1">
-            <span class="label label-info">Tai nghe</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="productSpecies" value="2">
-            <span class="label label-info">Bàn phím</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="productSpecies" value="3">
-            <span class="label label-info">Chuột</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="productSpecies" value="4">
-            <span class="label label-info">Laptop</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="productSpecies" value="5">
-            <span class="label label-info">Phụ kiện khác</span>
-          </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="productSpecies" value="2">
+          <span class="label label-info">Bàn phím</span>
         </div>
-        <div class="form-product-add">
-          <span>Hình ảnh</span>
-          <input type="file" id = "file" name="thumb" value="" style="width: 40%;">
-          <img src="" class="productImage-upload" >
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="productSpecies" value="3">
+          <span class="label label-info">Chuột</span>
         </div>
-        <div class="form-product-add">
-          <span>Màu sắc</span>
-          <div class="active">
-            <input class="status-active" type="radio" name="color" value="1">
-            <span class="label label-info">Đen</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="color" value="2">
-            <span class="label label-info">Trắng</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="color" value="3">
-            <span class="label label-info">Đỏ</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="color" value="4">
-            <span class="label label-info">Xanh da trời</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="color" value="5">
-            <span class="label label-info">Da Cam</span>
-          </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="productSpecies" value="4">
+          <span class="label label-info">Laptop</span>
         </div>
-        <div class="form-product-add">
-          <span>Giá tiền</span>
-          <input id="new-price" type="number" name="price" value="">
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="productSpecies" value="5">
+          <span class="label label-info">Phụ kiện khác</span>
         </div>
-        <div class="form-product-add">
-          <span>Số lượng</span>
-          <input type="number" name="quantity" value="">
+      </div>
+      <div class="form-product-add">
+        <span>Hình ảnh</span>
+        <input type="file" id = "file" name="file" value="" style="width: 85%;">
+        <img src="" class="productImage-upload" >
+      </div>
+      <div class="form-product-add">
+        <span>Màu sắc</span>
+        <div class="active">
+          <input class="status-active" type="radio" name="color" value="1">
+          <span class="label label-info">Đen</span>
         </div>
-        <div class="form-product-add">
-          <span>Nhãn hiệu</span>
-          <div class="active">
-            <input class="status-active" type="radio" name="brand" value="1">
-            <span class="label label-info">SteelSeries</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="brand" value="2">
-            <span class="label label-info">Razer</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="brand" value="3">
-            <span class="label label-info">Ozone Gaming</span>
-          </div>
-          <div class="active active-block">
-            <input class="status-active" type="radio" name="brand" value="4">
-            <span class="label label-info">MSI Gaming</span>
-          </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="color" value="2">
+          <span class="label label-info">Trắng</span>
         </div>
-        <div class="form-product-add">
-          <span>Mô tả</span>
-          <textarea id="new-description"  name="description" ></textarea>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="color" value="3">
+          <span class="label label-info">Đỏ</span>
         </div>
-        <div class="form-product-add button-active">
-          <button>Tạo sản phẩm</button>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="color" value="4">
+          <span class="label label-info">Xanh da trời</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="color" value="5">
+          <span class="label label-info">Da Cam</span>
+        </div>
+      </div>
+      <div class="form-product-add">
+        <span>Giá tiền</span>
+        <input id="new-price" type="number" name="price" value="">
+      </div>
+      <div class="form-product-add">
+        <span>Số lượng</span>
+        <input type="number" name="quantity" value="">
+      </div>
+      <div class="form-product-add">
+        <span>Nhãn hiệu</span>
+        <div class="active">
+          <input class="status-active" type="radio" name="brand" value="1">
+          <span class="label label-info">SteelSeries</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="brand" value="2">
+          <span class="label label-info">Razer</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="brand" value="3">
+          <span class="label label-info">Ozone Gaming</span>
+        </div>
+        <div class="active active-block">
+          <input class="status-active" type="radio" name="brand" value="4">
+          <span class="label label-info">MSI Gaming</span>
+        </div>
+      </div>
+      <div class="form-product-add">
+        <span>Mô tả</span>
+        <textarea id="new-description"  name="description" ></textarea>
+      </div>
+       <!--  <div class="form-product-add button-active">
+          <button id="submit" type="submit">Tạo sản phẩm</button>
+        </div> -->
+        <div class="form-user-add button-active">
+          <a href="javascript:void(0)" onclick="postProductAdd()">Thêm Sản Phẩm</a>
         </div>
 
-      </form>
-    </div>
+        <!--      </form> -->
+      </div>
 
-  </section>
-  <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
 
-<%- include('../include/admin-footer') %>
+  <%- include('../include/admin-footer') %>
 
-<%- include('../include/admin-control-sidebar') %>
+  <%- include('../include/admin-control-sidebar') %>
 
-<%- include('../include/admin-js.ejs') %>
+  <%- include('../include/admin-js.ejs') %>
 
-<!-- <script>
+  <script>
 
-  function postProductAdd() {
+    function postProductAdd() {
+      var productName = $("input[name=productName]").val();
+      var productSpecies = $("input[name=productSpecies]:checked").val(); 
+      var color = $("input[name=color]:checked").val();
+      var price = $("input[name=price]").val();
+      var quantity = $("input[name=quantity]").val();
+      var brand = $("input[name=brand]:checked").val(); 
+      var description = $("textarea[name=description]").val();
+      var thumb =  $('input[type=file]')[0].files[0]
+      var formData = new FormData();
+      formData.append('file',thumb)
+      formData.append('productName', productName)
+      formData.append('productSpecies', productSpecies)
+      formData.append('color', color)
+      formData.append('price', price)
+      formData.append('quantity', quantity)
+      formData.append('brand', brand)
+      formData.append('description', description)
 
-    var productName = $("input[name=productName]").val();
-    // var thumb = new FormData();
-    // thumb.append('thumb', $('#new-thumb').files[0]);
-    var productSpecies = $("input[name=productSpecies]:checked").val(); 
-    var color = $("input[name=color]:checked").val();
-    var price = $("input[name=price]").val();
-    var quantity = $("input[name=quantity]").val();
-    var brand = $("input[name=brand]:checked").val(); 
-    var description = $("textarea[name=description]").val();
-
-
-    $.ajax({
-      url: '/admin/product/addProduct',
-      type: 'post',
-      data: {
-        productName : productName,
-        // thumb : thumb,
-        productSpecies : productSpecies,
-        color : color,
-        price : price,
-        quantity : quantity ,
-        brand : brand ,
-        description : description
-      },dataType: 'json',
+      $.ajax({
+        url: '/admin/product/addProduct',
+        type: 'post',
+        data: formData,
+        contentType:false,
+        processData:false
+      // dataType: 'json',
     }).done(function(results){
-
-      console.log(results);
       if (results.status == true) {
         $.confirm({
           title: 'Thông Báo!',
@@ -223,16 +230,20 @@
             Ok: function () {
               // $.alert('Ok');
               window.location.replace("/admin/product/list");
-            },
+            }
           }
         });
       }else{
-        console.log(results.errors[0].msg)
-        $.alert({
+        $.confirm({
           title: 'Thông Báo !',
-          content: '<span class="text-danger"><strong class="fa fa-close"></strong>'+results.errors[0].msg+'</span>'
+          content: '<span class="text-danger"><strong class="fa fa-close"></strong>'+results.errors[0].msg+'</span>',
+          buttons: {
+            Ok: function () {
+              // $.alert('Ok');
+              window.location.reload();
+            }
+          }
         })
-
       }
 
     })
@@ -242,8 +253,10 @@
 
 
 </script>
--->
+
 <script type="text/javascript">
+
+
 
   //preview image product
   function readURL(input) {

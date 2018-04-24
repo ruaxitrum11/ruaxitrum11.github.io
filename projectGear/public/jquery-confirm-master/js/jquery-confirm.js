@@ -100,6 +100,7 @@ var jconfirm, Jconfirm;
             var firstBtn = Object.keys(buttons)[0];
             options['buttons'][firstBtn] = buttons[firstBtn];
         }
+        console.log(options)
         /*
          *  Alias of jconfirm
          */

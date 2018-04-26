@@ -212,7 +212,8 @@ check('password_confirm', 'Mật khẩu không trùng khớp').custom((value, { 
 exports.postUserAdd = async (req,res) =>{
  if (req.body) {
 
-  console.log(req.body);
+  console.log(req.body)
+
 
   const errors = validationResult(req);
 
@@ -221,7 +222,7 @@ exports.postUserAdd = async (req,res) =>{
     return res.send({status:false, errors : errors.array()});
   }
 
-  console.log(errors.array())
+
 
   try{
     const user = new User({

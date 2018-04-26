@@ -43,7 +43,7 @@ let upload = multer({
 		// }
 		cb(null, true);
 	}
-}).single('file');
+}).single('fileImage');
 
  // Models
  const Product = require('../../models/Product');

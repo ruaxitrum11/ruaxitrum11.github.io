@@ -16,20 +16,6 @@ const User = require('../../models/User');
  * Home page.
  */
  exports.index = (req, res) => {
-  // console.log("Index Frontend")
-  // const user = new User({
-  //   userName: "huyhung",
-  //   password: "huyhung",
-  //   avatar: 'no_avatar.png'
-  // });
 
-  // user.save((err) => {
-  //   if (err) { return next(err) 
-  //     console.log(err)
-  //   }
-  //     console.log("Done")
-  // });
-
-  // console.log("ahihi")
   return res.render('frontend/index');
 }

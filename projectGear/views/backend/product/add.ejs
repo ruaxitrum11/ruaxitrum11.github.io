@@ -115,9 +115,14 @@
       </div>
       <div class="form-product-add">
         <span>Hình ảnh</span>
-        <input type="file" id = "file" name="file" value="" style="width: 85%;">
+        <input type="file" id = "fileImage" name="fileImage" value="" style="width: 85%;">
         <img src="" class="productImage-upload" >
       </div>
+      <!-- <div class="form-product-add">
+        <span>Banner</span>
+        <input type="file" id = "fileBanner" name="fileBanner" value="" style="width: 85%;">
+        <img src="" class="productBanner-upload" >
+      </div> -->
       <div class="form-product-add">
         <span>Màu sắc</span>
         <div class="active">
@@ -203,9 +208,11 @@
       var quantity = $("input[name=quantity]").val();
       var brand = $("input[name=brand]:checked").val(); 
       var description = $("textarea[name=description]").val();
-      var thumb =  $('input[type=file]')[0].files[0]
+      var thumb =  $('input[type=file]')[0].files[0];
+      // var banner = $('input[type=file]')[1].files[0];
       var formData = new FormData();
-      formData.append('file',thumb)
+      formData.append('fileImage',thumb)
+      // formData.append('fileBanner',banner)
       formData.append('productName', productName)
       formData.append('productSpecies', productSpecies)
       formData.append('color', color)
@@ -259,7 +266,7 @@
 
 
   //preview image product
-  function readURL(input) {
+  function readURLImage(input) {
 
     if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -272,8 +279,25 @@
     }
   }
 
-  $("#file").change(function() {
-    readURL(this);
+  $("#fileImage").change(function() {
+    readURLImage(this);
+  });
+
+   function readURLBanner(input) {
+
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        $('.productBanner-upload').attr('src', e.target.result);
+      }
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $("#fileBanner").change(function() {
+    readURLBanner(this);
   });
 
 
